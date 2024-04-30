@@ -1,7 +1,7 @@
 * {
 margin: 0;
 padding: 0;
-font-family: work sans;
+font-family: 'work sans';
 box-sizing: border-box;
 }
 html, body
@@ -189,7 +189,9 @@ background-color: black;
     height: 100vh;
     /* background-color: red; */
     margin-top: 2vw;
-    background-image: url(./dark\ images.jpg);
+    background-image: url('https://www.nasa.gov/wp-content/uploads/2023/03/757_iss044e020824.jpg');
+    /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
+    /* background-image: url(./dark\ images.jpg);  */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 0%;
@@ -399,7 +401,7 @@ background-color: black;
     top: 33%;
     left: 23%;
     border: 1px solid black;
-    background-image: url(./astronaut-8061095_1280.png);
+    background-image: url(./astronaut-8061095_1280.png); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -502,7 +504,7 @@ background-color: black;
 #background-image {
     width: 100%;
     height: 100%;
-    background-image: url(./space\ image.jpg);
+    background-image: url(./space\ image.jpg); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -670,6 +672,7 @@ background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 #background-overlay2 {
@@ -685,7 +688,7 @@ background-color: black;
 #background-image2 {
     width: 100%;
     height: 100%;
-    background-image: url(./space\ image.jpg);
+    background-image: url(./space\ image.jpg); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -824,12 +827,16 @@ input[type="radio"] {
     width: 100%;
     min-height: 100%;
     position: relative; 
+    background-image: url(./space\ image.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #page6 #centerimage{
     width: 90%;
     height: 100%;
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
     top: 66%;
     left: 50%;
@@ -838,12 +845,842 @@ input[type="radio"] {
     /* background-repeat: no-repeat; */
     /* background-size: cover; */
 }
-
-
-
-#page7{
+#page6 #centerimage > img{
     width: 100%;
     height: 100%;
+    opacity: 0.4;
+    /* background-color: aqua; */
+}
+#page6 h1{
+    color: white;
+    font-family: "Roboto Condensed";
+    font-size: 3vw;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+#page6 #box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7vw;
+    position: absolute; 
+    top: 75%;
+    left: 49%;
+    transform: translate(-50% , -50%);
+}
+#box2{
+    width: 0.9vw;
+    height: 0.9vw;
+    background-color: rgb(214,214,215);
+    border: 1px solid black;
+}
+#box1{
+    width: 0.9vw;
+    height: 0.9vw;
+    background-color: rgb(38, 90, 141);
+    border: 1px solid black;
+}
+#box3{
+    width: 0.9vw;
+    height: 0.9vw;
+    background-color: rgb(247,118,19);
+    border: 1px solid black;
+}
+#page6 p{
+    color: white;
+    /* background-color: aqua; */
+    font-size: 1vw;
+    width: 40%;
+    line-height: 1.5vw;
+    font-family: 'work sans';
+    position: absolute;
+    top: 83%;
+    transform: translate(-50% , -50%);
+    left: 50%;
+    text-align: center;
+}
+#page6 #lines{
+    width: 40%;
+    height: 30%;
+    color: white;
+    /* background-color: red; */
+    position: relative;
+    top: 60vw;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#page6 #lines h4{
+      font-size: 0.8vw;
+      font-family: 'work sans';
+      font-weight: 300;
+      position: absolute;
+      top: -4vw;
+      /* top: 3vw; */
+      left: 52%;
+}
+#page6 #lines h4 > i{
+    color: rgb(220, 220, 248);
+    padding: 2px;
+}
+
+#page6 #lines h5{
+    font-size: 0.8vw;
+    font-family: 'work sans';
+    font-weight: 300;
+    position: absolute;
+    top: -1vw;
+    left: 13%;
+}
+#page6 #lines h5 > i{
+    color: rgb(220, 220, 248);
+    padding: 3px;
+}
+#page6 #lines h6{
+    font-size: 0.8vw;
+    font-family: 'work sans';
+    font-family: 300;
+    position: absolute;
+    top: 4vw;
+    left: 56%;
+}
+#page6 #lines h6 > i{
+    color: rgb(220, 220, 248);
+    padding: 7px;
+}
+#page6 #lines h3{
+    font-size: 0.8vw;
+    font-family: 'work sans';
+    font-family: 300;
+    position: absolute;
+    top: 10.1vw;
+    left: 20%;
+}
+#page6 #lines h3 > i{
+    color: rgb(220, 220, 248);
+    padding: 7px;
+}
+
+#footer{
+    background-color: black;
+    width: 100%;
+    /* min-height: 100px; */
+     height: 95%;
+     background-image: url(./space\ image.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#footer-top{
+   width: 100%;
+   height: 30%;
+    /* background-color: aqua;   */
+   display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    border-bottom: 2px dashed rgb(40, 32, 32);
+    position: relative;
+    top: 70%;
+    }
+
+#footer-top img{
+    /* height: 80px; */
+    /* padding-left: 2%; */
+     height: 45%; 
+    padding-left: 2vw; 
+}
+#footer-top h1{
+    font-size: 2.5vw;
+    font-weight: 600;
+    color: white;
+   letter-spacing: 0.5vw;
+   /* padding-right: 20vw; */
+   font-family: 'Roboto Condensed';
+   border-left: 1px solid white; 
+   padding: 30px;
+   position: relative;
+   left: -8%;
+   
+}
+#footer-top img:nth-child(3) {
+           padding-right: 4px;
+          height: 45%;
+          margin-top: 1px;
+}
+#footer-content{
+    width: 100%;
+    height: 50%;
+    /* background-color: blueviolet; */
+    /* padding: 3% 2%; */
+    padding: 3vw; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#footer-content p{
+    font-size: 1.2vw;
+    color: white;
+    font-family: 'Work Sans';
+    line-height: 1.9vw;
+    margin-top: 65%;
+   
+}
+#footer-content ul:nth-child(2){
+    /* background-color: aqua; */
+    color: white;
+    font-size: 1.2vw;
+    font-family: 'Work Sans';
+    line-height: 2vw;
+    margin-top: 67.75%;
+}
+#footer-content ul:nth-child(3){
+    /* background-color: aqua; */
+    color: white;
+    font-size: 1.2vw;
+    font-family: 'Work Sans';
+    line-height: 2vw;
+    margin-top: 69.75%;
+}
+#footer-content ul:nth-child(4){
+    /* background-color: aqua; */
+    color: white;
+    font-size: 1.2vw;
+    font-family: 'Work Sans';
+    line-height: 2vw;
+    margin-top: 65.75%;
+}
+#footer-bottom{
+    width: 100%;
+    height: 20%;
+    /* background-color: aquamarine; */
+    padding: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 60%;
+}
+#footer-bottom h4{
+    font-size: 1.1vw;
+    font-weight: 400;
+    font-family:  'Work Sans';
+    color: white;
 }
 
 
+@media (min-width:1600px) {
+    #nav {
+        width: 100%;
+        height: 10vw;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2vw;
+    } 
+    
+    #nav #nav-right img{
+        height: 5vw;
+        width: 5vw;
+    }
+    #nav #nav-right h1 {
+        font-family: "Roboto Condensed";
+        font-size: 2.7vw;
+        font-weight: 500;
+        color: #fff;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.653);
+        letter-spacing: 0.4vw;
+        padding-left: 2.5vw;
+        filter: brightness(100%);
+    }
+    
+    .aboutus #about h2{
+        margin-top: 26%;
+        font-size: 2vw;
+    }
+    #about #about_box{
+        /* background-color: red; */
+        width: 3.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: -1.2vw;
+        margin-bottom: 2.5vw;
+    }
+    
+    #about_box > .box{
+        width: 12px;
+        height: 12px;
+        border-radius: 50px;
+        background-color: orangered;
+    }
+    
+    #page2 .aboutus #about > p {
+        color: #E0DDDD;
+        /* Increase text brightness */
+        filter: brightness(80%);
+        font-size: 1vw;
+        padding-bottom: 3vw;
+        position: relative;
+        bottom: 1.5vw;
+    }
+    
+    #page2 .aboutus #about >button{
+        margin-top: 3%;
+        padding: 15px 30px;
+        bottom: 2vw;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #428DDE;
+        color: white;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .aboutus #services h2{
+        margin-top: 13%;
+        font-size: 2vw;
+    }
+    #about_box > .box{
+        width: 12px;
+        height: 12px;
+        border-radius: 50px;
+        background-color: orangered;
+    }
+    
+    #about_box > .box:nth-child(2){
+        background-color: #E0DDDD;
+    }
+    
+    #about_box > .box:nth-child(3){
+        background-color: #428DDE;
+    }
+    
+    #page2 .aboutus #services > h2 {
+        color: #fff;
+        font-family: "Roboto Condensed";
+        padding-bottom: 2vw;
+        /* Increase text brightness */
+        text-align: right;
+        filter: brightness(150%);
+    }
+    
+    #page2 .aboutus #services > p {
+        color: #E0DDDD;
+        text-align: left;
+        margin-left: 5%;
+        /* Increase text brightness */
+        filter: brightness(80%);
+        font-size: 1vw;
+        position: relative;
+        bottom: 1.5vw;
+        padding-bottom: -3vw;
+    }
+    #page3{
+        width: 100%;
+        height: 100%;
+        padding: 5vw;
+    }
+    
+    #page3 #container{
+        width: 100%;
+        height: 50vh;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1vw;
+    }
+    
+    #page3 #container .card{
+        width: 25vw;
+        height: 25vw;
+        background-color: #070A0C;
+        border-right: 2px solid black;
+        border-radius: 40px;
+        padding: 3vw;
+        position: relative;
+    }
+    
+    #page3 #container .card>h3{
+        color: #fff;
+        font-size: 1.44vw;
+        font-family: "Roboto Condensed";
+        font-weight: 500;
+        text-align: center;
+        margin-left: -10px;
+        margin-top: -20px;
+    }
+    
+    #page3 #container .card>i{
+        color: white;
+        position: absolute;
+        top: 24%;
+        margin-left: 4.5vw;
+    }
+    
+    #page3 #container .card:nth-child(2) .gola{
+        width: 120px;
+        height: 120px;
+        background-color: royalblue;
+        border-radius: 50%;
+        position: absolute;
+        top: 33%;
+        left: 27%;
+        border: 1px solid black;
+        background-image: url('https://blog.ipleaders.in/wp-content/uploads/2021/07/DRone-law-1.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #page3 #container .card:nth-child(1) > .gola{
+        width: 120px;
+        height: 120px;
+        background-color: royalblue; 
+        border-radius: 50%;
+        position: absolute;
+        top: 33%;
+        left: 27%;
+        border: 1px solid black;
+        background-image: url('https://media.licdn.com/dms/image/D5612AQHLrU9poSHAIw/article-cover_image-shrink_720_1280/0/1684730723527?e=2147483647&v=beta&t=laKdNLNmkL3PnNC27ZM5Xmopxo0P5k-mU2cn3u43qwA');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+    }
+
+    #page3 #container .card:nth-child(3) > .gola{
+        width: 120px;
+        height: 120px;
+        background-color: royalblue; 
+        border-radius: 50%;
+        position: absolute;
+        top: 33%;
+        left: 27%;
+        border: 1px solid black;
+        background-image: url('https://i.insider.com/5bbcdfacbde70f41687f8cf4?width=700');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+    }
+    
+    #page3 #container .card:nth-child(4) > .gola{
+        width: 120px;
+        height: 120px;
+        background-color: royalblue; 
+        border-radius: 50%;
+        position: absolute;
+        top: 33%;
+        left: 28%;
+        border: 1px solid black;
+        background-image: url('https://media.wired.com/photos/5d5d8b3e895f71000883d316/1:1/w_1500,h_1500,c_limit/Science_1momentus-vigoride-hi-res.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+    }
+
+    #page3 #container .card:nth-child(5) > .gola{
+        width: 120px;
+        height: 120px;
+        background-color: royalblue; 
+        border-radius: 50%;
+        position: absolute;
+        top: 33%;
+        left: 27%;
+        border: 1px solid black;
+        background-image: url('https://techcrunch.com/wp-content/uploads/2020/07/SXRS-3-Sherpa-FX-PR-v101-2048x1152-1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+    }
+    
+    #page3 #container .card>button{
+        margin-top: 120%;
+        margin-left: 13%;
+        padding: 15px 30px; 
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #E0DDDD;
+        color: white;
+        font-size: 0.9vw;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    #page3 #container >.card:nth-child(1) > button{
+        margin-top: 119% ;
+         /* background-color: red; */
+     }
+     #page3 #container >.card:nth-child(3) > button{
+        margin-top: 120% ;
+         /* background-color: red; */
+     }
+    
+    #page3 >button{
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 18px 40px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #428DDE;
+        color: white;
+        font-size: 1vw;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    
+    #page4 h2 {
+        color: white;
+        font-family: "Roboto Condensed";
+        font-size: 3vw;
+        text-align: center;
+        margin-bottom: 1vw;
+        position: relative; /* Ensure the text is positioned correctly relative to its container */
+        z-index: 2; /* Ensure the text is above the overlay */
+    }
+    
+    #page4 p {
+        color: #E0DDDD;
+        font-size: 1vw;
+        width: 26%;
+        text-align: center;
+        position: absolute;
+        left: 37%;
+        margin-bottom: 2vw;
+        z-index: 2; /* Ensure the text is above the overlay */
+    }
+    
+    #page4 #image {
+        width: 70%;
+        height: 75vh;
+        font-size: 4vw;
+        position: absolute;
+        top: 20%;
+        left: 54%;
+        padding: 6vw;
+        transform: translateX(-50%);
+        z-index: 2; /* Ensure the image is above the overlay */
+    }
+    #page4 >  #image > img:nth-child(1){
+        margin-left: -6%;
+    }
+    #page4 > #image > img:nth-child(3){
+        margin-left: 6%;
+    }
+    #page4 > #image > img:nth-child(5){
+        margin-left: 6%;
+    }
+    #page4 > #image > img:nth-child(7){
+        margin-left: 6%;
+    }
+    #page4 > #image > img:nth-child(9){
+        margin-left: 6%;
+    }
+    #image #firstp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 1%;
+        top: 42%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    #image #secp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 20%;
+        top: 42%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    #image #thirdp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 39%;
+        top: 42%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    #image #fourthp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 57.50%;
+        top: 42%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    #image #fifthp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 76.50%;
+        top: 42%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    
+    #page4 #image2{
+        width: 80%;
+        height: fit-content;
+        position: relative;
+        font-size: 4vw;
+        left: 54%;
+        top: 20%;
+        transform: translateX(-50%);
+        /* background-color: royalblue; */
+    }
+    #page4 > #image > #image2 > img:nth-child(1){
+        margin-left: -9%;
+    }
+    #page4  > #image > #image2 > img:nth-child(3){
+        margin-left: 6%;
+    }
+    #page4  > #image > #image2 > img:nth-child(5){
+        margin-left: 6%;
+    }
+    #page4  > #image > #image2 > img:nth-child(7){
+        margin-left: 9%;
+    }
+    #image2 #sixp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: -8%;
+        top: 76%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    #image2 #sevenp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 19%;
+        top: 76%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    #image2 #eigthp{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 46%;
+        top: 76%;
+        width: 15%;
+        font-weight: 500;
+    }
+    
+    #image2 #ninep{
+        color: white;
+        font-size: 20px;
+        /* background-color: red; */
+        position: absolute;
+        left: 76%;
+        top: 76%;
+        width: 15%;
+        font-weight: 500;
+    }
+    #background-image2 {
+        width: 100%;
+        height: 100%;
+        background-image: url(./space\ image.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0; /* Ensure the background image is behind the overlay */
+    }
+    
+    #page5 h2 {
+        color: white;
+        font-family: "Roboto Condensed";
+        font-size: 3vw;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: -25vw;
+        margin-bottom: 1vw;
+        position: relative; /* Ensure the text is positioned correctly relative to its container */
+        z-index: 2; /* Ensure the text is above the overlay */
+    }
+    
+    #page5 p {
+        color: #E0DDDD;
+        font-size: 1vw;
+        width: 26%;
+        text-align: center;
+        position: absolute;
+        left: 37%;
+        margin-top: -15vw;
+        margin-bottom: 2vw;
+        z-index: 2; /* Ensure the text is above the overlay */
+    }
+    .preview{
+        width: 75%;
+        /* background-color: red; */
+        padding: 0 1vw;
+        color: aliceblue;
+        position: absolute;
+        bottom: 32%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 30px;
+        z-index: 2;
+    }
+
+    .preview > a:nth-child(1) > i{
+        /* background-color: aqua; */
+          position: absolute;
+          left: 11%;
+    }
+
+    .preview > a:nth-child(2) > i{
+        position: absolute;
+        right: 11%;
+    }
+
+    input[type="radio"] {
+        height: 1.1rem;
+        width: 1.1rem;
+    }
+
+    #see{
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 20px 32px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #428DDE;
+        color: white;
+        font-weight: 600;
+        font-size: 1vw;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    
+    }
+    #page6{
+        width: 100%;
+        min-height: 100%;
+        position: relative; 
+        top: -30%;
+    }
+    #footer{
+        background-color: black;
+        width: 100%;
+        /* min-height: 100px; */
+         height: 65%;
+    }
+     #footer-content p{
+         font-size: 1.2vw;
+         color: white;
+         font-family: 'Work Sans';
+         line-height: 1.9vw;
+         margin-top: 50%;
+        
+     }
+     #footer-content ul:nth-child(2){
+         /* background-color: aqua; */
+         color: white;
+         font-size: 1.2vw;
+         font-family: 'Work Sans';
+         line-height: 2vw;
+         margin-top: 53%;
+     }
+     #footer-content ul:nth-child(3){
+         /* background-color: aqua; */
+         color: white;
+         font-size: 1.2vw;
+         font-family: 'Work Sans';
+         line-height: 2vw;
+         margin-top: 54.75%;
+     }
+     #footer-content ul:nth-child(4){
+         /* background-color: aqua; */
+         color: white;
+         font-size: 1.2vw;
+         font-family: 'Work Sans';
+         line-height: 2vw;
+         margin-top: 50.50%;
+     }
+     #footer-bottom{
+         width: 100%;
+         height: 40%;
+         /* background-color: aquamarine; */
+         padding: 3vw;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         position: relative;
+         top: 80%;
+     }
+
+
+     #page2 .aboutus #about >button{
+        padding: 15px 28px;
+    }
+    
+
+    #page3 >button{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 28px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #428DDE;
+        color: white;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    
+    }
+
+    #page3 #container .card>button{
+        margin-top: 120%;
+        padding: 15px 24px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #E0DDDD;
+        color: white;
+        font-weight: 600;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    
+   
+}
