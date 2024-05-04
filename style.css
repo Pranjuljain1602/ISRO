@@ -11,14 +11,142 @@ height: 100%;
 background-color: black;
 }
 
-#page1 {
+#loader{
     width: 100%;
     height: 100%;
+    background-color: #030303;
+    background-image: url(./space\ image.jpg);
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    color: white;
+    z-index: 999;
+    padding: 15vh 10vw;
+}
+
+#loader #waiting{
+    /* background-color: red; */
+    font-family: 'plain light';
+    width: 15%;
+    font-size: 2.5vw;
+    margin-top: 5vw;
+    margin-left: 15vw;
+}
+
+/* .mousefollower { */
+    /* border: 2px solid #fff; */
+    /* background-color: rgb(255, 255, 255); */
+    /* scale: 2; */
+    /* mix-blend-mode: difference; */
+/* } */
+
+.line{
+/* background-color: red; */
+height: fit-content;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+gap: 3vw;
+
+}
+
+#line1-part1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+#line1-part1 h5, #line1-part1 h6{
+    font-size: 3vw;
+    font-family: 'silk serif';
+    font-weight: 100;
+
+}
+
+#line1-part1 h5{
+    /* background-color: red; */
+    width: 5vw;
+    text-align: right;
+}
+
+.line h1{
+    font-family: 'Plain regular';
+    font-size: 6vw;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.line h2{
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: 800;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+
+
+@keyframes anime {
+    0%{
+        font-family: 'plain light';
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 1;
+    }
+    48%{
+        font-family: 'plain light';
+        -webkit-text-stroke: 1px #fff;
+        color: #fff;
+        font-weight: 500;
+        opacity: 0;
+    }
+    50%{
+        font-family: 'silk serif';
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        color: transparent;
+        opacity: 1;
+    }
+
+
+    100%{
+        font-family: 'silk serif';
+        -webkit-text-stroke: 1px #fff;
+        font-weight: 500;
+        color: transparent;
+        opacity: 0;
+    }
+}
+
+#main{
+    position: relative;
+    background-color: black;
+}
+
+#cursor{
+        width: 3vw;
+        height: 3vw;
+        border: 1.3px solid rgba(255, 255, 255, 0.842);
+        border-radius: 50%;
+        position: fixed;
+        z-index: 9999;
+        pointer-events: none;
+        mix-blend-mode: difference;
+        transform: translate(-50%,-50%);
+}
+
+#page1 {
+    width: 100%;
+    height: 100vh;
     background-color: black;
     background-image: url(./isro\ backgroung\ final.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: 00% 0%;
+    background-position: center;
     position: relative;
 }
 
@@ -51,12 +179,16 @@ background-color: black;
     gap: 2vw;
 }
 
+#nav #nav-right img{
+    filter: brightness(100%);
+}
+
 #nav #nav-right h1 {
-    font-family: "Roboto Condensed";
+   font-family: 'Roboto Condensed';
     font-size: 3.7vw;
     font-weight: 400;
     color: #fff;
-    border-left: 1.5px solid rgba(255, 255, 255, 0.653);
+    border-left: 1.5px solid rgba(255, 255, 255);
     letter-spacing: 0.3vw;
     padding-left: 2.5vw;
     filter: brightness(100%);
@@ -79,33 +211,32 @@ background-color: black;
 }
 
 #nav #nav-left h3:hover {
-    opacity: 0.7;
+    filter: brightness(80%);
     cursor: pointer;
 }
 
 #header_content {
-    width: 50%;
+    width: 90%;
     height: 55vh;
     /* background-color: red; */
     position: absolute;
-    top: 43%;
-    left: 1%;
-    padding: 3vw;
+    top: 35%;
+    left: 2%;
+    padding: 1vw;
 }
 
 #header_content h2 {
     color: rgb(255, 255, 255);
-    font-size: 3vw;
+    font-size: 8vw;
     font-family: "Roboto Condensed";
-    width: 80%;
-    line-height: 4vw;
+    line-height: 9vw;
     /* Increase text brightness */
     filter: brightness(100%);
 }
 
 .btn {
-    margin-top: 3%;
-    margin-left: 60%;
+    margin-top: 1%;
+    margin-left: 80%;
     padding: 15px 30px;
     border-radius: 5px;
     background-color: transparent;
@@ -142,8 +273,9 @@ background-color: black;
 
 
 #page2{
+    margin-top: 10vw;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
     background-color: black;
 }
 
@@ -261,7 +393,7 @@ background-color: black;
 
 #page2 .aboutus #about >button{
     margin-top: 3%;
-    padding: 15px 30px;
+    padding: 15px 25px;
     border-radius: 5px;
     background-color: transparent;
     border: 2px solid #428DDE;
@@ -351,8 +483,9 @@ background-color: black;
 }
 
 #page3{
+    margin-top: 10vw;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 5vw;
 }
 
@@ -401,11 +534,43 @@ background-color: black;
     top: 33%;
     left: 23%;
     border: 1px solid black;
-    background-image: url(./astronaut-8061095_1280.png); 
+    background-image: url('https://techcrunch.com/wp-content/uploads/2020/07/SXRS-3-Sherpa-FX-PR-v101-2048x1152-1.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+#page3 #container .card:nth-child(2) .gola{
+        width: 100px;
+        height: 100px;
+        background-color: royalblue;
+        border-radius: 50%;
+        position: absolute;
+        top: 33%;
+        left: 27%;
+        border: 1px solid black;
+        background-image: url('https://blog.ipleaders.in/wp-content/uploads/2021/07/DRone-law-1.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    #page3 #container .card:nth-child(1) > .gola{
+        background-image: url('https://media.licdn.com/dms/image/D5612AQHLrU9poSHAIw/article-cover_image-shrink_720_1280/0/1684730723527?e=2147483647&v=beta&t=laKdNLNmkL3PnNC27ZM5Xmopxo0P5k-mU2cn3u43qwA');
+    }
+
+    #page3 #container .card:nth-child(3) > .gola{
+        background-image: url('https://i.insider.com/5bbcdfacbde70f41687f8cf4?width=700');
+    }
+    
+    #page3 #container .card:nth-child(4) > .gola{
+        background-image: url('https://media.wired.com/photos/5d5d8b3e895f71000883d316/1:1/w_1500,h_1500,c_limit/Science_1momentus-vigoride-hi-res.jpg');
+    }
+
+    #page3 #container .card:nth-child(5) > .gola{
+        background-image: url('https://techcrunch.com/wp-content/uploads/2020/07/SXRS-3-Sherpa-FX-PR-v101-2048x1152-1.jpg');
+    }
+    
 
 
 #page3 #container .card>button{
@@ -487,13 +652,13 @@ background-color: black;
 
 #page4 {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
 }
 
 #background-overlay {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -503,7 +668,7 @@ background-color: black;
 
 #background-image {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url(./space\ image.jpg); 
     background-size: cover;
     background-repeat: no-repeat;
@@ -666,8 +831,9 @@ background-color: black;
 
 
 #page5 {
+    margin-top: 10vw;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
@@ -677,7 +843,7 @@ background-color: black;
 
 #background-overlay2 {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -687,7 +853,7 @@ background-color: black;
 
 #background-image2 {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-image: url(./space\ image.jpg); 
     background-size: cover;
     background-repeat: no-repeat;
@@ -724,6 +890,7 @@ background-color: black;
 
 
 #page5 #slider{
+    margin-top: 3vw;
     background-color: aliceblue;
     height: 480px;
     width: 1000px;
@@ -755,7 +922,7 @@ background-color: black;
     padding: 0 1vw;
     color: aliceblue;
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -824,8 +991,9 @@ input[type="radio"] {
 
 
 #page6{
+    margin-top: -5vw;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
     position: relative; 
     background-image: url(./space\ image.jpg); 
     background-size: cover;
@@ -835,7 +1003,7 @@ input[type="radio"] {
 
 #page6 #centerimage{
     width: 90%;
-    height: 100%;
+    height: 100vh;
     /* background-color: red; */
     position: absolute;
     top: 66%;
@@ -847,7 +1015,7 @@ input[type="radio"] {
 }
 #page6 #centerimage > img{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0.4;
     /* background-color: aqua; */
 }
@@ -966,7 +1134,7 @@ input[type="radio"] {
     background-color: black;
     width: 100%;
     /* min-height: 100px; */
-     height: 95%;
+     height: 110vh;
      background-image: url(./space\ image.jpg); 
     background-size: cover;
     background-repeat: no-repeat;
@@ -974,7 +1142,7 @@ input[type="radio"] {
 }
 #footer-top{
    width: 100%;
-   height: 30%;
+   height: 30vh;
     /* background-color: aqua;   */
    display: flex; 
     align-items: center; 
@@ -988,7 +1156,8 @@ input[type="radio"] {
     /* height: 80px; */
     /* padding-left: 2%; */
      height: 45%; 
-    padding-left: 2vw; 
+    padding-right: 1.5vw;
+    padding-left: 1.5vw;
 }
 #footer-top h1{
     font-size: 2.5vw;
@@ -1010,7 +1179,7 @@ input[type="radio"] {
 }
 #footer-content{
     width: 100%;
-    height: 50%;
+    height: 50vh;
     /* background-color: blueviolet; */
     /* padding: 3% 2%; */
     padding: 3vw; 
@@ -1053,7 +1222,7 @@ input[type="radio"] {
 }
 #footer-bottom{
     width: 100%;
-    height: 20%;
+    height: 20vh;
     /* background-color: aquamarine; */
     padding: 3vw;
     display: flex;
@@ -1599,7 +1768,7 @@ input[type="radio"] {
         background-color: black;
         width: 100%;
         /* min-height: 100px; */
-         height: 65%;
+         height: 68%;
     }
      #footer-content p{
          font-size: 1.2vw;
@@ -1681,6 +1850,13 @@ input[type="radio"] {
         z-index: 1;
     }
 
-    
    
+}
+
+
+@media (max-width: 550px) {
+    #cursor{
+        display: none;
+    }
+    
 }
