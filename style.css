@@ -1238,99 +1238,87 @@ input[type="radio"] {
     color: white;
 }
 
-
-@media (min-width:1600px) {
-    #nav {
-        width: 100%;
-        height: 10vw;
-        /* background-color: red; */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 2vw;
-    } 
+@media (min-width: 1600px) {
     
     #nav #nav-right img{
-        height: 5vw;
-        width: 5vw;
+        height: 6vw;
+        width: 6vw;
     }
     #nav #nav-right h1 {
-        font-family: "Roboto Condensed";
-        font-size: 2.7vw;
-        font-weight: 500;
-        color: #fff;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.653);
-        letter-spacing: 0.4vw;
-        padding-left: 2.5vw;
-        filter: brightness(100%);
+        font-size: 3.5vw;
+    }
+    #nav #nav-left {
+        margin-right: 2vw;
+    }
+    #nav #nav-left h3 {
+        font-size: 1.5vw;
+        font-weight: 550;
+    }
+    #header_content h2 {
+        font-size: 7vw;
     }
     
-    .aboutus #about h2{
-        margin-top: 26%;
-        font-size: 2vw;
+    #page2 .aboutus {
+        width: 100%;
+        height: 100vh;
+        /* background-color: red; */
+        margin-top: 4vw;
+        background-image: url('https://www.nasa.gov/wp-content/uploads/2023/03/757_iss044e020824.jpg');
+        /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
+        /* background-image: url(./dark\ images.jpg);  */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+        position: relative;
     }
-    #about #about_box{
+    
+    #page2 .aboutus #about {
+        width: 28%;
+        /* background-color: red; */
+        position: absolute;
+        top: 22%;
+        left: 3%;
+        z-index: 1; /* Ensure text is on top of the overlay */
+    }
+    #page2 .aboutus #about > h2 {
+        color: #fff;
+        font-size: 1.5vw;
+        font-family: "Roboto Condensed";
+        position: absolute;
+        top: 15%;
+        padding-bottom: 0.4vw;
+        /* Increase text brightness */
+        filter: brightness(150%);
+        /* background-color: aqua; */
+    }
+
+    #page2 .aboutus #about > #about_box{
         /* background-color: red; */
         width: 3.5vw;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: 6vw;
+        margin-bottom: 1vw;
+        /* background-color: aqua; */
+    }
+    
+    
+    #services #about_box{
+        /* background-color: red; */
+        width: 3.5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 86%;
         margin-top: -1.2vw;
         margin-bottom: 2.5vw;
-    }
-    
-    #about_box > .box{
-        width: 12px;
-        height: 12px;
-        border-radius: 50px;
-        background-color: orangered;
-    }
-    
-    #page2 .aboutus #about > p {
-        color: #E0DDDD;
-        /* Increase text brightness */
-        filter: brightness(80%);
-        font-size: 1vw;
-        padding-bottom: 3vw;
-        position: relative;
-        bottom: 1.5vw;
-    }
-    
-    #page2 .aboutus #about >button{
-        margin-top: 3%;
-        padding: 15px 30px;
-        bottom: 2vw;
-        border-radius: 5px;
-        background-color: transparent;
-        border: 2px solid #428DDE;
-        color: white;
-        font-weight: 600;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-    }
-    .aboutus #services h2{
-        margin-top: 13%;
-        font-size: 2vw;
-    }
-    #about_box > .box{
-        width: 12px;
-        height: 12px;
-        border-radius: 50px;
-        background-color: orangered;
-    }
-    
-    #about_box > .box:nth-child(2){
-        background-color: #E0DDDD;
-    }
-    
-    #about_box > .box:nth-child(3){
-        background-color: #428DDE;
     }
     
     #page2 .aboutus #services > h2 {
         color: #fff;
         font-family: "Roboto Condensed";
+        font-size: 1.5vw;
         padding-bottom: 2vw;
         /* Increase text brightness */
         text-align: right;
@@ -1340,28 +1328,14 @@ input[type="radio"] {
     #page2 .aboutus #services > p {
         color: #E0DDDD;
         text-align: left;
-        margin-left: 5%;
         /* Increase text brightness */
         filter: brightness(80%);
         font-size: 1vw;
-        position: relative;
-        bottom: 1.5vw;
-        padding-bottom: -3vw;
-    }
-    #page3{
-        width: 100%;
-        height: 100%;
-        padding: 5vw;
-    }
-    
-    #page3 #container{
-        width: 100%;
-        height: 50vh;
-        /* background-color: red; */
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1vw;
+        /* background-color: aqua; */
+        position: absolute;
+        top: 4vw;
+        right: o.1vw;
+        padding-bottom: 4vw;
     }
     
     #page3 #container .card{
@@ -1491,7 +1465,7 @@ input[type="radio"] {
     
     #page3 >button{
         position: absolute;
-        top: 18%;
+        top: 15%;
         left: 50%;
         transform: translateX(-50%);
         padding: 18px 40px;
@@ -1687,7 +1661,16 @@ input[type="radio"] {
         left: 0;
         z-index: 0; /* Ensure the background image is behind the overlay */
     }
+    #page5 {
+        margin-top: 1vw;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     
+    }
     #page5 h2 {
         color: white;
         font-family: "Roboto Condensed";
@@ -1717,7 +1700,7 @@ input[type="radio"] {
         padding: 0 1vw;
         color: aliceblue;
         position: absolute;
-        bottom: 32%;
+        bottom: 28%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -1743,7 +1726,7 @@ input[type="radio"] {
 
     #see{
         position: absolute;
-        top: 15%;
+        top: 10vw;
         left: 50%;
         transform: translateX(-50%);
         padding: 20px 32px;
@@ -1762,20 +1745,94 @@ input[type="radio"] {
         width: 100%;
         min-height: 100%;
         position: relative; 
-        top: -30%;
+        top: -5vw;
     }
+    #page6 #lines h4{
+        font-size: 0.8vw;
+        font-family: 'work sans';
+        font-weight: 300;
+        position: absolute;
+        top: -1vw;
+        /* top: 3vw; */
+        left: 53
+  }
+  #page6 #lines h4 > i{
+      color: rgb(220, 220, 248);
+      padding: 2px;
+  }
+  
+  #page6 #lines h5{
+      font-size: 0.8vw;
+      font-family: 'work sans';
+      font-weight: 300;
+      position: absolute;
+      top: 3.5vw;
+      left: 25%;
+  }
+  #page6 #lines h5 > i{
+      color: rgb(220, 220, 248);
+      padding: 3px;
+  }
+  #page6 #lines h6{
+      font-size: 0.8vw;
+      font-family: 'work sans';
+      font-family: 300;
+      position: absolute;
+      top: 9vw;
+      left: 56%;
+  }
+  #page6 #lines h6 > i{
+      color: rgb(220, 220, 248);
+      padding: 7px;
+  }
+  #page6 #lines h3{
+      font-size: 0.8vw;
+      font-family: 'work sans';
+      font-family: 30;
+      position: absolute;
+      top: 16.4vw;
+      left: 34%;
+  }
+  #page6 #lines h3 > i{
+      color: rgb(220, 220, 248);
+      padding: 7px;
+  }
     #footer{
-        background-color: black;
+        background-color: rgb(16, 15, 15);
         width: 100%;
-        /* min-height: 100px; */
-         height: 68%;
+         min-height: 40px;   
+         /* height: 100%; */
     }
+    #footer-top{
+        width: 100%;
+        height: 30vh;
+         /* background-color: aqua;   */
+        display: flex; 
+         align-items: center; 
+         justify-content: space-between; 
+         border-bottom: 2px dashed rgb(40, 32, 32);
+         position: relative;
+         top: 30vw;
+         }
+         #footer-top h1{
+            font-size: 2.5vw;
+            font-weight: 600;
+            color: white;
+           letter-spacing: 0.5vw;
+           /* padding-right: 20vw; */
+           font-family: 'Roboto Condensed';
+           border-left: 1px solid white; 
+           padding: 30px;
+           position: relative;
+           left: -8%;
+           
+        }
      #footer-content p{
          font-size: 1.2vw;
          color: white;
          font-family: 'Work Sans';
          line-height: 1.9vw;
-         margin-top: 50%;
+         margin-top: 58%;
         
      }
      #footer-content ul:nth-child(2){
@@ -1784,7 +1841,7 @@ input[type="radio"] {
          font-size: 1.2vw;
          font-family: 'Work Sans';
          line-height: 2vw;
-         margin-top: 53%;
+         margin-top: 60.5%;
      }
      #footer-content ul:nth-child(3){
          /* background-color: aqua; */
@@ -1792,7 +1849,7 @@ input[type="radio"] {
          font-size: 1.2vw;
          font-family: 'Work Sans';
          line-height: 2vw;
-         margin-top: 54.75%;
+         margin-top: 62.5%;
      }
      #footer-content ul:nth-child(4){
          /* background-color: aqua; */
@@ -1800,7 +1857,7 @@ input[type="radio"] {
          font-size: 1.2vw;
          font-family: 'Work Sans';
          line-height: 2vw;
-         margin-top: 50.50%;
+         margin-top: 58%;
      }
      #footer-bottom{
          width: 100%;
@@ -1811,7 +1868,7 @@ input[type="radio"] {
          align-items: center;
          justify-content: space-between;
          position: relative;
-         top: 80%;
+         top: 35%;
      }
 
 
@@ -1850,9 +1907,25 @@ input[type="radio"] {
         z-index: 1;
     }
 
-   
-}
+    #loader{
+        width: 100%;
+        height: 100%;
+        background-color: #030303;
+        background-image: url(./space\ image.jpg);
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        color: white;
+        z-index: 999;
+        padding-left: 18vw;
+    }
 
+    #loader #waiting{
+        margin-left: 15vw;
+        font-size: 2vw;
+    }
+    
+}
 
 @media (max-width: 550px) {
     #cursor{
