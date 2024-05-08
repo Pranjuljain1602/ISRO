@@ -1,105 +1,84 @@
-function loadingAnimtion(){
-    var t1 = gsap.timeline()
-  t1.from(".line h1",{
-      y: 100,
-      stagger: 0.25,
-      duration: 0.6,
-      delay: 0.3
-  })
-  
-  t1.from("#waiting",{
-      opacity: 0
-  })
-  
-  t1.from("#line1-part1",{
-      opacity: 0,
-      onStart: function(){
-          var h5timer = document.querySelector("#line1-part1 h5")
-          var grow = 0
-  
-  setInterval(function(){
-      if(grow<100){
-          h5timer.innerHTML = grow++
-          
-      }
-      else{
-          h5timer.innerHTML = grow
-      }
-  },34);
-      },
-  });
-  
-  t1.to(".line h2",{
-      animationName: "anime",
-      opacity: 1
-  })
-  
-  t1.to("#loader",{
-      opacity: 0,
-      duration: 0.3,
-      delay: 4
-  })
+function loadingAnimation() {
+    var preloader = document.querySelector(".preloader");
 
-  t1.from("#page1",{
-    delay: 0.17,
-    y: -100,
-    opacity: 0,
-    duration: 0.4,
-    ease: Power4
+    // GSAP Animation
+    var tl = gsap.timeline();
 
-})
+    // Add GSAP animations
+    tl.from(".isro-text", { opacity: 0, duration: 1, delay: 1 })
+      .from(".rocket", { y: "-100vh", ease: "bounce.out", duration: 1 }, "-=0.5")
+      .from(".cloud1, .cloud2, .cloud3", { y: "-100vh", duration: 1, stagger: 0.5 }, "-=0.5")
+      .to(".preloader", { opacity: 0, duration: 0.5, delay: 1, onComplete: showWebsiteContent });
 
-t1.from("#nav-right",{
-    opacity: 0,
-    y: -100,
-    duration: 0.5,
-    delay: 0.4
-})
+    // Function to show website content after preloader animation completes
+    function showWebsiteContent() {
+        preloader.classList.add("end-preloader");
+        document.querySelector('#main').style.opacity = 1;
+    }
 
-t1.from("#nav-left h3",{
-  opacity: 0,
-  y: -100,
-  duration: 0.5,
-  delay: 0.5,
-  stagger: 0.8
-})
+    // Additional animations
+    tl.from("#page1", {
+        delay: 0.17,
+        y: -100,
+        opacity: 0,
+        duration: 0.4,
+        ease: "power4.out"
+    });
 
-t1.from("#header_content",{
-    x: -120,
-    opacity: 0,
-    duration: 0.8,
-    delay: 0.5,
-    stagger: 1,
-})
-  
-  t1.to("#loader",{
-      display: "none"
-  })
-  }
-  
-  loadingAnimtion()
+    tl.from("#nav-right", {
+        opacity: 0,
+        y: -80,
+        duration: 0.45
+    });
 
+    tl.from("#nav-left h3", {
+        opacity: 0,
+        y: -80,
+        duration: 0.45,
+        stagger: 0.2
+    });
 
-function cursorAnimation(){
-    document.addEventListener("mousemove", function(dets){
-        gsap.to("#cursor",{
-            left: dets.x,
-            top: dets.y,
-            // duration: 0.3,
-            // ease: "elastic.out"
-        })
-    })
+    tl.from("#header_content", {
+        x: -100,
+        opacity: 0,
+        duration: 0.4,
+    }, "pjain");
 
-    // Shery.mouseFollower({
-    //     skew: true,
-    //     ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-    //     duration: 1,
-    //   });
+    var h2 = document.querySelector("#header_content h2");
+    var h2Text = h2.textContent;
+    var clutter = "";
+    var splittedText = h2Text.split("");
 
-    Shery.makeMagnet("#nav-left h3");
+    splittedText.forEach(function(elem){
+        clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
+    });
+
+    h2.innerHTML = clutter;
+
+    tl.from("h2 span", {
+        x: -70,
+        opacity: 0,
+        duration: 0.3,
+        stagger: 0.04,
+        ease: "power4.out"
+    }, "pjain");
 }
 
-cursorAnimation()
+loadingAnimation();
+
+function cursorAnimation() {
+    Shery.mouseFollower({
+        skew: true,
+        ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+        duration: 1,
+      });
+
+    Shery.makeMagnet("#nav-left h3");
+
+}
+
+cursorAnimation();
+
 
 
       var t2 = gsap.timeline()
@@ -205,40 +184,6 @@ cursorAnimation()
             }
         })
 
-        function marqueAnimation(){
-            window.addEventListener("wheel",function(dets){
-                if(dets.deltaY > 0){
-        
-                   gsap.to(".marque",{
-                    transform:"translateX(-200%)",
-                    repeat:-1,
-                    duration:4,
-                    ease:"none"
-                   })
-        
-                   gsap.to(".marque img",{
-                          rotate:180       
-                   })
-                } else{
-                    gsap.to(".marque",{
-                        transform:"translateX(0%)",
-                        repeat:-1,
-                        duration:4,
-                        ease:"none"
-                       })
-        
-                       gsap.to(".marque img",{
-                        rotate:0
-                       })
-                }
-        })
-        }
-        
-        marqueAnimation()
-        
-
-
-
 
 // var t1 = gsap.timeline()
 // t1.from("#nav #nav-right",{
@@ -311,3 +256,8 @@ const changeSlide = (slideNumber) => {
         }
     )
 }
+
+
+
+
+    

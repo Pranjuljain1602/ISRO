@@ -11,139 +11,111 @@ height: 100%;
 background-color: black;
 }
 
-#loader{
+.preloader {
+    position: fixed;
+    height: 100vh;
     width: 100%;
-    height: 100%;
-    background-color: #030303;
-    background-image: url(./space\ image.jpg);
+    background: #000;
+    background-image: url(space\ image.jpg);
     background-size: cover;
     background-position: center;
-    position: fixed;
-    color: white;
-    z-index: 999;
-    padding: 15vh 10vw;
-}
-
-#loader #waiting{
-    /* background-color: red; */
-    font-family: 'plain light';
-    width: 15%;
-    font-size: 2.5vw;
-    margin-top: 5vw;
-    margin-left: 15vw;
-}
-
-/* .mousefollower { */
-    /* border: 2px solid #fff; */
-    /* background-color: rgb(255, 255, 255); */
-    /* scale: 2; */
-    /* mix-blend-mode: difference; */
-/* } */
-
-.line{
-/* background-color: red; */
-height: fit-content;
-overflow: hidden;
-display: flex;
-align-items: center;
-justify-content: flex-start;
-gap: 3vw;
-
-}
-
-#line1-part1{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    gap: 1vw;
+    align-items: center;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
 }
 
-#line1-part1 h5, #line1-part1 h6{
-    font-size: 3vw;
-    font-family: 'silk serif';
-    font-weight: 100;
-
+.cloud1, .cloud2, .cloud3 {
+    height: 120px;
+    position: absolute;
+    z-index: -1;
+    top: -100%;
 }
 
-#line1-part1 h5{
-    /* background-color: red; */
-    width: 5vw;
-    text-align: right;
+.cloud1 {
+    right: 45%;
+    animation: clouds 1.5s linear infinite 0.5s;
 }
 
-.line h1{
-    font-family: 'Plain regular';
-    font-size: 6vw;
-    font-weight: 800;
-    text-transform: uppercase;
+.cloud2 {
+    left: 50%;
+    animation: clouds 1.5s linear infinite 1s;
 }
 
-.line h2{
-    font-size: 4vw;
-    text-transform: uppercase;
-    font-weight: 800;
+.cloud3 {
+    animation: clouds 1.5s linear infinite;
+}
+
+.rocket {
+    height: 420px;
+    animation: rocket 0.01s ease infinite alternate;
+}
+
+.isro-text {
+    color: #fff;
+    font-size: 4em;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hide ISRO text */
+}
+
+@keyframes clouds {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 100%;
+    }
+}
+
+@keyframes rocket {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(4px);
+    }
+}
+
+.end-preloader {
     opacity: 0;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
-
-
-
-@keyframes anime {
-    0%{
-        font-family: 'plain light';
-        -webkit-text-stroke: 1px #fff;
-        color: #fff;
-        font-weight: 500;
-        opacity: 1;
-    }
-    48%{
-        font-family: 'plain light';
-        -webkit-text-stroke: 1px #fff;
-        color: #fff;
-        font-weight: 500;
-        opacity: 0;
-    }
-    50%{
-        font-family: 'silk serif';
-        -webkit-text-stroke: 1px #fff;
-        font-weight: 500;
-        color: transparent;
-        opacity: 1;
-    }
-
-
-    100%{
-        font-family: 'silk serif';
-        -webkit-text-stroke: 1px #fff;
-        font-weight: 500;
-        color: transparent;
-        opacity: 0;
-    }
+    pointer-events: none;
 }
 
 #main{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
     position: relative;
     background-color: black;
 }
 
-#cursor{
-        width: 3vw;
-        height: 3vw;
-        border: 1.3px solid rgba(255, 255, 255, 0.842);
-        border-radius: 50%;
-        position: fixed;
-        z-index: 9999;
-        pointer-events: none;
-        mix-blend-mode: difference;
-        transform: translate(-50%,-50%);
+/* #cursor{ */
+        /* width: 3vw; */
+        /* height: 3vw; */
+        /* border: 1.3px solid rgba(255, 255, 255, 0.842); */
+        /* border-radius: 50%; */
+        /* position: fixed; */
+        /* z-index: 9999; */
+        /* pointer-events: none; */
+        /* mix-blend-mode: difference; */
+        /* transform: translate(-50%,-50%); */
+/* } */
+
+.mousefollower {
+    border: 2px solid #fff;
+    background-color: rgb(255, 255, 255);
+    scale: 2;
+    mix-blend-mode: difference;
 }
 
 #page1 {
     width: 100%;
     height: 100vh;
     background-color: black;
-    background-image: url(./isro\ backgroung\ final.jpg);
+    background-image: url(./space\ image.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -215,6 +187,8 @@ gap: 3vw;
     cursor: pointer;
 }
 
+
+
 #header_content {
     width: 90%;
     height: 55vh;
@@ -228,8 +202,9 @@ gap: 3vw;
 #header_content h2 {
     color: rgb(255, 255, 255);
     font-size: 8vw;
+    font-weight: 400;
     font-family: "Roboto Condensed";
-    line-height: 9vw;
+    line-height: 1.2;
     /* Increase text brightness */
     filter: brightness(100%);
 }
@@ -273,20 +248,28 @@ gap: 3vw;
 
 
 #page2{
-    margin-top: 10vw;
+    /* margin-top: 10vw; */
     width: 100%;
     height: 100vh;
     background-color: black;
+    background-image: url(./space\ image.jpg);
+    /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
+    /* background-image: url(./dark\ images.jpg);  */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
 }
 
 #page2 #side_content{
+
     width: 100%;
     height: 24vh;
     /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 4vw;
+    padding: 10vw 4vw;
 }
 
 #page2 .content{
@@ -320,13 +303,13 @@ gap: 3vw;
     width: 100%;
     height: 100vh;
     /* background-color: red; */
-    margin-top: 2vw;
-    background-image: url('https://www.nasa.gov/wp-content/uploads/2023/03/757_iss044e020824.jpg');
+    margin-top: -2vw;
+    background-image: url(./space\ image.jpg);
     /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
     /* background-image: url(./dark\ images.jpg);  */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0% 0%;
+    background-position: center;
     position: relative;
 }
 
@@ -483,10 +466,16 @@ gap: 3vw;
 }
 
 #page3{
-    margin-top: 10vw;
+    margin-top: 15vw;
     width: 100%;
     height: 100vh;
-    padding: 5vw;
+    padding: 10vw 5vw;
+    background-image: url(./space\ image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-color: red;
 }
 
 #page3 #container{
@@ -1137,7 +1126,6 @@ input[type="radio"] {
      height: 110vh;
      background-image: url(./space\ image.jpg); 
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
 }
 #footer-top{
@@ -1263,12 +1251,12 @@ input[type="radio"] {
         height: 100vh;
         /* background-color: red; */
         margin-top: 4vw;
-        background-image: url('https://www.nasa.gov/wp-content/uploads/2023/03/757_iss044e020824.jpg');
+        background-image: url(./space\ image.jpg);
         /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
         /* background-image: url(./dark\ images.jpg);  */
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: 0% 0%;
+        background-position: center;
         position: relative;
     }
     
@@ -2009,6 +1997,4 @@ input[type="radio"] {
         animation-duration: 1s;
         animation-iteration-count: infinite;
     }
-
-
 }
