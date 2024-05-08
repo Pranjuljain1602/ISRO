@@ -180,11 +180,11 @@ cursorAnimation()
         t2.from("#page6",{
             opacity: 0,
             duration: 0.8,
-            delay: 1,
+            delay: 1.2,
             scrollTrigger: {
                 trigger: "#page6",
                 scroller: "body",
-                scrub: true,
+                scrub: 1,
                 // markers: true,
                 start: "top -10%",
                 end: "top -10%"
@@ -194,17 +194,48 @@ cursorAnimation()
         t2.from("#footer",{
             opacity: 0,
             duration: 0.8,
-            delay: 1,
+            delay: 1.2,
             scrollTrigger: {
                 trigger: "#footer",
                 scroller: "body",
-                scrub: true,
+                scrub: 5,
              /*    markers: true, */
                 start: "top -10%",
                 end: "top -10%"
             }
         })
 
+        function marqueAnimation(){
+            window.addEventListener("wheel",function(dets){
+                if(dets.deltaY > 0){
+        
+                   gsap.to(".marque",{
+                    transform:"translateX(-200%)",
+                    repeat:-1,
+                    duration:4,
+                    ease:"none"
+                   })
+        
+                   gsap.to(".marque img",{
+                          rotate:180       
+                   })
+                } else{
+                    gsap.to(".marque",{
+                        transform:"translateX(0%)",
+                        repeat:-1,
+                        duration:4,
+                        ease:"none"
+                       })
+        
+                       gsap.to(".marque img",{
+                        rotate:0
+                       })
+                }
+        })
+        }
+        
+        marqueAnimation()
+        
 
 
 
@@ -230,8 +261,6 @@ cursorAnimation()
 //     x: -120,
 //     duration: 0.5,
 // })
-
-
 
 
 
