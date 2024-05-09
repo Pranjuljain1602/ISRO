@@ -88,7 +88,7 @@ cursorAnimation();
             y: 50, // Move 50px down
             duration: 1,
             stagger: 1,
-            delay: 1, // Animation duration
+            delay: 1.2, // Animation duration
             scrollTrigger: {
                 trigger: "#page2", // Trigger element
                 start: "top 60%", // Animation starts when the top of trigger element reaches 80% of the viewport
@@ -116,7 +116,7 @@ cursorAnimation();
         t2.from(".card, #card_btn",{
             opacity: 0,
             y: 50, // Move 50px down
-            duration: 0.5,
+            duration: 0.7,
             stagger: 1,
             delay: 1, // Animation duration
             scrollTrigger: {
