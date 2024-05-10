@@ -257,6 +257,7 @@ const changeSlide = (slideNumber) => {
 
 
 
+
 // GSAP timeline for the footer animation
 var footerAnimation = gsap.timeline({
     scrollTrigger: {
@@ -268,9 +269,7 @@ var footerAnimation = gsap.timeline({
     }
   });
   
-  // Define animations for different elements in the footer
-  footerAnimation
-    // Animation for #footer-top elements
+footerAnimation
     .from("#footer-top img, #footer-top h1", {
       opacity: 0,
       y: -20,
