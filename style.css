@@ -1144,11 +1144,11 @@ input[type="radio"] {
     /* height: 80px; */
     /* padding-left: 2%; */
      height: 45%; 
-    padding-right: 1.5vw;
+    padding-right: 7vw;
     padding-left: 1.5vw;
 }
 #footer-top h1{
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: 600;
     color: white;
    letter-spacing: 0.5vw;
@@ -1157,7 +1157,7 @@ input[type="radio"] {
    border-left: 1px solid white; 
    padding: 30px;
    position: relative;
-   left: -8%;
+   left: -8.5%;
    
 }
 #footer-top img:nth-child(3) {
@@ -1914,87 +1914,3 @@ input[type="radio"] {
         margin-left: 15vw;
         font-size: 2vw;
     }
-    
-
-@media (max-width: 550px) {
-    #cursor{
-        display: none;
-    }
-
-    #loader{
-        width: 100%;
-        height: 100%;
-        background-color: #030303;
-        background-image: url(./space\ image.jpg);
-        background-size: cover;
-        background-position: center;
-        position: fixed;
-        color: white;
-        z-index: 999;
-        padding: 65vh 35vw;
-    }
-    
-    #loader #waiting{
-        /* background-color: red; */
-        font-family: 'plain light';
-        width: 50%;
-        font-size: 9vw;
-        margin-top: 20vw;
-        margin-left: 10vw;
-    }
-    
-    /* .mousefollower { */
-        /* border: 2px solid #fff; */
-        /* background-color: rgb(255, 255, 255); */
-        /* scale: 2; */
-        /* mix-blend-mode: difference; */
-    /* } */
-    
-    .line{
-    /* background-color: red; */
-    height: fit-content;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 3vw;
-    
-    }
-    
-    #line1-part1{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2vw;
-    }
-    
-    #line1-part1 h5, #line1-part1 h6{
-        font-size: 6vw;
-        color: white;
-        font-family: 'silk serif';
-        font-weight: 100;
-    
-    }
-    
-    #line1-part1 h5{
-        /* background-color: red; */
-        width: 8vw;
-        text-align: right;
-    }
-    
-    .line h1{
-        font-family: 'Plain regular';
-        font-size: 9vw;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-    
-    .line h2{
-        font-size: 8vw;
-        text-transform: uppercase;
-        font-weight: 800;
-        opacity: 0;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-    }
-}
