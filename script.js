@@ -86,7 +86,7 @@ cursorAnimation();
             y: 50, // Move 50px down
             duration: 1,
             stagger: 1,
-            delay: 1, // Animation duration
+            delay: 1.2, // Animation duration
             scrollTrigger: {
                 trigger: "#page2", // Trigger element
                 start: "top 60%", // Animation starts when the top of trigger element reaches 80% of the viewport
@@ -114,7 +114,7 @@ cursorAnimation();
         t2.from(".card, #card_btn",{
             opacity: 0,
             y: 50, // Move 50px down
-            duration: 0.5,
+            duration: 0.7,
             stagger: 1,
             delay: 1, // Animation duration
             scrollTrigger: {
@@ -208,56 +208,70 @@ cursorAnimation();
 
 
 
+function slideImage(){
 
-const slides = document.querySelectorAll(".slide")
-const radioButton = document.querySelectorAll(".button")
+ const slides = document.querySelectorAll(".slide");
+const radioButton = document.querySelectorAll(".button");
 
-var counter = 0;
+let counter = 0;
+let intervalId; // Variable to store the interval ID
 
-slides.forEach(
-    (slide, index) => {
-        slide.style.left = `${index * 100}%`
-    }
-)
+slides.forEach((slide, index) => {
+    slide.style.left = `${index * 100}%`;
+});
 
 const goNext = () => {
-    counter++
-    slideImage()
-}
+    counter++;
+    if (counter >= slides.length) {
+        counter = 0; // Reset counter to 0 if it exceeds the number of slides
+    }
+    slideImage();
+};
 
-const goPrev = () => {
-    counter--
-    slideImage()
-}
 
 const slideImage = () => {
-    slides.forEach(
-        (slide) => {
-            counter <= slides.length - 1 ?
-            slide.style.transform = `translateX(-${counter * 100}%)` 
-            : counter = slides.length - 1
-        }
-    )
+    slides.forEach((slide) => {
+        slide.style.transform = `translateX(-${counter * 100}%)`;
+    });
 
     radioButton.forEach((radio, i) => {
-        radio.checked = i===counter
-    })
-}
+        radio.checked = i === counter;
+    });
+};
 
 const changeSlide = (slideNumber) => {
-    counter = slideNumber
-    slides.forEach(
-        (slide) => {
-            counter <= slides.length -1 ?
-            slide.style.transform = `translateX(-${counter * 100}%)` 
-            : counter = slides.length -1
-        }
-    )
+    counter = slideNumber;
+    slideImage();
+};
+
+// Function to start the automatic sliding
+const startAutoSlide = () => {
+    intervalId = setInterval(goNext, 1500);
+};
+
+// Function to stop the automatic sliding
+const stopAutoSlide = () => {
+    clearInterval(intervalId);
+};
+
+// Start automatic sliding when the page loads
+startAutoSlide();
+
+// Pause automatic sliding when the user hovers over the slider
+document.getElementById("slider").addEventListener("mouseenter", stopAutoSlide);
+
+// Resume automatic sliding when the user moves the mouse out of the slider
+document.getElementById("slider").addEventListener("mouseleave", startAutoSlide);
+
 }
 
+slideImage();
 
 
-// GSAP timeline for the footer animation
+
+function FooterAnimation(){
+
+    // GSAP timeline for the footer animation
 var footerAnimation = gsap.timeline({
     scrollTrigger: {
       trigger: "#footer-top", // Trigger when the footer comes into view
@@ -311,11 +325,88 @@ var footerAnimation = gsap.timeline({
       });
     });
   });
-  
-  
-  
 
 
+ // Apply GSAP animation to the h1 elements inside the #create div
+document.querySelectorAll("#create h1").forEach(function (h) {
+    var clutter = "";
+    h.textContent.split("").forEach(function (letter) {
+      clutter += `<span>${letter}</span>`;
+    });
+    h.innerHTML = clutter;
+  });
 
+// Define GSAP timeline for the footer animation
+var tl7 = gsap.timeline({ paused: true });
+tl7
+.to("#plain span", {
+  opacity: 0,
+  stagger: 0.1
+}, "a")
+.to("#silk span", {
+  opacity: 1,
+  stagger: 0.1,
+  delay: 1
+}, "a");
 
-    
+// Function to check if footer is visible
+function isFooterVisible() {
+  var rect = document.querySelector("#footer-top").getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  );
+}
+
+// Add mouse enter and leave event listeners to the #create div for animation
+var isAnimating = false; // Flag to track if animation is currently running
+
+document.querySelector("#create").addEventListener("mouseenter", function () {
+  if (!isAnimating) { // Check if animation is not already running
+    isAnimating = true; // Set flag to true to indicate animation is running
+    tl7.restart(); // Restart the animation timeline
+  }
+});
+
+document.querySelector("#create").addEventListener("mouseleave", function () {
+  if (!isAnimating) { // Check if animation is not already running
+    isAnimating = true; // Set flag to true to indicate animation is running
+    gsap.to("#silk span", {
+      opacity: 0,
+      stagger: 0.1,
+      onComplete: function () {
+        isAnimating = false; // Reset flag when animation completes
+      }
+    });
+    gsap.to("#plain span", {
+      opacity: 1,
+      stagger: 0.1,
+      delay: 0.5
+    });
+  }
+});
+
+// Check footer visibility and trigger animation accordingly
+function checkFooterVisibility() {
+  if (isFooterVisible()) {
+    tl7.restart();
+  }
+}
+
+// Listen for scroll events to check footer visibility
+window.addEventListener("scroll", checkFooterVisibility);
+
+// Initial check for footer visibility on page load
+checkFooterVisibility();
+
+Shery.mouseFollower({
+    skew: true,
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+
+Shery.makeMagnet("#Copyright");
+
+}
+
+FooterAnimation();
