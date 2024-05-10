@@ -311,11 +311,4 @@ var footerAnimation = gsap.timeline({
       });
     });
   });
-  
-  
-  
 
-
-
-
-    
