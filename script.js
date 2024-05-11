@@ -88,7 +88,8 @@ cursorAnimation();
             stagger: 1,
             delay: 1.2, // Animation duration
             scrollTrigger: {
-                trigger: "#page2", // Trigger element
+                trigger: "#page2",
+                scroller: "body", // Trigger element
                 start: "top 60%", // Animation starts when the top of trigger element reaches 80% of the viewport
                 end: "top 30%", // Animation ends when the top of trigger element reaches 30% of the viewport
                 toggleActions: "play none none none", // Animation will play when it enters the viewport and will not reverse
@@ -97,19 +98,63 @@ cursorAnimation();
             }
         });
 
+      var aboutP = document.querySelectorAll(".aboutus p")
 
-        t2.from(".aboutus",{
-            opacity: 0,
+aboutP.forEach(function(elem){
+    var clutter = ""
+    var PText= elem.textContent
+    var splittedText = PText.split("")
+    splittedText.forEach(function(e){
+        clutter += `<span>${e}</span>`
+    })
+    elem.innerHTML = clutter
+})
+
+
+t2.from(".aboutus",{
+   opacity: 0,
+   y: 50,
+   duration: 1,
+   delay: 1,
+   scrollTrigger: {
+       trigger: ".aboutus",
+       scroller: "body",
+      //  markers: true,
+       start: "top 50%",
+       end: "top 0%",
+       scrub: 1
+   }
+},"-=-1")
+
+        t2.from(".aboutus p span",{
+           stagger: 0.1,
+            opacity: 0.5,
             y: 50,
             duration: 1,
             delay: 1,
             scrollTrigger: {
                 trigger: ".aboutus",
+                scroller: "body",
                 start: "top 40%",
                 end: "top 0%",
                 scrub: 1
             }
         })
+
+        t2.from("#page3",{
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          delay: 1,
+          scrollTrigger: {
+              trigger: "#page3",
+              scroller: "body",
+              start: "top 60%",
+              end: "top 0%",
+              scrub: 1
+          }
+       })
+
 
         t2.from(".card, #card_btn",{
             opacity: 0,
@@ -118,7 +163,8 @@ cursorAnimation();
             stagger: 1,
             delay: 1, // Animation duration
             scrollTrigger: {
-                trigger: "#page3", // Trigger element
+                trigger: "#page3",
+                scroller: "body", // Trigger element
                 start: "top 30%", // Animation starts when the top of trigger element reaches 80% of the viewport
                 end: "top 0%", // Animation ends when the top of trigger element reaches 30% of the viewport
                 toggleActions: "play none none none", // Animation will play when it enters the viewport and will not reverse
@@ -183,31 +229,6 @@ cursorAnimation();
         })
 
 
-// var t1 = gsap.timeline()
-// t1.from("#nav #nav-right",{
-//     opacity: 0,
-//     y: -100,
-//     duration: 0.6,
-//     delay: 0.5
-// })
-
-// t1.from("#nav #nav-left h3",{
-//     opacity: 0,
-//     y: -100,
-//     stagger: 1,
-//     duration: 0.5,
-// })
-
-
-// t1.from("#header_content",{
-//     opacity: 0,
-//     x: -120,
-//     duration: 0.5,
-// })
-
-
-
-
 function slideImage(){
 
  const slides = document.querySelectorAll(".slide");
@@ -255,7 +276,8 @@ const changeSlide = (slideNumber) => {
     // GSAP timeline for the footer animation
 var footerAnimation = gsap.timeline({
     scrollTrigger: {
-      trigger: "#footer-top", // Trigger when the footer comes into view
+      trigger: "#footer-top",
+      scroller: "body",// Trigger when the footer comes into view
     //   markers: true,
       start: "top 80%", // Start animation when footer is 80% into view
       end: "top 20%", // End animation when footer is 70% into view
