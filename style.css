@@ -53,13 +53,7 @@ background-color: black;
     animation: rocket 0.01s ease infinite alternate;
 }
 
-.isro-text {
-    color: #fff;
-    font-size: 4em;
-    font-family: "Roboto Condensed", sans-serif;
-    margin-bottom: 20px;
-    opacity: 0; /* Initially hide ISRO text */
-}
+
 
 @keyframes clouds {
     from {
@@ -427,7 +421,7 @@ background-color: black;
 
 
 #page3{
-    margin-top: 15vw;
+    margin-top: 20vw;
     width: 100%;
     height: 100vh;
     padding: 10vw 5vw;
@@ -645,7 +639,6 @@ background-color: black;
     color: black;
 }
 
-
 #page4 {
     width: 100%;
     height: 100vh;
@@ -810,8 +803,10 @@ background-color: black;
 #page5 #slider{
     margin-top: 3vw;
     background-color: aliceblue;
-    height: 400px;
-    width: 850px;
+    height: 480px;
+    width: 1000px;
+    /* width: 1000px; */
+    width: 900px;
     position: absolute;
     top: 40%;
     display: flex;
@@ -824,14 +819,11 @@ background-color: black;
     -2px -2px 10px aliceblue;
     z-index: 2;
 }
-
-
-
 #page5 #slider img{
     width: 100%;
-    height: fit-content;
+     height: fit-content; 
     position: absolute;
-    transition: 1s;
+    transition: transform 1s;
 }
 
 #slider .buttons{
@@ -850,7 +842,7 @@ input[type="radio"] {
 
 #see{
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
     padding: 15px 30px;
@@ -890,7 +882,7 @@ input[type="radio"] {
 
 
 #page6{
-    margin-top: -8vw;
+    margin-top: 3vw;
     width: 100%;
     height: 100vh;
     position: relative; 
@@ -908,9 +900,6 @@ input[type="radio"] {
     top: 66%;
     left: 50%;
     transform: translateX(-50%);
-    /* background-image: url(./glob.jpg); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
 }
 #page6 #centerimage > img{
     width: 100%;
@@ -1130,9 +1119,9 @@ input[type="radio"] {
     color: white;
     font-family: 'Work Sans';
     line-height: 1.9vw;
-    margin-top: 65%;
-    margin-left: -36%;
+    margin-top: 67%;
     text-align: left;
+    margin-left: -35%;
     /* background-color: red; */
    
 }
@@ -1143,7 +1132,7 @@ input[type="radio"] {
     font-family: 'Work Sans';
     line-height: 2vw;
     margin-top: 67.75%;
-    margin-left: 33%;
+    margin-left: 5%;
     /* transition: transform 0.4s ease; */
 }
 #footer-content ul:nth-child(3){
@@ -1152,17 +1141,29 @@ input[type="radio"] {
     font-size: 1.2vw;
     font-family: 'Work Sans';
     line-height: 2vw;
-    margin-top: 69.75%;
+    margin-top: 63%;
 }
-#footer-content ul:nth-child(4){
+#footer-content ul:nth-child(1){
     /* background-color: aqua; */
     color: white;
     font-size: 1.2vw;
     font-family: 'Work Sans';
     line-height: 2vw;
     margin-top: 65.75%;
-    margin-left: -3%;
+    margin-left: 33%;
 }
+
+#footer-lines{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Work Sans';
+    padding: 3vw;
+    width: 100%;
+    margin-top: 10%;
+    color: white;
+ }
 
 #footer-bottom{
     width: 100%;
@@ -1183,6 +1184,12 @@ input[type="radio"] {
 }
 
 @media (min-width: 1600px) {
+
+    .rocket {
+        height: 580px;
+        animation: rocket 0.01s ease infinite alternate;
+    }
+
     
     #nav #nav-right img{
         height: 6vw;
@@ -1201,88 +1208,76 @@ input[type="radio"] {
     #header_content h2 {
         font-size: 7vw;
     }
-    
-    #page2 .aboutus {
-        width: 100%;
-        height: 100vh;
-        /* background-color: red; */
-        margin-top: 4vw;
-        background-image: url(./space\ image.jpg);
-        /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
-        /* background-image: url(./dark\ images.jpg);  */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
+ 
+    .aboutus p span{
+        font-family: "Roboto Condensed";
     }
+    
     
     #page2 .aboutus #about {
-        width: 28%;
-        /* background-color: red; */
+        width: 100%;
+        /* background-color: rgb(0, 68, 255); */
         position: absolute;
-        top: 22%;
-        left: 3%;
+        top: 10%;
+        left: 0%;
         z-index: 1; /* Ensure text is on top of the overlay */
     }
-    #page2 .aboutus #about > h2 {
-        color: #fff;
-        font-size: 1.5vw;
-        font-family: "Roboto Condensed";
+    
+    #about #about_box{
+        /* background-color: rgb(0, 21, 255); */
+        width: 3.5vw;
+        display: flex;
         position: absolute;
-        top: 18%;
-        padding-bottom: 0.4vw;
-        /* Increase text brightness */
-        filter: brightness(150%);
-        /* background-color: aqua; */
-    }
-
-    #page2 .aboutus #about > #about_box{
-        /* background-color: red; */
-        width: 3.5vw;
-        display: flex;
+        left: 50%;
+        transform: translateX(-50%);
         align-items: center;
         justify-content: space-between;
-        margin-top: 6.4vw;
-        margin-bottom: 1vw;
-        /* background-color: aqua; */
-    }
-    
-    
-    #services #about_box{
-        /* background-color: red; */
-        width: 3.5vw;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-left: 86%;
-        margin-top: -1.5vw;
+        margin-top: 0.7vw;
         margin-bottom: 2.5vw;
     }
-    
-    #page2 .aboutus #services > h2 {
+
+    #page2 .aboutus #about > h2 {
         color: #fff;
         font-family: "Roboto Condensed";
-        font-size: 1.5vw;
-        padding-bottom: 2vw;
+        font-size: 3vw;
+        padding-bottom: 0.2vw;
+        padding-top: 3vw;
+        text-align: center;
         /* Increase text brightness */
-        text-align: right;
         filter: brightness(150%);
-     
-       
+
     }
     
-    #page2 .aboutus #services > p {
-        color: #E0DDDD;
-        text-align: left;
+    #page2 .aboutus #about > p {
+        color: #edeaea;
         /* Increase text brightness */
+        /* background-color: rgb(45, 38, 28); */
+        margin-top: 4vw;
         filter: brightness(80%);
-        font-size: 1vw;
-        /* background-color: aqua; */
-        position: absolute;
-        top: 3.4vw;
-        right: 0.1vw;
-        padding-bottom: 4vw;
+        font-size: 2.2vw;
+        padding: 3vw;
+        line-height: 3vw;
     }
+    
+    #page2 .aboutus #about >button{
+        margin-top: 3%;
+        padding: 15px 25px;
+        border-radius: 5px;
+        background-color: transparent;
+        border: 2px solid #428DDE;
+        color: white;
+        font-weight: 600;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    #page3 #services{
+        margin-top: 3vw;
+    }
+   
     
     #page3 #container .card{
         width: 25vw;
@@ -1425,7 +1420,10 @@ input[type="radio"] {
         overflow: hidden;
         z-index: 1;
     }
-    
+
+    #page4{
+        margin-top: 20vw;
+    }
     
     #page4 h2 {
         color: white;
@@ -1447,154 +1445,32 @@ input[type="radio"] {
         margin-bottom: 2vw;
         z-index: 2; /* Ensure the text is above the overlay */
     }
+
+    #scroll {
+        margin-top: 10vw;
+        height: 40vh;
+        width: 100%;
+        /* background-color: red; */
+        white-space: nowrap;
+        overflow-x: auto;
+        /* overflow-y: hidden; */
+        padding: 0.7vw;
+        z-index: 2;
+    }
     
-    /* #page4 #image { */
-        /* width: 70%; */
-        /* height: 75vh; */
-        /* font-size: 4vw; */
-        /* position: absolute; */
-        /* top: 20%; */
-        /* left: 54%; */
-        /* padding: 6vw; */
-        /* transform: translateX(-50%); */
-        /* z-index: 2; Ensure the image is above the overlay */
-    /* } */
-    /* #page4 >  #image > img:nth-child(1){ */
-        /* margin-left: -6%; */
-    /* } */
-    /* #page4 > #image > img:nth-child(3){ */
-        /* margin-left: 6%; */
-    /* } */
-    /* #page4 > #image > img:nth-child(5){ */
-        /* margin-left: 6%; */
-    /* } */
-    /* #page4 > #image > img:nth-child(7){ */
-        /* margin-left: 6%; */
-    /* } */
-    /* #page4 > #image > img:nth-child(9){ */
-        /* margin-left: 6%; */
-    /* } */
-    /* #image #firstp{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: 1%; */
-        /* top: 42%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /* #image #secp{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: 20%; */
-        /* top: 42%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /* #image #thirdp{ */
-        /* color: white; */
-        /* font-size: 20px; */
- /*        background-color: red; */
-        /* position: absolute; */
-        /* left: 39%; */
-        /* top: 42%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /* #image #fourthp{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: 57.50%; */
-        /* top: 42%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /* #image #fifthp{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: 76.50%; */
-        /* top: 42%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /*  */
-    /* #page4 #image2{ */
-        /* width: 80%; */
-        /* height: fit-content; */
-        /* position: relative; */
-        /* font-size: 4vw; */
-        /* left: 54%; */
-        /* top: 20%; */
-        /* transform: translateX(-50%); */
-        /* background-color: royalblue; */
-    /* } */
-    /* #page4 > #image > #image2 > img:nth-child(1){ */
-        /* margin-left: -9%; */
-    /* } */
-    /* #page4  > #image > #image2 > img:nth-child(3){ */
-        /* margin-left: 6%; */
-    /* } */
-    /* #page4  > #image > #image2 > img:nth-child(5){ */
-        /* margin-left: 6%; */
-    /* } */
-    /* #page4  > #image > #image2 > img:nth-child(7){ */
-        /* margin-left: 9%; */
-    /* } */
-    /* #image2 #sixp{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: -8%; */
-        /* top: 76%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /* #image2 #sevenp{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: 19%; */
-        /* top: 76%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /* #image2 #eigthp{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: 46%; */
-        /* top: 76%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
-    /*  */
-    /* #image2 #ninep{ */
-        /* color: white; */
-        /* font-size: 20px; */
-        /* background-color: red; */
-        /* position: absolute; */
-        /* left: 76%; */
-        /* top: 76%; */
-        /* width: 15%; */
-        /* font-weight: 500; */
-    /* } */
+    
+    #scroll img {
+        height: 170px;
+        border-radius: 50%;
+        width: 170px;
+        object-fit: cover;
+        object-position: top;
+        margin: 0.3vw;
+        z-index: 999;
+        filter: brightness(120%);
+    }
+
+
     #background-image2 {
         width: 100%;
         height: 100%;
@@ -1607,6 +1483,7 @@ input[type="radio"] {
         left: 0;
         z-index: 0; /* Ensure the background image is behind the overlay */
     }
+    
     #page5 {
         margin-top: 1vw;
         width: 100%;
@@ -1640,34 +1517,47 @@ input[type="radio"] {
         margin-bottom: 2vw;
         z-index: 2; /* Ensure the text is above the overlay */
     }
-    .preview{
-        width: 75%;
-        /* background-color: red; */
-        padding: 0 1vw;
-        color: aliceblue;
+   
+    #page5 #slider{
+        margin-top: 3vw;
+        background-color: aliceblue;
+        height: 480px;
+        width: 1000px;
+        /* width: 1000px; */
+        /* width: 900px; */
         position: absolute;
-        bottom: 28%;
+        top: 38%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        font-size: 30px;
+        overflow: hidden;
+        border-radius: 20px;
+        border: 4px solid aliceblue;
+        box-shadow: 5px 5px 20px aliceblue,
+        -2px -2px 10px aliceblue;
         z-index: 2;
     }
 
-    .preview > a:nth-child(1) > i{
-        /* background-color: aqua; */
-          position: absolute;
-          left: 11%;
-    }
 
-    .preview > a:nth-child(2) > i{
+    #page5 #slider img{
+        width: 100%;
+         height: fit-content; 
         position: absolute;
-        right: 11%;
+        transition: transform 1s;
     }
-
+    
+    /* #slider .buttons{
+        z-index: 100;
+        display: flex;
+        position: absolute;
+        color: aliceblue;
+        bottom: 20px;
+        gap: 15px;
+    } */
+    
     input[type="radio"] {
-        height: 1.1rem;
-        width: 1.1rem;
+        height: 1.2rem;
+        width: 1.2rem;
     }
 
     #see{
@@ -1693,12 +1583,26 @@ input[type="radio"] {
         position: relative; 
         top: -5vw;
     }
+
+    #page6 p{
+        color: white;
+        /* background-color: aqua; */
+        font-size: 1vw;
+        width: 40%;
+        line-height: 1.5vw;
+        font-family: 'work sans';
+        position: absolute;
+        top: 83%;
+        transform: translate(-50% , -50%);
+        left: 50%;
+        text-align: center;
+    }
     #page6 #lines h4{
         font-size: 0.8vw;
         font-family: 'work sans';
         font-weight: 300;
         position: absolute;
-        top: -1vw;
+        top: -4.5vw;
         /* top: 3vw; */
         left: 53
   }
@@ -1712,8 +1616,8 @@ input[type="radio"] {
       font-family: 'work sans';
       font-weight: 300;
       position: absolute;
-      top: 3.5vw;
-      left: 25%;
+      top: 1vw;
+      left: 20%;
   }
   #page6 #lines h5 > i{
       color: rgb(220, 220, 248);
@@ -1724,8 +1628,8 @@ input[type="radio"] {
       font-family: 'work sans';
       font-family: 300;
       position: absolute;
-      top: 9vw;
-      left: 56%;
+      top: 5vw;
+      left: 58%;
   }
   #page6 #lines h6 > i{
       color: rgb(220, 220, 248);
@@ -1736,40 +1640,182 @@ input[type="radio"] {
       font-family: 'work sans';
       font-family: 30;
       position: absolute;
-      top: 16.4vw;
-      left: 34%;
+      top: 12.9vw;
+      left: 37%;
   }
   #page6 #lines h3 > i{
       color: rgb(220, 220, 248);
       padding: 7px;
   }
 
- 
- #footer-top img{
-     /* height: 80px; */
-     /* padding-left: 2%; */
-      height: 45%; 
-     padding-right: 7vw;
-     padding-left: 1.5vw;
+  #footer{
+    background-color: black;
+    width: 100%;
+    /* min-height: 100px; */
+     height: 110vh;
+     background-image: url(./space\ image.jpg); 
+    background-size: cover;
+    background-position: center;
+}
+#footer-top {
+    width: 100%;
+    height: 30vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    border-bottom: 2px dashed rgb(40, 32, 32);
+    position: relative;
+    top: 70%;
+  }
+
+  
+  #create {
+    width: 100%;
+    position: relative;
+    height: 8vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align the h1 elements */
+    /* background-color: red; */
+    margin-left: 3%;
+  }
+  
+  #plain,
+  #silk {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 2.4vw;
+    color: white;
+    letter-spacing: 0.5vw;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    opacity: 1;
+    padding: 3vw;
+    /* background-color: royalblue; */
+    /* Ensure both h1 elements are initially visible */
+  }
+  
+  #silk {
+    font-family: "gilroy";
+    font-style: italic;
+    /* color: transparent;
+    -webkit-text-stroke: 1px #fff; */
+  }
+  
+    #silk span{
+        opacity: 0;
+        /* font-weight: 100; */
+        font-family: "gilroy";
+        font-style: italic;
+        /* color: transparent;
+        -webkit-text-stroke: 1px #fff; */
+    }
+
+
+#footer-top img{
+    /* height: 80px; */
+    /* padding-left: 2%; */
+     height: 52%; 
+    padding-right: 1.5vw;
+    padding-left: 3vw;
+}
+
+#footer-top img :nth-child(3) {
+    /* background-color: aqua; */
+    /* width: 100%; */
+    /* color: #fff; */
+    padding-right: 4px;
+    height: 52%;
+    margin-top: 1px;
+}
+#footer-content{
+    width: 100%;
+    height: 50vh;
+     /* background-color: blueviolet;  */
+     /* padding: 3% 2%;  */
+    padding: 3vw; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#footer-content p{
+    font-size: 1.2vw;
+    color: white;
+    font-family: 'Work Sans';
+    line-height: 1.9vw;
+    margin-top: 65%;
+    margin-left: -36%;
+    /* background-color: red; */
+    text-align: left;
+   
+}
+#footer-content ul:nth-child(2){
+     /* background-color: aqua;  */
+    color: white;
+    font-size: 1.2vw;
+    font-family: 'Work Sans';
+    line-height: 2vw;
+    margin-top: 53%;
+    margin-left: 5%;
+    /* transition: transform 0.4s ease; */
+}
+#footer-content ul:nth-child(3){
+    /* background-color: aqua; */
+    color: white;
+    font-size: 1.2vw;
+    font-family: 'Work Sans';
+    line-height: 2vw;
+    margin-top: 49%;
+}
+#footer-content ul:nth-child(1){
+    /* background-color: aqua; */
+    color: white;
+    font-size: 1.2vw;
+    font-family: 'Work Sans';
+    line-height: 2vw;
+    margin-top: 50%;
+    margin-left: 33%;
+}
+
+#footer-lines{
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Work Sans';
+    padding: 3vw;
+    width: 100%;
+    margin-top: 20%;
+    color: white;
  }
- /* #footer-top h1{ */
-     /* font-size: 2vw; */
-     /* font-weight: 600; */
-     /* color: white; */
-    /* letter-spacing: 0.5vw; */
-    /* padding-right: 20vw; */
-    /* font-family: 'Roboto Condensed'; */
-    /* border-left: 1px solid white;  */
-    /* padding: 30px; */
-    /* position: relative; */
-    /* left: -9%; */
-    /*  */
- /* } */
-  #footer-top img:nth-child(3) {
-           padding-right: 4px;
-           height: 45%;
-           margin-top: 1px;  
-  }     
+
+#footer-bottom{
+    width: 100%;
+    height: 20vh;
+    /* background-color: aquamarine; */
+    padding: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 60%;
+}
+#footer-bottom h4{
+    font-size: 1.1vw;
+    font-weight: 400;
+    font-family:  'Work Sans';
+    color: white;
+}
+
+
 
      #page2 .aboutus #about >button{
         padding: 15px 28px;
@@ -1805,24 +1851,5 @@ input[type="radio"] {
         overflow: hidden;
         z-index: 1;
     }
-   
-}
 
-    /* #loader{ */
-        /* width: 100%; */
-        /* height: 100%; */
-        /* background-color: #030303; */
-        /* background-image: url(./space\ image.jpg); */
-        /* background-size: cover; */
-        /* background-position: center; */
-        /* position: fixed; */
-        /* color: white; */
-        /* z-index: 999; */
-        /* padding-left: 18vw; */
-    /* } */
-/*  */
-    /* #loader #waiting{ */
-        /* margin-left: 15vw; */
-        /* font-size: 2vw; */
-    /*  */
-    /* } */
+}
