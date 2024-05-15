@@ -202,12 +202,12 @@ t2.from(".aboutus",{
 
         t2.from("#page6",{
             opacity: 0,
-            duration: 0.8,
-            delay: 1.2,
+            duration: 1.2,
+            delay: 1,
             scrollTrigger: {
                 trigger: "#page6",
                 scroller: "body",
-                scrub: 1,
+                scrub: true,
                 // markers: true,
                 start: "top -10%",
                 end: "top -10%"
@@ -267,7 +267,7 @@ function slideImage(){
  
  // Function to start the automatic sliding
  const startAutoSlide = () => {
-     intervalId = setInterval(goNext, 1500);
+     intervalId = setInterval(goNext, 1000);
  };
  
  // Function to stop the automatic sliding
