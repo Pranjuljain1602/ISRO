@@ -346,6 +346,7 @@ t2.from("#footer", {
     end: "top -10%",
   },
 });
+
 }
 
 contentAnimation();
@@ -562,3 +563,24 @@ function FooterAnimation() {
 }
 
 FooterAnimation();
+
+       
+function showOverlay(card) {
+  card.classList.add('show-overlay');
+}
+// Function to hide overlay on mouse leave
+function hideOverlay(card) {
+  card.classList.remove('show-overlay');
+}
+
+// Function to show overlay on button click
+function showOverlayOnClick(button) {
+  const card = button.parentElement;
+  card.classList.add('show-overlay');
+}
+
+// Attach hover event listeners to cards
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseover', () => showOverlay(card));
+  card.addEventListener('mouseleave', () => hideOverlay(card));
+});
