@@ -172,7 +172,40 @@ cardP.forEach(function (elem) {
   elem.innerHTML = clutter;
 });
 
-t2.from(
+
+function animateText(elem) {
+  // Kill any ongoing animation for the text
+  gsap.killTweensOf(elem.querySelectorAll("span"));
+
+  // Reset text span properties
+  gsap.set(elem.querySelectorAll("span"), {
+    x: -70,
+    opacity: 0
+  });
+
+  gsap.fromTo(elem.querySelectorAll("span"), 
+    {
+      x: -70,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.04,
+      ease: "power4.out"
+    }
+  );
+}
+
+document.querySelectorAll('#page3 .card').forEach(function(card) {
+  card.addEventListener('mouseenter', function() {
+    animateText(this.querySelector('.overlay p'));
+  });
+});
+
+
+gsap.from(
   "#page3",
   {
     opacity: 0,
@@ -191,17 +224,6 @@ t2.from(
   "-=-1"
 );
 
-t2.from("#page3 p span", {
-  // y: -50,
-  x: -70,
-  opacity: 0,
-  duration: -0.3,
-  stagger: 0.04,
-  ease: "power4.out",
-});
-
-
-
 t2.from(".card, #card_btn", {
   opacity: 0,
   y: 50,
@@ -211,10 +233,10 @@ t2.from(".card, #card_btn", {
   scrollTrigger: {
     trigger: "#page3",
     scroller: "body",
-    start: "top 30%", // Animation starts when the top of trigger element reaches 80% of the viewport
-    end: "top 0%", // Animation ends when the top of trigger element reaches 30% of the viewport
-    toggleActions: "play none none none", // Animation will play when it enters the viewport and will not reverse
-    scrub: 4, // Smoothly animates based on scroll position
+    start: "top 30%",
+    end: "top 0%",
+    toggleActions: "play none none none",
+    scrub: 4,
   },
 });
 
@@ -509,15 +531,14 @@ function slideImage() {
 slideImage();
 
 function FooterAnimation() {
-  // GSAP timeline for the footer animation
   var footerAnimation = gsap.timeline({
     scrollTrigger: {
       trigger: "#footer-top",
-      scroller: "body", // Trigger when the footer comes into view
+      scroller: "body",
       //   markers: true,
-      start: "top 80%", // Start animation when footer is 80% into view
-      end: "top 20%", // End animation when footer is 70% into view
-      scrub: 3, // Smooth scrubbing effect
+      start: "top 80%",
+      end: "top 20%",
+      scrub: 3,
     },
   });
 
@@ -531,19 +552,18 @@ function FooterAnimation() {
       },
       "+=0.5"
     )
-    // Animation for #footer-content elements
+
     .from("#footer-content p, #footer-content ul", {
       opacity: 0,
       y: -20,
       stagger: 0.2,
     })
-    // Animation for #footer-bottom elements
+
     .from("#footer-bottom h4", {
       opacity: 0,
       y: -20,
     });
 
-  // Add span elements to the h1 element in the footer
   var footerH1 = document.querySelector("#footer-top h1");
   var clutter = "";
   footerH1.textContent.split("").forEach(function (letter) {
@@ -551,7 +571,6 @@ function FooterAnimation() {
   });
   footerH1.innerHTML = clutter;
 
-  // GSAP animation for list items on hover
   document.querySelectorAll("#footer-content ul li").forEach(function (li) {
     li.addEventListener("mouseenter", function () {
       gsap.to(li, {
@@ -567,7 +586,6 @@ function FooterAnimation() {
     });
   });
 
-  // Apply GSAP animation to the h1 elements inside the #create div
   document.querySelectorAll("#create h1").forEach(function (h) {
     var clutter = "";
     h.textContent.split("").forEach(function (letter) {
@@ -576,7 +594,6 @@ function FooterAnimation() {
     h.innerHTML = clutter;
   });
 
-  // Define GSAP timeline for the footer animation
   var tl7 = gsap.timeline({ paused: true });
   tl7
     .to(
@@ -597,7 +614,6 @@ function FooterAnimation() {
       "a"
     );
 
-  // Function to check if footer is visible
   function isFooterVisible() {
     var rect = document.querySelector("#footer-top").getBoundingClientRect();
     return (
@@ -607,26 +623,23 @@ function FooterAnimation() {
     );
   }
 
-  // Add mouse enter and leave event listeners to the #create div for animation
-  var isAnimating = false; // Flag to track if animation is currently running
+  var isAnimating = false;
 
   document.querySelector("#create").addEventListener("mouseenter", function () {
     if (!isAnimating) {
-      // Check if animation is not already running
-      isAnimating = true; // Set flag to true to indicate animation is running
-      tl7.restart(); // Restart the animation timeline
+      isAnimating = true;
+      tl7.restart();
     }
   });
 
   document.querySelector("#create").addEventListener("mouseleave", function () {
     if (!isAnimating) {
-      // Check if animation is not already running
-      isAnimating = true; // Set flag to true to indicate animation is running
+      isAnimating = true;
       gsap.to("#silk span", {
         opacity: 0,
         stagger: 0.1,
         onComplete: function () {
-          isAnimating = false; // Reset flag when animation completes
+          isAnimating = false;
         },
       });
       gsap.to("#plain span", {
@@ -637,17 +650,14 @@ function FooterAnimation() {
     }
   });
 
-  // Check footer visibility and trigger animation accordingly
   function checkFooterVisibility() {
     if (isFooterVisible()) {
       tl7.restart();
     }
   }
 
-  // Listen for scroll events to check footer visibility
   window.addEventListener("scroll", checkFooterVisibility);
 
-  // Initial check for footer visibility on page load
   checkFooterVisibility();
 
   Shery.mouseFollower({
@@ -662,22 +672,25 @@ function FooterAnimation() {
 FooterAnimation();
 
 
-function showOverlay(card) {
-  card.classList.add('show-overlay');
-}
-// Function to hide overlay on mouse leave
-function hideOverlay(card) {
-  card.classList.remove('show-overlay');
+
+function cardOverlayAnimation(){
+  function showOverlay(card) {
+    card.classList.add('show-overlay');
+  }
+  
+  function hideOverlay(card) {
+    card.classList.remove('show-overlay');
+  }
+  
+  function showOverlayOnClick(button) {
+    const card = button.parentElement;
+    card.classList.add('show-overlay');
+  }
+  
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseover', () => showOverlay(card));
+    card.addEventListener('mouseleave', () => hideOverlay(card));
+  });
 }
 
-// Function to show overlay on button click
-function showOverlayOnClick(button) {
-  const card = button.parentElement;
-  card.classList.add('show-overlay');
-}
-
-// Attach hover event listeners to cards
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mouseover', () => showOverlay(card));
-  card.addEventListener('mouseleave', () => hideOverlay(card));
-});
+cardOverlayAnimation();
