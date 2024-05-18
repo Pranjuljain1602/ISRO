@@ -159,19 +159,48 @@ t2.from(".aboutus p span", {
   },
 });
 
-t2.from("#page3", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  delay: 1,
-  scrollTrigger: {
-    trigger: "#page3",
-    scroller: "body",
-    start: "top 60%",
-    end: "top 0%",
-    scrub: 1,
-  },
+
+var cardP = document.querySelectorAll("#page3 p");
+
+cardP.forEach(function (elem) {
+  var clutter = "";
+  var rText = elem.textContent;
+  var splittedText = rText.split("");
+  splittedText.forEach(function (e) {
+    clutter += `<span>${e}</span>`;
+  });
+  elem.innerHTML = clutter;
 });
+
+t2.from(
+  "#page3",
+  {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    delay: 1,
+    scrollTrigger: {
+      trigger: "#page3",
+      scroller: "body",
+      //  markers: true,
+      start: "top 70%",
+      end: "top 0%",
+      scrub: 1,
+    },
+  },
+  "-=-1"
+);
+
+t2.from("#page3 p span", {
+  // y: -50,
+  x: -70,
+  opacity: 0,
+  duration: -0.3,
+  stagger: 0.04,
+  ease: "power4.out",
+});
+
+
 
 t2.from(".card, #card_btn", {
   opacity: 0,
@@ -349,6 +378,59 @@ t2.from("#page6 p span", {
   },
 });
 
+t2.from("#page6 #lines h4", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h4",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
+
+t2.from("#page6 #lines h5", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h5",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
+
+t2.from("#page6 #lines h6", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h6",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
+
+t2.from("#page6 #lines h3", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h3",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
+
+
 t2.from("#footer", {
   opacity: 0,
   duration: 0.8,
@@ -362,7 +444,6 @@ t2.from("#footer", {
     end: "top -10%",
   },
 });
-
 }
 
 contentAnimation();
@@ -580,7 +661,7 @@ function FooterAnimation() {
 
 FooterAnimation();
 
-       
+
 function showOverlay(card) {
   card.classList.add('show-overlay');
 }

@@ -686,6 +686,10 @@ body {
     visibility: hidden;
 }
 
+#page3 p span{
+    font-family: "Roboto Condensed";
+}
+
 #page4 {
     width: 100%;
     height: 100vh;
@@ -1813,7 +1817,7 @@ input[type="radio"] {
         font-family: 'work sans';
         font-weight: 700;
         position: absolute;
-        top: -4.5vw;
+        top: -4vw;
         /* top: 3vw; */
         left: 53
     }
@@ -1856,8 +1860,8 @@ input[type="radio"] {
         font-family: 'work sans';
         font-family: 30;
         position: absolute;
-        top: 12.9vw;
-        left: 37%;
+        top: 15.5vw;
+        left: 31%;
     }
 
     #page6 #lines h3>i {
@@ -1967,17 +1971,47 @@ input[type="radio"] {
 
     }
 
-    #footer-content p {
+    #footer-content #Headquarters {
+        width: 40%;
         font-size: 1.2vw;
         color: white;
         font-family: 'Work Sans';
         line-height: 1.9vw;
-        margin-top: 65%;
-        margin-left: -36%;
-        /* background-color: red; */
+        margin-top: 60%;
         text-align: left;
-
+        margin-left: -1%;
+        /* background-color: rgb(0, 102, 255); */
+    
     }
+    
+    #footer-content #phone {
+        width: 30%;
+        font-size: 1.2vw;
+        color: white;
+        font-family: 'Work Sans';
+        line-height: 1.9vw;
+        margin-top: 70%;
+        text-align: left;
+        margin-left: -25%;
+        /* background-color: rgb(47, 255, 0); */
+    
+    }
+    
+    #footer-content #email {
+        width: 30%;
+        font-size: 1.2vw;
+        color: white;
+        font-family: 'Work Sans';
+        line-height: 1.9vw;
+        margin-top: 78%;
+        text-align: left;
+        margin-left: -1%;
+        position: relative;
+        left: -18%;
+        /* background-color: rgb(255, 0, 212); */
+    
+    }
+    
 
     #footer-content ul:nth-child(2) {
         /* background-color: aqua;  */
@@ -1985,8 +2019,8 @@ input[type="radio"] {
         font-size: 1.2vw;
         font-family: 'Work Sans';
         line-height: 2vw;
-        margin-top: 53%;
-        margin-left: 5%;
+        margin-top:84%;
+        margin-left:1%;
         /* transition: transform 0.4s ease; */
     }
 
@@ -1996,7 +2030,7 @@ input[type="radio"] {
         font-size: 1.2vw;
         font-family: 'Work Sans';
         line-height: 2vw;
-        margin-top: 49%;
+        margin-top: 77%;
     }
 
     #footer-content ul:nth-child(1) {
@@ -2005,8 +2039,8 @@ input[type="radio"] {
         font-size: 1.2vw;
         font-family: 'Work Sans';
         line-height: 2vw;
-        margin-top: 50%;
-        margin-left: 33%;
+        margin-top: 81%;
+        margin-left: -1%;
     }
 
     #footer-lines {
