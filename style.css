@@ -425,9 +425,6 @@ body {
     color: black;
 }
 
-
-
-
 #page3 {
     margin-top: 20vw;
     width: 100%;
@@ -488,6 +485,7 @@ body {
     filter: brightness(150%);
 }
 
+
 #page3 #container {
     width: 100%;
     height: 50vh;
@@ -495,7 +493,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1vw;
+    gap: 2vw;
 }
 
 #page3 #container .card {
@@ -506,6 +504,7 @@ body {
     border-radius: 40px;
     padding: 3vw;
     position: relative;
+    overflow: hidden;
 }
 
 #page3 #container .card>h3 {
@@ -573,8 +572,9 @@ body {
 
 
 #page3 #container .card>button {
-    margin-top: 120%;
-    padding: 15px 25px;
+    margin-top: 150%;
+    margin-left: 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     background-color: transparent;
     border: 2px solid #E0DDDD;
@@ -583,6 +583,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    
 }
 
 #page3 #container .card>button::after {
@@ -646,6 +647,43 @@ body {
 #page3>button:hover {
     cursor: pointer;
     color: black;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(40, 37, 37);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.card:hover .overlay, .card.show-overlay .overlay {
+    bottom: 0;
+}
+
+.card .overlay{
+    background-color: rgb(18, 17, 17);
+    color: #fff;
+}
+
+.card .overlay p{
+    color: #fff;
+    font-size: 1vw;
+    font-family: 'Work Sans';
+    line-height: 1.5;
+    text-align: center;
+    
+}
+
+.card.show-overlay > button {
+    visibility: hidden;
 }
 
 #page4 {
@@ -727,7 +765,33 @@ body {
     display: none;
 }
 
-#scroll img {
+.image-container {
+    display: inline-block;
+    text-align: center;
+    /* background-color: red; */
+    margin: 0vw 1vw;
+}
+
+.image-container img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    /* width: 13.5%; */
+    object-fit: cover;
+    object-position: top;
+    margin: 0.2vw;
+    z-index: 999;
+    filter: brightness(120%);
+}
+
+.image-container span {
+    color: white;
+    font-family: "Roboto Condensed";
+    display: block;
+    margin-top: 0.5vw;
+}
+
+/* #scroll img {
     height: 80%;
     border-radius: 50%;
     width: 13.5%;
@@ -736,10 +800,10 @@ body {
     margin: 0.4vw;
     z-index: 999;
     filter: brightness(120%);
-}
+} */
 
 #container2 {
-    width: 100%;
+    width: 120%;
     height: 110%;
     /* background-color: blue; */
     padding: 1.8vw;
@@ -749,6 +813,7 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     z-index: 2;
+
 }
 
 @keyframes bhaggu {
@@ -835,9 +900,7 @@ body {
     margin-top: 4vw;
     background-color: aliceblue;
     height: 400px;
-    width: 1000px;
-    /* width: 1000px; */
-    width: 900px;
+    width: 30%;
     position: absolute;
     top: 40%;
     display: flex;
@@ -1499,9 +1562,9 @@ input[type="radio"] {
         /* background-color: red; */
     }
 
-    #page3 #container>.card:nth-child(3)>button {
+     #page3 #container>.card:nth-child(3)>button {
         margin-top: 120%;
-        /* background-color: red; */
+       
     }
 
     #page3>button {
@@ -1520,6 +1583,9 @@ input[type="radio"] {
         overflow: hidden;
         z-index: 1;
     }
+
+/* Adjust your existing CSS for the overlay */
+
 
     #page4 {
         margin-top: 20vw;
@@ -1562,16 +1628,51 @@ input[type="radio"] {
     }
 
 
-    #scroll img {
-        height: 170px;
+    /* #scroll img { */
+        /* height: 170px; */
+        /* border-radius: 50%; */
+        /* width: 170px; */
+        /* object-fit: cover; */
+        /* object-position: top; */
+        /* margin: 0.3vw; */
+        /* z-index: 999; */
+        /* filter: brightness(120%); */
+    /* } */
+
+    .image-container {
+        display: inline-block;
+        text-align: center;
+        margin: 0 1vw;
+    }
+    
+    .image-container img {
+        height: 80%;
         border-radius: 50%;
-        width: 170px;
+        width: 13.5%;
         object-fit: cover;
         object-position: top;
-        margin: 0.3vw;
+        margin: 0.4vw;
         z-index: 999;
         filter: brightness(120%);
     }
+    
+    .image-container span {
+        color: white;
+        font-family: "Roboto Condensed";
+        display: block;
+        margin-top: 0.5vw;
+    }
+    
+    /* #scroll img {
+        height: 80%;
+        border-radius: 50%;
+        width: 13.5%;
+        object-fit: cover;
+        object-position: top;
+        margin: 0.4vw;
+        z-index: 999;
+        filter: brightness(120%);
+    } */
 
 
     #background-image2 {
@@ -1620,7 +1721,7 @@ input[type="radio"] {
         text-align: center;
         position: absolute;
         left: 37%;
-        margin-top: -15vw;
+        margin-top: -12vw;
         margin-bottom: 2vw;
         z-index: 2;
         /* Ensure the text is above the overlay */
@@ -1710,7 +1811,7 @@ input[type="radio"] {
     #page6 #lines h4 {
         font-size: 0.8vw;
         font-family: 'work sans';
-        font-weight: 300;
+        font-weight: 700;
         position: absolute;
         top: -4.5vw;
         /* top: 3vw; */
@@ -1725,7 +1826,7 @@ input[type="radio"] {
     #page6 #lines h5 {
         font-size: 0.8vw;
         font-family: 'work sans';
-        font-weight: 300;
+        font-weight: 700;
         position: absolute;
         top: 1vw;
         left: 20%;
@@ -1975,5 +2076,4 @@ input[type="radio"] {
         overflow: hidden;
         z-index: 1;
     }
-
 }

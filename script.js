@@ -279,10 +279,26 @@ t2.from("#page5 p span", {
     scroller: "body",
     // markers: true,
     start: "top 70%",
-    end: "top 20%",
+    end: "top 40%",
     scrub: 1,
   },
 });
+
+t2.to("#slider",{
+    width: "70%",
+    zIndex: 100, 
+    duration: 1,
+    dealy: 1,
+    scrollTrigger:{
+        trigger: "#page5",
+        scroll: "body",
+        // markers: true,
+        start: "top 0%",
+        end: "top 40%",
+        scrub: 3,
+        pin: true
+    }
+})
 
 
 
@@ -346,6 +362,7 @@ t2.from("#footer", {
     end: "top -10%",
   },
 });
+
 }
 
 contentAnimation();
@@ -562,3 +579,24 @@ function FooterAnimation() {
 }
 
 FooterAnimation();
+
+       
+function showOverlay(card) {
+  card.classList.add('show-overlay');
+}
+// Function to hide overlay on mouse leave
+function hideOverlay(card) {
+  card.classList.remove('show-overlay');
+}
+
+// Function to show overlay on button click
+function showOverlayOnClick(button) {
+  const card = button.parentElement;
+  card.classList.add('show-overlay');
+}
+
+// Attach hover event listeners to cards
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseover', () => showOverlay(card));
+  card.addEventListener('mouseleave', () => hideOverlay(card));
+});
