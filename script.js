@@ -78,6 +78,7 @@ function loadingAnimation() {
     },
     "pjain"
   );
+
 }
 
 loadingAnimation();
@@ -281,8 +282,8 @@ t2.from("#page4 p span", {
     trigger: "#page4 p",
     scroller: "body",
     // markers: true,
-    start: "top 55%",
-    end: "top 5%",
+    start: "top 60%",
+    end: "top 10%",
     scrub: 1,
   },
 });
@@ -376,8 +377,8 @@ t2.from(
       trigger: "#page6",
       scroller: "body",
       //  markers: true,
-      start: "top 10%",
-      end: "top -30%",
+      start: "top 40%",
+      end: "top -40%",
       scrub: 1,
     },
   },
@@ -694,3 +695,37 @@ function cardOverlayAnimation(){
 }
 
 cardOverlayAnimation();
+
+
+var menu = document.querySelector("#nav-right i")
+
+var close = document.querySelector("#nav-left i")
+
+var t5 = gsap.timeline()
+
+t5.to("#nav-left",{
+    right: 0,
+    duration: 0.6,
+})
+
+t5.from("#nav-left h3",{
+    x: 100,
+    opacity: 0,
+    stagger: 0.25,
+    duration: 0.5,
+})
+
+t5.from("#nav-left i",{
+    opacity: 0
+})
+
+t5.pause()
+
+
+menu.addEventListener("click",function(){
+    t5.play();
+})
+
+close.addEventListener("click",function(){
+    t5.reverse();
+})

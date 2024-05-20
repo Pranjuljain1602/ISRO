@@ -10,6 +10,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: black;
+    /* overflow-x: hidden; */
 }
 
 .preloader {
@@ -91,18 +92,6 @@ body {
     background-color: black;
 }
 
-/* #cursor{ */
-/* width: 3vw; */
-/* height: 3vw; */
-/* border: 1.3px solid rgba(255, 255, 255, 0.842); */
-/* border-radius: 50%; */
-/* position: fixed; */
-/* z-index: 9999; */
-/* pointer-events: none; */
-/* mix-blend-mode: difference; */
-/* transform: translate(-50%,-50%); */
-/* } */
-
 .mousefollower {
     border: 2px solid #fff;
     background-color: rgb(255, 255, 255);
@@ -164,6 +153,14 @@ body {
     letter-spacing: 0.3vw;
     padding-left: 2.5vw;
     filter: brightness(100%);
+}
+
+#nav #nav-right i{
+    display: none;
+}
+
+#nav #nav-left i{
+    display: none;
 }
 
 #nav #nav-left {
@@ -831,7 +828,6 @@ body {
 }
 
 #page5 {
-    /* margin-top: 3vw; */
     width: 100%;
     height: 100vh;
     position: relative;
@@ -874,7 +870,7 @@ body {
     font-size: 30px;
     text-align: center;
     text-transform: uppercase;
-    margin-top: -23vw;
+    margin-top: -36vw;
     margin-bottom: 1vw;
     position: relative;
     /* Ensure the text is positioned correctly relative to its container */
@@ -889,7 +885,7 @@ body {
     text-align: center;
     position: absolute;
     left: 37%;
-    margin-top: -9vw;
+    margin-top: -26vw;
     margin-bottom: 2vw;
     z-index: 3;
     /* Ensure the text is above the overlay */
@@ -901,7 +897,7 @@ body {
 
 
 #page5 #slider {
-    margin-top: 4vw;
+    margin-top: -5vw;
     background-color: aliceblue;
     height: 400px;
     width: 30%;
@@ -939,46 +935,6 @@ input[type="radio"] {
     width: 1.2rem;
 }
 
-#see {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 30px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: 2px solid #428DDE;
-    color: white;
-    font-weight: 600;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-
-}
-
-#see::after {
-    content: "";
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    position: absolute;
-    background-color: #428DDE;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: all linear 0.3s;
-    z-index: -1;
-}
-
-#see:hover::after {
-    transform: translate(-50%, -50%) scale(3);
-}
-
-#see:hover {
-    cursor: pointer;
-    color: black;
-}
-
 
 #page6 {
     margin-top: 3vw;
@@ -990,6 +946,7 @@ input[type="radio"] {
     background-repeat: no-repeat;
     background-position: center;
     z-index: 0;
+    /* background-color: red; */
 }
 
 #page6 #centerimage {
@@ -1009,6 +966,7 @@ input[type="radio"] {
     object-fit: cover;
     opacity: 0.8;
     z-index: 999;
+    margin-top: -8vw;
     /* background-color: aqua; */
 }
 
@@ -1017,7 +975,7 @@ input[type="radio"] {
     font-family: "Roboto Condensed";
     font-size: 3vw;
     position: absolute;
-    top: 70%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -1028,7 +986,7 @@ input[type="radio"] {
     justify-content: center;
     gap: 0.7vw;
     position: absolute;
-    top: 75%;
+    top: 38%;
     left: 49%;
     transform: translate(-50%, -50%);
 }
@@ -1062,7 +1020,7 @@ input[type="radio"] {
     line-height: 1.5vw;
     font-family: 'work sans';
     position: absolute;
-    top: 83%;
+    top: 55%;
     transform: translate(-50%, -50%);
     left: 50%;
     text-align: center;
@@ -1079,17 +1037,17 @@ input[type="radio"] {
     color: white;
     /* background-color: red; */
     position: relative;
-    top: 60vw;
+    top: 57vw;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #page6 #lines h4 {
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-family: 'work sans';
     font-weight: 800;
     position: absolute;
-    top: -4vw;
+    top: -10vw;
     /* background-color: red; */
     /* top: 3vw; */
     left: 52%;
@@ -1098,38 +1056,47 @@ input[type="radio"] {
 #page6 #lines h4>i {
     color: rgb(220, 220, 248);
     padding: 2px;
+    position: absolute;
+    left: 25%;
+    top: -35%;
 }
 
 #page6 #lines h5 {
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-family: 'work sans';
     font-weight: 800;
     position: absolute;
-    top: -1vw;
+    top: -2vw;
     left: 13%;
 }
 
 #page6 #lines h5>i {
     color: rgb(220, 220, 248);
     padding: 3px;
+    position: absolute;
+    left: 23%;
+    top: -35%;
 }
 
 #page6 #lines h6 {
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-family: 'work sans';
     font-family: 300;
     position: absolute;
-    top: 4vw;
+    top: 3vw;
     left: 56%;
 }
 
 #page6 #lines h6>i {
     color: rgb(220, 220, 248);
     padding: 7px;
+    position: absolute;
+    left: 20%;
+    top: -40%;
 }
 
 #page6 #lines h3 {
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-family: 'work sans';
     font-family: 300;
     position: absolute;
@@ -1140,6 +1107,9 @@ input[type="radio"] {
 #page6 #lines h3>i {
     color: rgb(220, 220, 248);
     padding: 7px;
+    position: absolute;
+    left: 20%;
+    top: -23%;
 }
 
 #footer {
@@ -1243,40 +1213,45 @@ input[type="radio"] {
 }
 
 #footer-content #Headquarters {
-    /* width: 18%; */
+    width: 45%;
+    /* background-color: red; */
     font-size: 1.2vw;
     color: white;
     font-family: 'Work Sans';
     line-height: 1.9vw;
     margin-top: 61%;
     text-align: left;
-    margin-left: -35%;
+    margin-left: -1%;
     /* background-color: rgb(0, 102, 255); */
 
 }
 
 #footer-content #phone {
-    /* width: 18%; */
+    width: 35%;
+    /* background-color: rgb(136, 0, 255); */
     font-size: 1.2vw;
     color: white;
     font-family: 'Work Sans';
     line-height: 1.9vw;
-    margin-top: 70%;
+    margin-top: 71%;
     text-align: left;
-    margin-left: -35%;
+    margin-left: -26%;
     /* background-color: rgb(47, 255, 0); */
 
 }
 
 #footer-content #email {
-    /* width: 18%; */
+    width: 35%;
+    /* background-color: rgb(0, 255, 21); */
     font-size: 1.2vw;
     color: white;
     font-family: 'Work Sans';
     line-height: 1.9vw;
-    margin-top: 77%;
+    margin-top: 80%;
     text-align: left;
-    margin-left: -35%;
+    position: relative;
+    left: -20%;
+    /* margin-left: -35%; */
     /* background-color: rgb(255, 0, 212); */
 
 }
@@ -1288,8 +1263,8 @@ input[type="radio"] {
     font-size: 1.2vw;
     font-family: 'Work Sans';
     line-height: 2vw;
-    margin-top: 67.75%;
-    margin-left: 5%;
+    margin-top: 113%;
+    margin-left: 6%;
     /* transition: transform 0.4s ease; */
 }
 
@@ -1299,7 +1274,7 @@ input[type="radio"] {
     font-size: 1.2vw;
     font-family: 'Work Sans';
     line-height: 2vw;
-    margin-top: 63%;
+    margin-top: 105%;
 }
 
 #footer-content ul:nth-child(1) {
@@ -1308,8 +1283,8 @@ input[type="radio"] {
     font-size: 1.2vw;
     font-family: 'Work Sans';
     line-height: 2vw;
-    margin-top: 65.75%;
-    margin-left: 33%;
+    margin-top: 110%;
+    margin-left: -5%;
 }
 
 #footer-lines {
@@ -2110,4 +2085,145 @@ input[type="radio"] {
         overflow: hidden;
         z-index: 1;
     }
+}
+
+
+/** Mobile view */
+
+@media (max-width: 600px) {  
+    .rocket {
+        height: 500px;
+        animation: rocket 0.01s ease infinite alternate;
+    }
+    
+    /* Overlay to control background brightness */
+    
+    /* #nav { */
+        /* height: 30vw; */
+     /*    background-color: red; */
+    /* } */
+    
+    /* #nav #nav-right { */
+        /* width: 30%; */
+        /* gap: 2vw; */
+        /* margin-left: 5vw; */
+        /* margin-top: 20vw; */
+    /* } */
+    /*  */
+    /* #nav #nav-right img { */
+        /* filter: brightness(100%); */
+        /* width: 140px; */
+    /* } */
+    /*  */
+    /* #nav #nav-right h1 { */
+        /* display: none; */
+    /* } */
+
+    /* #nav #nav-left h3 { */
+        /* display: none; */
+    /* } */
+    
+    /* #header_content { */
+        /* width: 100%; */
+        /* height: 25vh; */
+        /* position: absolute; */
+        /* top: 28%; */
+        /* left: 0%; */
+        /* padding: 3vw; */
+    /* } */
+    /*  */
+    /* #header_content h2 { */
+        /* font-size: 14.5vw; */
+    /* } */
+    
+    /* .btn { */
+        /* margin-top: 33%; */
+        /* margin-left: 30%; */
+        /* padding: 25px 50px; */
+        /* font-size: 5vw; */
+    /* } */
+    /*  */
+    /* .btn::after { */
+        /* content: ""; */
+        /* height: 90px; */
+        /* width: 90px; */
+    /* } */
+    /*  */
+     /* .mousefollower { */
+        /* display: none; */
+    /* } */
+
+    /* #nav #nav-right i{ */
+        /* display: block; */
+        /* font-size: 35px; */
+        /* color: white; */
+        /* cursor: pointer; */
+        /* position: relative; */
+        /* left: 145%; */
+    /* } */
+    /*  */
+    /* #nav #nav-left i{ */
+        /* display: block; */
+    /* } */
+
+    
+    /* #nav #nav-left{ */
+        /* width: 50%; */
+        /* height: 100%; */
+        /* position: absolute; */
+        /* top: 0; */
+        /* right: -110%; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* gap: 25vw; */
+        /* text-transform: uppercase; */
+        /* background-color: #2d2b2b; */
+        /* backdrop-filter: blur(10%); */
+    /* } */
+    
+    /* #nav #nav-left h3{ */
+        /* font-size: 50px; */
+        /* font-weight: 600; */
+        
+        /* color: white; */
+    /* } */
+    
+    /* #nav #nav-left i{ */
+        /* font-size: 20px; */
+        /* padding: 8px; */
+        /* background-color: #fff; */
+        /* border-radius: 50%; */
+        /* position: absolute; */
+        /* top: 7%; */
+        /* right: 10%; */
+        /* cursor: pointer; */
+    /* } */
+
+    /* #page2{ */
+        /* display: none; */
+    /* } */
+/*  */
+    /* #page3{ */
+        /* display: none; */
+    /* } */
+/*  */
+    /* #page4{ */
+        /* display: none; */
+    /* } */
+/*  */
+    /* #page5{ */
+        /* display: none; */
+    /* } */
+/*  */
+    /* #page6{ */
+        /* display: none; */
+    /* } */
+/*  */
+    /* #footer{ */
+        /* display: none; */
+    /* } */
+
+    
 }
