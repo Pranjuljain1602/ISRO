@@ -282,7 +282,7 @@ t2.from("#page4 p span", {
     trigger: "#page4 p",
     scroller: "body",
     // markers: true,
-    start: "top 60%",
+    start: "top 50%",
     end: "top 10%",
     scrub: 1,
   },
@@ -729,3 +729,22 @@ menu.addEventListener("click",function(){
 close.addEventListener("click",function(){
     t5.reverse();
 })
+
+function transitionToPage5() {
+  document.querySelector('#page5').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
+
+
+function transitionToPage2() {
+  document.querySelector('#page2').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
+
+function transitionToPage6() {
+  document.querySelector('#page6').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
