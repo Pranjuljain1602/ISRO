@@ -308,10 +308,26 @@ t2.from("#page5 p span", {
     scroller: "body",
     // markers: true,
     start: "top 70%",
-    end: "top 20%",
+    end: "top 40%",
     scrub: 1,
   },
 });
+
+t2.to("#slider",{
+    width: "70%",
+    zIndex: 100, 
+    duration: 1,
+    dealy: 1,
+    scrollTrigger:{
+        trigger: "#page5",
+        scroll: "body",
+        // markers: true,
+        start: "top 0%",
+        end: "top 40%",
+        scrub: 3,
+        pin: true
+    }
+})
 
 
 
@@ -644,6 +660,7 @@ function FooterAnimation() {
 }
 
 FooterAnimation();
+
 
 
 function showOverlay(card) {
