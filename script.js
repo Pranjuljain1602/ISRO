@@ -46,38 +46,81 @@ function loadingAnimation() {
     stagger: 0.2,
   });
 
-  tl.from(
-    "#header_content",
-    {
-      x: -100,
-      opacity: 0,
-      duration: 0.4,
-    },
-    "pjain"
-  );
+  function createAnimation(isMobile) {
+    if (isMobile) {
+      tl.from(
+        "#header_content",
+        {
+          x: -5,
+          opacity: 0,
+          duration: 0.5,
+        },
+        "pjain"
+      );
+      tl.from(
+        "h2 span",
+        {
+          x: -5,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: "power2.out",
+        },
+        "pjain"
+      );
+      tl.from("#nav-left h3", {
+        opacity: 0,
+        y: -80,
+        duration: 0.45,
+      });
+    } else {
+      tl.from(
+        "#header_content",
+        {
+          x: -100,
+          opacity: 0,
+          duration: 0.4,
+        },
+        "pjain"
+      );
+      tl.from(
+        "h2 span",
+        {
+          x: -70,
+          opacity: 0,
+          duration: 0.3,
+          stagger: 0.04,
+          ease: "power4.out",
+        },
+        "pjain"
+      );
+    }
+  }
+  
+  function initTextAnimation() {
+    var h2 = document.querySelector("#header_content h2");
+    var h2Text = h2.textContent;
+    var clutter = "";
+    var splittedText = h2Text.split("");
+  
+    splittedText.forEach(function (elem) {
+      clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
+    });
+  
+    h2.innerHTML = clutter;
+  }
+  
+  var isMobile = window.matchMedia("(max-width: 600px)").matches;
+  
+  initTextAnimation();
 
-  var h2 = document.querySelector("#header_content h2");
-  var h2Text = h2.textContent;
-  var clutter = "";
-  var splittedText = h2Text.split("");
+  createAnimation(isMobile);
+  
 
-  splittedText.forEach(function (elem) {
-    clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
+  window.addEventListener('resize', function () {
+    isMobile = window.matchMedia("(max-width: 600px)").matches;
+    createAnimation(isMobile);
   });
-
-  h2.innerHTML = clutter;
-
-  tl.from(
-    "h2 span",
-    {
-      x: -70,
-      opacity: 0,
-      duration: 0.3,
-      stagger: 0.04,
-      ease: "power4.out",
-    },
-    "pjain"
-  );
 
 }
 
@@ -554,7 +597,7 @@ function FooterAnimation() {
       "+=0.5"
     )
 
-    .from("#footer-content p, #footer-content ul", {
+    .from("#footer-content h4, #footer-content ul", {
       opacity: 0,
       y: -20,
       stagger: 0.2,
