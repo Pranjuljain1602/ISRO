@@ -46,38 +46,82 @@ function loadingAnimation() {
     stagger: 0.2,
   });
 
-  tl.from(
-    "#header_content",
-    {
-      x: -100,
-      opacity: 0,
-      duration: 0.4,
-    },
-    "pjain"
-  );
+  function createAnimation(isMobile) {
+    if (isMobile) {
+      tl.from(
+        "#header_content",
+        {
+          x: -5,
+          opacity: 0,
+          duration: 0.5,
+        },
+        "pjain"
+      );
+      tl.from(
+        "h2 span",
+        {
+          x: -5,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: "power2.out",
+        },
+        "pjain"
+      );
+      tl.from("#nav-left h3", {
+        opacity: 0,
+        y: -80,
+        duration: 0.45,
+      });
+    } else {
+      tl.from(
+        "#header_content",
+        {
+          x: -100,
+          opacity: 0,
+          duration: 0.4,
+        },
+        "pjain"
+      );
+      tl.from(
+        "h2 span",
+        {
+          x: -70,
+          opacity: 0,
+          duration: 0.3,
+          stagger: 0.04,
+          ease: "power4.out",
+        },
+        "pjain"
+      );
+    }
+  }
+  
+  function initTextAnimation() {
+    var h2 = document.querySelector("#header_content h2");
+    var h2Text = h2.textContent;
+    var clutter = "";
+    var splittedText = h2Text.split("");
+  
+    splittedText.forEach(function (elem) {
+      clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
+    });
+  
+    h2.innerHTML = clutter;
+  }
+  
+  var isMobile = window.matchMedia("(max-width: 600px)").matches;
+  
+  initTextAnimation();
 
-  var h2 = document.querySelector("#header_content h2");
-  var h2Text = h2.textContent;
-  var clutter = "";
-  var splittedText = h2Text.split("");
+  createAnimation(isMobile);
+  
 
-  splittedText.forEach(function (elem) {
-    clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
+  window.addEventListener('resize', function () {
+    isMobile = window.matchMedia("(max-width: 600px)").matches;
+    createAnimation(isMobile);
   });
 
-  h2.innerHTML = clutter;
-
-  tl.from(
-    "h2 span",
-    {
-      x: -70,
-      opacity: 0,
-      duration: 0.3,
-      stagger: 0.04,
-      ease: "power4.out",
-    },
-    "pjain"
-  );
 }
 
 loadingAnimation();
@@ -97,369 +141,375 @@ cursorAnimation();
 function contentAnimation() {
   var t2 = gsap.timeline();
 
-  t2.from(".content", {
+t2.from(".content", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  stagger: 1,
+  delay: 1.2,
+  scrollTrigger: {
+    trigger: "#page2",
+    scroller: "body",
+    start: "top 60%",
+    end: "top 30%",
+    toggleActions: "play none none none",
+    scrub: 2,
+  },
+});
+
+var aboutP = document.querySelectorAll(".aboutus p");
+
+aboutP.forEach(function (elem) {
+  var clutter = "";
+  var PText = elem.textContent;
+  var splittedText = PText.split("");
+  splittedText.forEach(function (e) {
+    clutter += `<span>${e}</span>`;
+  });
+  elem.innerHTML = clutter;
+});
+
+t2.from(
+  ".aboutus",
+  {
     opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 1,
-    delay: 1.2,
-    scrollTrigger: {
-      trigger: "#page2",
-      scroller: "body",
-      start: "top 60%",
-      end: "top 30%",
-      toggleActions: "play none none none",
-      scrub: 2,
-    },
-  });
-
-  var aboutP = document.querySelectorAll(".aboutus p");
-
-  aboutP.forEach(function (elem) {
-    var clutter = "";
-    var PText = elem.textContent;
-    var splittedText = PText.split("");
-    splittedText.forEach(function (e) {
-      clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-  });
-
-  t2.from(
-    ".aboutus",
-    {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 1,
-      scrollTrigger: {
-        trigger: ".aboutus",
-        scroller: "body",
-        //  markers: true,
-        start: "top 50%",
-        end: "top 0%",
-        scrub: 1,
-      },
-    },
-    "-=-1"
-  );
-
-  t2.from(".aboutus p span", {
-    stagger: 0.1,
-    opacity: 0.5,
     y: 50,
     duration: 1,
     delay: 1,
     scrollTrigger: {
       trigger: ".aboutus",
       scroller: "body",
-      start: "top 40%",
+      //  markers: true,
+      start: "top 50%",
       end: "top 0%",
       scrub: 1,
     },
+  },
+  "-=-1"
+);
+
+t2.from(".aboutus p span", {
+  stagger: 0.1,
+  opacity: 0.5,
+  y: 50,
+  duration: 1,
+  delay: 1,
+  scrollTrigger: {
+    trigger: ".aboutus",
+    scroller: "body",
+    start: "top 40%",
+    end: "top 0%",
+    scrub: 1,
+  },
+});
+
+
+var cardP = document.querySelectorAll("#page3 p");
+
+cardP.forEach(function (elem) {
+  var clutter = "";
+  var rText = elem.textContent;
+  var splittedText = rText.split("");
+  splittedText.forEach(function (e) {
+    clutter += `<span>${e}</span>`;
+  });
+  elem.innerHTML = clutter;
+});
+
+
+function animateText(elem) {
+  // Kill any ongoing animation for the text
+  gsap.killTweensOf(elem.querySelectorAll("span"));
+
+  // Reset text span properties
+  gsap.set(elem.querySelectorAll("span"), {
+    x: -70,
+    opacity: 0
   });
 
-  var cardP = document.querySelectorAll("#page3 p");
-
-  cardP.forEach(function (elem) {
-    var clutter = "";
-    var rText = elem.textContent;
-    var splittedText = rText.split("");
-    splittedText.forEach(function (e) {
-      clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-  });
-
-  function animateText(elem) {
-    // Kill any ongoing animation for the text
-    gsap.killTweensOf(elem.querySelectorAll("span"));
-
-    // Reset text span properties
-    gsap.set(elem.querySelectorAll("span"), {
+  gsap.fromTo(elem.querySelectorAll("span"), 
+    {
       x: -70,
       opacity: 0,
-    });
-
-    gsap.fromTo(
-      elem.querySelectorAll("span"),
-      {
-        x: -70,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.04,
-        ease: "power4.out",
-      }
-    );
-  }
-
-  document.querySelectorAll("#page3 .card").forEach(function (card) {
-    card.addEventListener("mouseenter", function () {
-      animateText(this.querySelector(".overlay p"));
-    });
-  });
-
-  gsap.from(
-    "#page3",
-    {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 1,
-      scrollTrigger: {
-        trigger: "#page3",
-        scroller: "body",
-        //  markers: true,
-        start: "top 70%",
-        end: "top 0%",
-        scrub: 1,
-      },
     },
-    "-=-1"
+    {
+      x: 0,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.04,
+      ease: "power4.out"
+    }
   );
+}
 
-  t2.from(".card, #card_btn", {
+document.querySelectorAll('#page3 .card').forEach(function(card) {
+  card.addEventListener('mouseenter', function() {
+    animateText(this.querySelector('.overlay p'));
+  });
+});
+
+
+gsap.from(
+  "#page3",
+  {
     opacity: 0,
     y: 50,
-    duration: 0.7,
-    stagger: 1,
+    duration: 1,
     delay: 1,
     scrollTrigger: {
       trigger: "#page3",
       scroller: "body",
-      start: "top 30%",
-      end: "top 0%",
-      toggleActions: "play none none none",
-      scrub: 4,
-    },
-  });
-
-  var portalP = document.querySelectorAll("#page4 p");
-
-  portalP.forEach(function (elem) {
-    var clutter = "";
-    var rText = elem.textContent;
-    var splittedText = rText.split("");
-    splittedText.forEach(function (e) {
-      clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-  });
-
-  t2.from(
-    "#page4",
-    {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 1,
-      scrollTrigger: {
-        trigger: "#page4",
-        scroller: "body",
-        //  markers: true,
-        start: "top 70%",
-        end: "top 0%",
-        scrub: 1,
-      },
-    },
-    "-=-1"
-  );
-
-  t2.from("#page4 p span", {
-    stagger: 0.1,
-    opacity: 0.5,
-    y: 50,
-    duration: 1,
-    delay: 1,
-    scrollTrigger: {
-      trigger: "#page4 p",
-      scroller: "body",
-      // markers: true,
-      start: "top 50%",
-      end: "top 10%",
-      scrub: 1,
-    },
-  });
-
-  var recentP = document.querySelectorAll("#page5 p");
-
-  recentP.forEach(function (elem) {
-    var clutter = "";
-    var rText = elem.textContent;
-    var splittedText = rText.split("");
-    splittedText.forEach(function (e) {
-      clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-  });
-
-  t2.from(
-    "#page5",
-    {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 1,
-      scrollTrigger: {
-        trigger: "#page5",
-        scroller: "body",
-        //  markers: true,
-        start: "top 70%",
-        end: "top 0%",
-        scrub: 1,
-      },
-    },
-    "-=-1"
-  );
-
-  t2.from("#page5 p span", {
-    stagger: 0.1,
-    opacity: 0.5,
-    y: 50,
-    duration: 1,
-    delay: 1,
-    scrollTrigger: {
-      trigger: "#page5 p",
-      scroller: "body",
-      // markers: true,
+      //  markers: true,
       start: "top 70%",
-      end: "top 40%",
+      end: "top 0%",
       scrub: 1,
     },
-  });
+  },
+  "-=-1"
+);
 
-  t2.to("#slider", {
-    width: "70%",
-    zIndex: 100,
+t2.from(".card, #card_btn", {
+  opacity: 0,
+  y: 50,
+  duration: 0.7,
+  stagger: 1,
+  delay: 1,
+  scrollTrigger: {
+    trigger: "#page3",
+    scroller: "body",
+    start: "top 30%",
+    end: "top 0%",
+    toggleActions: "play none none none",
+    scrub: 4,
+  },
+});
+
+var portalP = document.querySelectorAll("#page4 p");
+
+portalP.forEach(function (elem) {
+  var clutter = "";
+  var rText = elem.textContent;
+  var splittedText = rText.split("");
+  splittedText.forEach(function (e) {
+    clutter += `<span>${e}</span>`;
+  });
+  elem.innerHTML = clutter;
+});
+
+t2.from(
+  "#page4",
+  {
+    opacity: 0,
+    y: 50,
     duration: 1,
-    dealy: 1,
+    delay: 1,
+    scrollTrigger: {
+      trigger: "#page4",
+      scroller: "body",
+      //  markers: true,
+      start: "top 70%",
+      end: "top 0%",
+      scrub: 1,
+    },
+  },
+  "-=-1"
+);
+
+t2.from("#page4 p span", {
+  stagger: 0.1,
+  opacity: 0.5,
+  y: 50,
+  duration: 1,
+  delay: 1,
+  scrollTrigger: {
+    trigger: "#page4 p",
+    scroller: "body",
+    // markers: true,
+    start: "top 50%",
+    end: "top 10%",
+    scrub: 1,
+  },
+});
+
+
+var recentP = document.querySelectorAll("#page5 p");
+
+recentP.forEach(function (elem) {
+  var clutter = "";
+  var rText = elem.textContent;
+  var splittedText = rText.split("");
+  splittedText.forEach(function (e) {
+    clutter += `<span>${e}</span>`;
+  });
+  elem.innerHTML = clutter;
+});
+
+t2.from(
+  "#page5",
+  {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    delay: 1,
     scrollTrigger: {
       trigger: "#page5",
-      scroll: "body",
-      // markers: true,
-      start: "top 0%",
-      end: "top 40%",
-      scrub: 3,
-      pin: true,
+      scroller: "body",
+      //  markers: true,
+      start: "top 70%",
+      end: "top 0%",
+      scrub: 1,
     },
+  },
+  "-=-1"
+);
+
+t2.from("#page5 p span", {
+  stagger: 0.1,
+  opacity: 0.5,
+  y: 50,
+  duration: 1,
+  delay: 1,
+  scrollTrigger: {
+    trigger: "#page5 p",
+    scroller: "body",
+    // markers: true,
+    start: "top 70%",
+    end: "top 40%",
+    scrub: 1,
+  },
+});
+
+t2.to("#slider",{
+    width: "70%",
+    zIndex: 100, 
+    duration: 1,
+    dealy: 1,
+    scrollTrigger:{
+        trigger: "#page5",
+        scroll: "body",
+        // markers: true,
+        start: "top 0%",
+        end: "top 40%",
+        scrub: 3,
+        pin: true
+    }
+})
+
+
+
+var centerP = document.querySelectorAll("#page6 p");
+
+centerP.forEach(function (elem) {
+  var clutter = "";
+  var pText = elem.textContent;
+  var splittedText = pText.split("");
+  splittedText.forEach(function (e) {
+    clutter += `<span>${e}</span>`;
   });
+  elem.innerHTML = clutter;
+});
 
-  var centerP = document.querySelectorAll("#page6 p");
-
-  centerP.forEach(function (elem) {
-    var clutter = "";
-    var pText = elem.textContent;
-    var splittedText = pText.split("");
-    splittedText.forEach(function (e) {
-      clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-  });
-
-  t2.from(
-    "#page6",
-    {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 1,
-      scrollTrigger: {
-        trigger: "#page6",
-        scroller: "body",
-        //  markers: true,
-        start: "top 40%",
-        end: "top -40%",
-        scrub: 1,
-      },
-    },
-    "-=-1"
-  );
-
-  t2.from("#page6 p span", {
-    stagger: 0.1,
-    opacity: 0.5,
+t2.from(
+  "#page6",
+  {
+    opacity: 0,
     y: 50,
     duration: 1,
     delay: 1,
     scrollTrigger: {
-      trigger: "#page6 p",
+      trigger: "#page6",
       scroller: "body",
-      // markers: true,
-      start: "top 65%",
-      end: "top 30%",
+      //  markers: true,
+      start: "top 40%",
+      end: "top -40%",
       scrub: 1,
     },
-  });
+  },
+  "-=-1"
+);
 
-  t2.from("#page6 #lines h4", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#page6 #lines h4",
-      scroller: "body",
-      start: "top 80%",
-      end: "top 60%",
-      scrub: 1,
-    },
-  });
+t2.from("#page6 p span", {
+  stagger: 0.1,
+  opacity: 0.5,
+  y: 50,
+  duration: 1,
+  delay: 1,
+  scrollTrigger: {
+    trigger: "#page6 p",
+    scroller: "body",
+    // markers: true,
+    start: "top 65%",
+    end: "top 30%",
+    scrub: 1,
+  },
+});
 
-  t2.from("#page6 #lines h5", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#page6 #lines h5",
-      scroller: "body",
-      start: "top 80%",
-      end: "top 60%",
-      scrub: 1,
-    },
-  });
+t2.from("#page6 #lines h4", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h4",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
 
-  t2.from("#page6 #lines h6", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#page6 #lines h6",
-      scroller: "body",
-      start: "top 80%",
-      end: "top 60%",
-      scrub: 1,
-    },
-  });
+t2.from("#page6 #lines h5", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h5",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
 
-  t2.from("#page6 #lines h3", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: "#page6 #lines h3",
-      scroller: "body",
-      start: "top 80%",
-      end: "top 60%",
-      scrub: 1,
-    },
-  });
+t2.from("#page6 #lines h6", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h6",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
 
-  t2.from("#footer", {
-    opacity: 0,
-    duration: 0.8,
-    delay: 1.2,
-    scrollTrigger: {
-      trigger: "#footer",
-      scroller: "body",
-      scrub: 5,
-      /*    markers: true, */
-      start: "top -10%",
-      end: "top -10%",
-    },
-  });
+t2.from("#page6 #lines h3", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#page6 #lines h3",
+    scroller: "body",
+    start: "top 80%",
+    end: "top 60%",
+    scrub: 1,
+  },
+});
+
+
+t2.from("#footer", {
+  opacity: 0,
+  duration: 0.8,
+  delay: 1.2,
+  scrollTrigger: {
+    trigger: "#footer",
+    scroller: "body",
+    scrub: 5,
+    /*    markers: true, */
+    start: "top -10%",
+    end: "top -10%",
+  },
+});
 }
 
 contentAnimation();
@@ -517,9 +567,9 @@ function slideImage() {
   //   .addEventListener("click", stopAutoSlide);
 
   // Resume automatic sliding when the user moves the mouse out of the slider
-  //   document
-  //     .getElementById("slider")
-  //     .addEventListener("mouseleave", startAutoSlide);
+//   document
+//     .getElementById("slider")
+//     .addEventListener("mouseleave", startAutoSlide);
 }
 
 slideImage();
@@ -547,7 +597,7 @@ function FooterAnimation() {
       "+=0.5"
     )
 
-    .from("#footer-content p, #footer-content ul", {
+    .from("#footer-content h4, #footer-content ul", {
       opacity: 0,
       y: -20,
       stagger: 0.2,
@@ -665,81 +715,79 @@ function FooterAnimation() {
 
 FooterAnimation();
 
-function showOverlay(card) {
-  card.classList.add("show-overlay");
-}
-// Function to hide overlay on mouse leave
-function hideOverlay(card) {
-  card.classList.remove("show-overlay");
-  function cardOverlayAnimation() {
-    function showOverlay(card) {
-      card.classList.add("show-overlay");
-    }
 
-    function hideOverlay(card) {
-      card.classList.remove("show-overlay");
-    }
 
-    function showOverlayOnClick(button) {
-      const card = button.parentElement;
-      card.classList.add("show-overlay");
-    }
-
-    document.querySelectorAll(".card").forEach((card) => {
-      card.addEventListener("mouseover", () => showOverlay(card));
-      card.addEventListener("mouseleave", () => hideOverlay(card));
-    });
+function cardOverlayAnimation(){
+  function showOverlay(card) {
+    card.classList.add('show-overlay');
   }
+  
+  function hideOverlay(card) {
+    card.classList.remove('show-overlay');
+  }
+  
+  function showOverlayOnClick(button) {
+    const card = button.parentElement;
+    card.classList.add('show-overlay');
+  }
+  
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseover', () => showOverlay(card));
+    card.addEventListener('mouseleave', () => hideOverlay(card));
+  });
 }
 
 cardOverlayAnimation();
 
-var menu = document.querySelector("#nav-right i");
 
-var close = document.querySelector("#nav-left i");
+var menu = document.querySelector("#nav-right i")
 
-var t5 = gsap.timeline();
+var close = document.querySelector("#nav-left i")
 
-t5.to("#nav-left", {
-  right: 0,
-  duration: 0.6,
-});
+var t5 = gsap.timeline()
 
-t5.from("#nav-left h3", {
-  x: 100,
-  opacity: 0,
-  stagger: 0.25,
-  duration: 0.5,
-});
+t5.to("#nav-left",{
+    right: 0,
+    duration: 0.6,
+})
 
-t5.from("#nav-left i", {
-  opacity: 0,
-});
+t5.from("#nav-left h3",{
+    x: 100,
+    opacity: 0,
+    stagger: 0.25,
+    duration: 0.5,
+})
 
-t5.pause();
+t5.from("#nav-left i",{
+    opacity: 0
+})
 
-menu.addEventListener("click", function () {
-  t5.play();
-});
+t5.pause()
 
-close.addEventListener("click", function () {
-  t5.reverse();
-});
+
+menu.addEventListener("click",function(){
+    t5.play();
+})
+
+close.addEventListener("click",function(){
+    t5.reverse();
+})
 
 function transitionToPage5() {
-  document.querySelector("#page5").scrollIntoView({
-    behavior: "smooth",
+  document.querySelector('#page5').scrollIntoView({
+      behavior: 'smooth'
   });
 }
 
+
 function transitionToPage2() {
-  document.querySelector("#page2").scrollIntoView({
-    behavior: "smooth",
+  document.querySelector('#page2').scrollIntoView({
+      behavior: 'smooth'
   });
 }
 
 function transitionToPage6() {
-  document.querySelector("#page6").scrollIntoView({
-    behavior: "smooth",
+  document.querySelector('#page6').scrollIntoView({
+      behavior: 'smooth'
   });
 }
