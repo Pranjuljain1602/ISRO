@@ -142,6 +142,7 @@ body {
 
 #nav #nav-right img {
     filter: brightness(100%);
+    width: 85px;
 }
 
 #nav #nav-right h1 {
@@ -401,8 +402,8 @@ body {
 
 #page2 .aboutus #about>button::after {
     content: "";
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
     position: absolute;
     background-color: #428DDE;
@@ -672,7 +673,7 @@ body {
 
 .card .overlay p{
     color: #fff;
-    font-size: 1vw;
+    font-size: 1.3vw;
     font-family: 'Work Sans';
     line-height: 1.5;
     text-align: center;
@@ -1004,7 +1005,7 @@ input[type="radio"] {
 #page6 p {
     color: white;
     /* background-color: aqua; */
-    font-size: 1vw;
+    font-size: 1.3vw;
     width: 40%;
     line-height: 1.5vw;
     font-family: 'work sans';
@@ -2101,7 +2102,7 @@ input[type="radio"] {
     
     .btn {
         margin-top: 33%;
-        margin-left: 30%;
+        margin-left: 25%;
         padding: 25px 50px;
         font-size: 5vw;
     }
@@ -2227,12 +2228,13 @@ input[type="radio"] {
     }
     
     #page2 .aboutus #about>h2 {
-        font-size: 7vw;
+        font-size: 10vw;
     }
     
     #page2 .aboutus #about>p {
         margin-top: 14vw;
         font-size: 5vw;
+        text-align: center;
     }
     
     #page2 .aboutus #about>button {
@@ -2265,7 +2267,7 @@ input[type="radio"] {
     }
     
     #page3 #services>h2 {
-        font-size: 8vw;
+        font-size: 10vw;
     }
     
     #page3 #container {
@@ -2335,13 +2337,14 @@ input[type="radio"] {
     }
     
     #page3 #container .card>button {
-        margin-top: 95%;
-        margin-left: 25%;
+        margin-top: 90%;
+        margin-left: 20%;
         padding: 20px 40px;
         border-radius: 5px;
         background-color: transparent;
         border: 2px solid #E0DDDD;
         color: white;
+        font-size: 18px;
         font-weight: 600;
         position: relative;
         overflow: hidden;
@@ -2352,7 +2355,7 @@ input[type="radio"] {
     #page3>button {
         position: absolute;
         top: 10%;
-        left: 50%;
+        left: 48%;
         transform: translateX(-50%);
         padding: 25px 40px;
         border-radius: 5px;
@@ -2363,12 +2366,12 @@ input[type="radio"] {
         position: relative;
         overflow: hidden;
         z-index: 1;
-        font-size: 4vw;
+        font-size: 4.8vw;
     
     }
 
     .card .overlay p{
-        font-size: 3.5vw;
+        font-size: 4.2vw;
     }
 
     #page4 {
@@ -2381,14 +2384,14 @@ input[type="radio"] {
     
 
     #page4 h2 {
-        font-size: 8vw;
+        font-size: 10vw;
         text-align: center;
         padding-top: 5vw;
         margin-bottom: 5vw;
     }
     
     #page4 p {
-        font-size: 3vw;
+        font-size: 3.5vw;
         /* background-color: red; */
         width: 70%;
         text-align: center;
@@ -2434,7 +2437,7 @@ input[type="radio"] {
     }
 
     #page5 h2 {
-        font-size: 8vw;
+        font-size: 10vw;
         margin-top: -300vw;
         margin-bottom: 13vw;
     }
@@ -2475,7 +2478,7 @@ input[type="radio"] {
     #page6 h1 {
         color: white;
         font-family: "Roboto Condensed";
-        font-size: 8vw;
+        font-size: 10vw;
         width: 100%;
         text-align: center;
         margin-top: -90vw;
@@ -2525,7 +2528,7 @@ input[type="radio"] {
     }
     
     #page6 #lines h4 {
-        font-size: 4.5vw;
+        font-size: 4.3vw;
         font-family: 'work sans';
         font-weight: 800;
         position: absolute;
@@ -2536,14 +2539,14 @@ input[type="radio"] {
     #page6 #lines h4>i {
         color: rgb(220, 220, 248);
         padding: 2px;
-        font-size: 8vw !important;
+        font-size: 7vw !important;
         position: absolute;
         left: 20%;
         top: -15%;
     }
     
     #page6 #lines h5 {
-        font-size: 4.8vw;
+        font-size: 4.4vw;
         font-family: 'work sans';
         font-weight: 800;
         position: absolute;
@@ -2554,14 +2557,14 @@ input[type="radio"] {
     #page6 #lines h5>i {
         color: rgb(220, 220, 248);
         padding: 3px;
-        font-size: 8vw !important;
+        font-size: 7vw !important;
         position: absolute;
         left: 25%;
         top: -18%;
     }
     
     #page6 #lines h6 {
-        font-size: 4.8vw;
+        font-size: 4.5vw;
         font-family: 'work sans';
         font-family: 300;
         position: absolute;
@@ -2572,14 +2575,14 @@ input[type="radio"] {
     #page6 #lines h6>i {
         color: rgb(220, 220, 248);
         padding: 7px;
-        font-size: 8vw !important;
+        font-size: 7vw !important;
         position: absolute;
         left: 18%;
         top: -22%;
     }
     
     #page6 #lines h3 {
-        font-size: 4.8vw;
+        font-size: 4.2vw;
         font-family: 'work sans';
         font-family: 300;
         position: absolute;
@@ -2590,7 +2593,7 @@ input[type="radio"] {
     #page6 #lines h3>i {
         color: rgb(220, 220, 248);
         padding: 7px;
-        font-size: 8vw !important;
+        font-size: 7vw !important;
         position: absolute;
         left: 25%;
         top: 3%;
@@ -2635,7 +2638,7 @@ input[type="radio"] {
         align-items: center;
         justify-content: center;
         gap: 5px;
-        font-size: 4vw;
+        font-size: 2.3vw;
         color: white;
         letter-spacing: 0.5vw;
         font-weight: 500;
@@ -2703,15 +2706,15 @@ input[type="radio"] {
         position: absolute;
         bottom: -8%;
         top: -10%;
-        left: -16%;
-        width: 170%;
+        left: -5%;
+        width: 140%;
         border-bottom: 2px solid white;
     }
     
     #footer-content ul:nth-child(3) {
         /* background-color: aqua; */
         color: white;
-        font-size: 6vw;
+        font-size: 5vw;
         font-family: 'Work Sans';
         line-height: 10vw;
         position: absolute;
@@ -2725,8 +2728,8 @@ input[type="radio"] {
         position: absolute;
         bottom: -15%;
         top: -10%;
-        left: -16%;
-        width: 156%;
+        left: -5%;
+        width: 150%;
         border-bottom: 2px solid white;
     }
     
@@ -2747,8 +2750,8 @@ input[type="radio"] {
         content: "";
         position: absolute;
         bottom: 0;
-        left: -10%;
-        width: 110%;
+        left: -4%;
+        width: 95%;
         border-bottom: 2px solid white;
     }
 
@@ -2758,12 +2761,21 @@ input[type="radio"] {
         /* background-color: rgb(240, 127, 255); */
         padding: 3vw;
         display: flex;
-        border-top: 2px solid white;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         position: relative;
         top: 15%;
+    }
+
+    #footer-bottom::before{
+        content: "";
+        position: absolute;
+        width: 80%;
+        top: 5%;
+        left: 6%;
+        border-top: 2px solid white;
+
     }
     
     #footer-bottom #Copyright {

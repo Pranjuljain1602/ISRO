@@ -51,7 +51,7 @@ function loadingAnimation() {
       tl.from(
         "#header_content",
         {
-          x: -5,
+          x: -100,
           opacity: 0,
           duration: 0.5,
         },
@@ -60,7 +60,7 @@ function loadingAnimation() {
       tl.from(
         "h2 span",
         {
-          x: -5,
+          x: -80,
           opacity: 0,
           duration: 0.5,
           stagger: 0.05,
@@ -68,11 +68,6 @@ function loadingAnimation() {
         },
         "pjain"
       );
-      tl.from("#nav-left h3", {
-        opacity: 0,
-        y: -80,
-        duration: 0.45,
-      });
     } else {
       tl.from(
         "#header_content",
@@ -141,21 +136,53 @@ cursorAnimation();
 function contentAnimation() {
   var t2 = gsap.timeline();
 
-t2.from(".content", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 1,
-  delay: 1.2,
-  scrollTrigger: {
-    trigger: "#page2",
-    scroller: "body",
-    start: "top 60%",
-    end: "top 30%",
-    toggleActions: "play none none none",
-    scrub: 2,
-  },
-});
+  gsap.registerPlugin(ScrollTrigger);
+
+  let mm = gsap.matchMedia();
+  
+  mm.add("(max-width: 600px)", () => {
+    // Mobile animation settings
+    var t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#page2",
+        scroller: "body",
+        start: "top 80%", // Adjust start position for mobile
+        end: "top 0%", // Adjust end position for mobile
+        toggleActions: "play none none none",
+        scrub: 3, // Reduce scrub time for mobile
+      },
+    });
+  
+    t2.from(".content", {
+      opacity: 0,
+      y: 30, // Adjust Y position for mobile
+      duration: 0.8, // Shorten duration for mobile
+      stagger: 0.5, // Adjust stagger for mobile
+    });
+  });
+  
+  mm.add("(min-width: 601px)", () => {
+    // Desktop animation settings
+    var t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#page2",
+        scroller: "body",
+        start: "top 60%",
+        end: "top 30%",
+        toggleActions: "play none none none",
+        scrub: 2,
+      },
+    });
+  
+    t2.from(".content", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 1,
+      delay: 1.2,
+    });
+  });
+  
 
 var aboutP = document.querySelectorAll(".aboutus p");
 
@@ -249,7 +276,49 @@ document.querySelectorAll('#page3 .card').forEach(function(card) {
 });
 
 
-gsap.from(
+gsap.registerPlugin(ScrollTrigger);
+
+let mm2 = gsap.matchMedia();
+
+mm2.add("(max-width: 600px)", () => {
+  // Mobile animation settings
+  gsap.from(
+    "#page3",
+    {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: "#page3",
+        scroller: "body",
+        start: "top 70%",
+        end: "top 0%", 
+        scrub: 1,
+      },
+    },
+    "-=-0.5"
+  );
+
+  t2.from(".card, #card_btn", {
+    opacity: 0,
+    y: 50,
+    duration: 0.7,
+    stagger: 0.8,
+    delay: 0.7,
+    scrollTrigger: {
+      trigger: ".card, #card_btn",
+      scroller: "body",
+      start: "top 50%",
+      end: "top -200%",
+      toggleActions: "play none none none",
+      scrub: 4,
+    },
+  });
+});
+
+mm2.add("(min-width: 601px)", () =>{
+  gsap.from(
   "#page3",
   {
     opacity: 0,
@@ -283,6 +352,9 @@ t2.from(".card, #card_btn", {
     scrub: 4,
   },
 });
+})
+
+
 
 var portalP = document.querySelectorAll("#page4 p");
 
@@ -332,117 +404,244 @@ t2.from("#page4 p span", {
 });
 
 
-var recentP = document.querySelectorAll("#page5 p");
+gsap.registerPlugin(ScrollTrigger);
 
-recentP.forEach(function (elem) {
-  var clutter = "";
-  var rText = elem.textContent;
-  var splittedText = rText.split("");
-  splittedText.forEach(function (e) {
-    clutter += `<span>${e}</span>`;
+let mm3 = gsap.matchMedia();
+
+mm3.add("(max-width: 600px)", () => {
+  // Mobile animation settings
+  var recentP = document.querySelectorAll("#page5 p");
+
+  recentP.forEach(function (elem) {
+    var clutter = "";
+    var rText = elem.textContent;
+    var splittedText = rText.split("");
+    splittedText.forEach(function (e) {
+      clutter += `<span>${e}</span>`;
+    });
+    elem.innerHTML = clutter;
   });
-  elem.innerHTML = clutter;
+
+  t2.from(
+    "#page5",
+    {
+      opacity: 0,
+      y: 30, // Adjust y for mobile
+      duration: 0.8, // Shorten duration for mobile
+      delay: 0.5, // Adjust delay for mobile
+      scrollTrigger: {
+        trigger: "#page5",
+        scroller: "body",
+        start: "top 90%", // Adjust start position for mobile
+        end: "top 50%", // Adjust end position for mobile
+        scrub: 1,
+      },
+    },
+    "-=-0.5" // Adjust timeline overlap for mobile
+  );
+
+  t2.from("#page5 p span", {
+    stagger: 0.05,
+    opacity: 0.5,
+    y: 30,
+    duration: 0.5,
+    delay: 0.2,
+    scrollTrigger: {
+      trigger: "#page5 p",
+      scroller: "body",
+      start: "top 60%",
+      end: "top 30%",
+      scrub: 1,
+    },
+  });
+
+  t2.to("#slider", {
+    width: "90%",
+    zIndex: 100, 
+    duration: 1,
+    delay: 0.5,
+    scrollTrigger: {
+      trigger: "#page5",
+      scroll: "body",
+      start: "top 40%",
+      end: "top 0%",
+      scrub: 2,
+      pin: true,
+    },
+  });
 });
 
-t2.from(
-  "#page5",
-  {
-    opacity: 0,
+mm3.add("(min-width: 601px)", () => {
+  // Desktop animation settings
+  var recentP = document.querySelectorAll("#page5 p");
+
+  recentP.forEach(function (elem) {
+    var clutter = "";
+    var rText = elem.textContent;
+    var splittedText = rText.split("");
+    splittedText.forEach(function (e) {
+      clutter += `<span>${e}</span>`;
+    });
+    elem.innerHTML = clutter;
+  });
+
+  t2.from(
+    "#page5",
+    {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#page5",
+        scroller: "body",
+        start: "top 70%",
+        end: "top 0%",
+        scrub: 1,
+      },
+    },
+    "-=-1"
+  );
+
+  t2.from("#page5 p span", {
+    stagger: 0.1,
+    opacity: 0.5,
     y: 50,
+    duration: 1,
+    delay: 1,
+    scrollTrigger: {
+      trigger: "#page5 p",
+      scroller: "body",
+      start: "top 70%",
+      end: "top 40%",
+      scrub: 1,
+    },
+  });
+
+  t2.to("#slider", {
+    width: "70%",
+    zIndex: 100, 
     duration: 1,
     delay: 1,
     scrollTrigger: {
       trigger: "#page5",
-      scroller: "body",
-      //  markers: true,
-      start: "top 70%",
-      end: "top 0%",
-      scrub: 1,
+      scroll: "body",
+      start: "top 0%",
+      end: "top 40%",
+      scrub: 3,
+      pin: true,
     },
-  },
-  "-=-1"
-);
-
-t2.from("#page5 p span", {
-  stagger: 0.1,
-  opacity: 0.5,
-  y: 50,
-  duration: 1,
-  delay: 1,
-  scrollTrigger: {
-    trigger: "#page5 p",
-    scroller: "body",
-    // markers: true,
-    start: "top 70%",
-    end: "top 40%",
-    scrub: 1,
-  },
-});
-
-t2.to("#slider",{
-    width: "70%",
-    zIndex: 100, 
-    duration: 1,
-    dealy: 1,
-    scrollTrigger:{
-        trigger: "#page5",
-        scroll: "body",
-        // markers: true,
-        start: "top 0%",
-        end: "top 40%",
-        scrub: 3,
-        pin: true
-    }
-})
-
-
-
-var centerP = document.querySelectorAll("#page6 p");
-
-centerP.forEach(function (elem) {
-  var clutter = "";
-  var pText = elem.textContent;
-  var splittedText = pText.split("");
-  splittedText.forEach(function (e) {
-    clutter += `<span>${e}</span>`;
   });
-  elem.innerHTML = clutter;
 });
 
-t2.from(
-  "#page6",
-  {
-    opacity: 0,
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+let mm4 = gsap.matchMedia();
+
+mm4.add("(max-width: 600px)", () => {
+  // Mobile animation settings
+  let t2 = gsap.timeline();
+  
+  var centerP = document.querySelectorAll("#page6 p");
+
+  centerP.forEach(function (elem) {
+    var clutter = "";
+    var pText = elem.textContent;
+    var splittedText = pText.split("");
+    splittedText.forEach(function (e) {
+      clutter += `<span>${e}</span>`;
+    });
+    elem.innerHTML = clutter;
+  });
+
+  t2.from(
+    "#page6",
+    {
+      opacity: 0,
+      y: 30, // Adjust y for mobile
+      duration: 0.8, // Shorten duration for mobile
+      delay: 0.5, // Adjust delay for mobile
+      scrollTrigger: {
+        trigger: "#page6",
+        scroller: "body",
+        start: "top 80%",
+        end: "top 10%",
+        scrub: 2, // Reduce scrub time for mobile
+      },
+    },
+    "-=-0.5"
+  );
+
+  t2.from("#page6 p span", {
+    stagger: 0.05, // Reduce stagger for mobile
+    opacity: 0.5,
+    y: 30, // Adjust y for mobile
+    duration: 0.8, // Shorten duration for mobile
+    delay: 0.5, // Adjust delay for mobile
+    scrollTrigger: {
+      trigger: "#page6 p",
+      scroller: "body",
+      start: "top 100%",
+      end: "top 20%",
+      scrub: 2, // Reduce scrub time for mobile
+    },
+  });
+});
+
+// Adding desktop version for completeness
+mm4.add("(min-width: 601px)", () => {
+  // Desktop animation settings
+  let t2 = gsap.timeline();
+  
+  var centerP = document.querySelectorAll("#page6 p");
+
+  centerP.forEach(function (elem) {
+    var clutter = "";
+    var pText = elem.textContent;
+    var splittedText = pText.split("");
+    splittedText.forEach(function (e) {
+      clutter += `<span>${e}</span>`;
+    });
+    elem.innerHTML = clutter;
+  });
+
+  t2.from(
+    "#page6",
+    {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#page6",
+        scroller: "body",
+        start: "top 40%",
+        end: "top -40%",
+        scrub: 1,
+      },
+    },
+    "-=-1"
+  );
+
+  t2.from("#page6 p span", {
+    stagger: 0.1,
+    opacity: 0.5,
     y: 50,
     duration: 1,
     delay: 1,
     scrollTrigger: {
-      trigger: "#page6",
+      trigger: "#page6 p",
       scroller: "body",
-      //  markers: true,
-      start: "top 40%",
-      end: "top -40%",
+      start: "top 65%",
+      end: "top 30%",
       scrub: 1,
     },
-  },
-  "-=-1"
-);
-
-t2.from("#page6 p span", {
-  stagger: 0.1,
-  opacity: 0.5,
-  y: 50,
-  duration: 1,
-  delay: 1,
-  scrollTrigger: {
-    trigger: "#page6 p",
-    scroller: "body",
-    // markers: true,
-    start: "top 65%",
-    end: "top 30%",
-    scrub: 1,
-  },
+  });
 });
+
 
 t2.from("#page6 #lines h4", {
   opacity: 0,
@@ -497,19 +696,43 @@ t2.from("#page6 #lines h3", {
 });
 
 
-t2.from("#footer", {
-  opacity: 0,
-  duration: 0.8,
-  delay: 1.2,
-  scrollTrigger: {
-    trigger: "#footer",
-    scroller: "body",
-    scrub: 5,
-    /*    markers: true, */
-    start: "top -10%",
-    end: "top -10%",
-  },
+gsap.registerPlugin(ScrollTrigger);
+
+let mm5 = gsap.matchMedia();
+
+mm5.add("(max-width: 600px)", () => {
+  // Mobile animation settings for #footer
+  t2.from("#footer", {
+    opacity: 0,
+    duration: 0.5, // Shorter duration for mobile
+    delay: 0.5, // Adjust delay for mobile
+    scrollTrigger: {
+      trigger: "#footer",
+      scroller: "body",
+      scrub: 2, // Reduce scrub time for mobile
+      start: "top 60%", // Adjust start position for mobile
+      end: "top 10%", // Adjust end position for mobile
+    },
+  });
 });
+
+// Adding desktop version for completeness
+mm5.add("(min-width: 601px)", () => {
+  // Desktop animation settings for #footer
+  t2.from("#footer", {
+    opacity: 0,
+    duration: 0.8,
+    delay: 1.2,
+    scrollTrigger: {
+      trigger: "#footer",
+      scroller: "body",
+      scrub: 5,
+      start: "top -10%",
+      end: "top -10%",
+    },
+  });
+});
+
 }
 
 contentAnimation();
@@ -560,160 +783,196 @@ function slideImage() {
 
   // Start automatic sliding when the page loads
   startAutoSlide();
-
-  // Pause automatic sliding when the user hovers over the slider
-  // document
-  //   .getElementById("slider")
-  //   .addEventListener("click", stopAutoSlide);
-
-  // Resume automatic sliding when the user moves the mouse out of the slider
-//   document
-//     .getElementById("slider")
-//     .addEventListener("mouseleave", startAutoSlide);
 }
 
 slideImage();
 
+gsap.registerPlugin(ScrollTrigger);
+
 function FooterAnimation() {
-  var footerAnimation = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#footer-top",
-      scroller: "body",
-      //   markers: true,
-      start: "top 80%",
-      end: "top 20%",
-      scrub: 3,
-    },
+  let mm6 = gsap.matchMedia();
+
+  // Mobile animation settings
+  mm6.add("(max-width: 600px)", () => {
+    var footerAnimation = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#footer-top",
+        scroller: "body",
+        start: "top 90%",
+        end: "top -90%",
+        scrub: 2,
+      },
+    });
+
+    footerAnimation
+      .from(
+        "#footer-top img, #footer-top h1",
+        {
+          opacity: 0,
+          y: -10,
+          stagger: 0.1,
+        },
+        "+=0.3"
+      )
+      .from("#footer-content h4, #footer-content ul", {
+        opacity: 0,
+        y: -10,
+        stagger: 0.1,
+      })
+      .from("#footer-bottom h4", {
+        opacity: 0,
+        y: -10,
+      });
+
+    // Apply shared effects
+    applyCommonFooterEffects();
   });
 
-  footerAnimation
-    .from(
-      "#footer-top img, #footer-top h1",
-      {
+  // Desktop animation settings
+  mm6.add("(min-width: 601px)", () => {
+    var footerAnimation = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#footer-top",
+        scroller: "body",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 3,
+      },
+    });
+
+    footerAnimation
+      .from(
+        "#footer-top img, #footer-top h1",
+        {
+          opacity: 0,
+          y: -20,
+          stagger: 0.2,
+        },
+        "+=0.5"
+      )
+      .from("#footer-content h4, #footer-content ul", {
         opacity: 0,
         y: -20,
         stagger: 0.2,
-      },
-      "+=0.5"
-    )
-
-    .from("#footer-content h4, #footer-content ul", {
-      opacity: 0,
-      y: -20,
-      stagger: 0.2,
-    })
-
-    .from("#footer-bottom h4", {
-      opacity: 0,
-      y: -20,
-    });
-
-  var footerH1 = document.querySelector("#footer-top h1");
-  var clutter = "";
-  footerH1.textContent.split("").forEach(function (letter) {
-    clutter += `<span>${letter}</span>`;
-  });
-  footerH1.innerHTML = clutter;
-
-  document.querySelectorAll("#footer-content ul li").forEach(function (li) {
-    li.addEventListener("mouseenter", function () {
-      gsap.to(li, {
-        scale: 1.2,
-        duration: 0.3,
+      })
+      .from("#footer-bottom h4", {
+        opacity: 0,
+        y: -20,
       });
-    });
-    li.addEventListener("mouseleave", function () {
-      gsap.to(li, {
-        scale: 1,
-        duration: 0.3,
-      });
-    });
+
+    // Apply shared effects
+    applyCommonFooterEffects();
   });
 
-  document.querySelectorAll("#create h1").forEach(function (h) {
+  function applyCommonFooterEffects() {
+    var footerH1 = document.querySelector("#footer-top h1");
     var clutter = "";
-    h.textContent.split("").forEach(function (letter) {
+    footerH1.textContent.split("").forEach(function (letter) {
       clutter += `<span>${letter}</span>`;
     });
-    h.innerHTML = clutter;
-  });
+    footerH1.innerHTML = clutter;
 
-  var tl7 = gsap.timeline({ paused: true });
-  tl7
-    .to(
-      "#plain span",
-      {
-        opacity: 0,
-        stagger: 0.1,
-      },
-      "a"
-    )
-    .to(
-      "#silk span",
-      {
-        opacity: 1,
-        stagger: 0.1,
-        delay: 1,
-      },
-      "a"
-    );
+    document.querySelectorAll("#footer-content ul li").forEach(function (li) {
+      li.addEventListener("mouseenter", function () {
+        gsap.to(li, {
+          scale: 1.2,
+          duration: 0.3,
+        });
+      });
+      li.addEventListener("mouseleave", function () {
+        gsap.to(li, {
+          scale: 1,
+          duration: 0.3,
+        });
+      });
+    });
 
-  function isFooterVisible() {
-    var rect = document.querySelector("#footer-top").getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight)
-    );
-  }
+    document.querySelectorAll("#create h1").forEach(function (h) {
+      var clutter = "";
+      h.textContent.split("").forEach(function (letter) {
+        clutter += `<span>${letter}</span>`;
+      });
+      h.innerHTML = clutter;
+    });
 
-  var isAnimating = false;
-
-  document.querySelector("#create").addEventListener("mouseenter", function () {
-    if (!isAnimating) {
-      isAnimating = true;
-      tl7.restart();
-    }
-  });
-
-  document.querySelector("#create").addEventListener("mouseleave", function () {
-    if (!isAnimating) {
-      isAnimating = true;
-      gsap.to("#silk span", {
-        opacity: 0,
-        stagger: 0.1,
-        onComplete: function () {
-          isAnimating = false;
+    var tl7 = gsap.timeline({ paused: true });
+    tl7
+      .to(
+        "#plain span",
+        {
+          opacity: 0,
+          stagger: 0.1,
         },
-      });
-      gsap.to("#plain span", {
-        opacity: 1,
-        stagger: 0.1,
-        delay: 0.5,
-      });
-    }
-  });
+        "a"
+      )
+      .to(
+        "#silk span",
+        {
+          opacity: 1,
+          stagger: 0.1,
+          delay: 1,
+        },
+        "a"
+      );
 
-  function checkFooterVisibility() {
-    if (isFooterVisible()) {
-      tl7.restart();
+    function isFooterVisible() {
+      var rect = document.querySelector("#footer-top").getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight)
+      );
     }
+
+    var isAnimating = false;
+
+    document.querySelector("#create").addEventListener("mouseenter", function () {
+      if (!isAnimating) {
+        isAnimating = true;
+        tl7.restart();
+      }
+    });
+
+    document.querySelector("#create").addEventListener("mouseleave", function () {
+      if (!isAnimating) {
+        isAnimating = true;
+        gsap.to("#silk span", {
+          opacity: 0,
+          stagger: 0.1,
+          onComplete: function () {
+            isAnimating = false;
+          },
+        });
+        gsap.to("#plain span", {
+          opacity: 1,
+          stagger: 0.1,
+          delay: 0.5,
+        });
+      }
+    });
+
+    function checkFooterVisibility() {
+      if (isFooterVisible()) {
+        tl7.restart();
+      }
+    }
+
+    window.addEventListener("scroll", checkFooterVisibility);
+
+    checkFooterVisibility();
+
+    Shery.mouseFollower({
+      skew: true,
+      ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+      duration: 1,
+    });
+
+    Shery.makeMagnet("#Copyright");
   }
-
-  window.addEventListener("scroll", checkFooterVisibility);
-
-  checkFooterVisibility();
-
-  Shery.mouseFollower({
-    skew: true,
-    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
-    duration: 1,
-  });
-
-  Shery.makeMagnet("#Copyright");
 }
 
 FooterAnimation();
+
 
 
 
