@@ -145,12 +145,8 @@ body{
 }
 
 #nav #nav-right img {
-<<<<<<< HEAD
   filter: brightness(100%);
-=======
-    filter: brightness(100%);
     width: 85px;
->>>>>>> main
 }
 
 #nav #nav-right h1 {
@@ -409,19 +405,6 @@ body{
 }
 
 #page2 .aboutus #about>button::after {
-<<<<<<< HEAD
-  content: "";
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  position: absolute;
-  background-color: #428DDE;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: all linear 0.3s;
-  z-index: -1;
-=======
     content: "";
     height: 100px;
     width: 100px;
@@ -433,7 +416,6 @@ body{
     transform: translate(-50%, -50%) scale(0);
     transition: all linear 0.3s;
     z-index: -1;
->>>>>>> main
 }
 
 #page2 .aboutus #about>button:hover::after {
