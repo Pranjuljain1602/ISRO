@@ -146,12 +146,12 @@ body{
 
 #nav #nav-right img {
   filter: brightness(100%);
-    width: 85px;
+  width: 7vw;
 }
 
 #nav #nav-right h1 {
   font-family: 'Roboto Condensed';
-  font-size: 3.7vw;
+  font-size: 4vw;
   font-weight: 400;
   color: #fff;
   border-left: 1.5px solid rgba(255, 255, 255);
@@ -405,17 +405,17 @@ body{
 }
 
 #page2 .aboutus #about>button::after {
-    content: "";
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    position: absolute;
-    background-color: #428DDE;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: all linear 0.3s;
-    z-index: -1;
+  content: "";
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #428DDE;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all linear 0.3s;
+  z-index: -1;
 }
 
 #page2 .aboutus #about>button:hover::after {
@@ -620,6 +620,7 @@ body{
   background-color: transparent;
   border: 2px solid #428DDE;
   color: white;
+  font-size: 1.5vw;
   font-weight: 600;
   position: relative;
   overflow: hidden;
@@ -676,7 +677,7 @@ body{
 
 .card .overlay p{
   color: #fff;
-  font-size: 1vw;
+  font-size: 1.2vw;
   font-family: 'Work Sans';
   line-height: 1.5;
   text-align: center;
@@ -728,7 +729,7 @@ body{
 #page4 h2 {
   color: white;
   font-family: "Roboto Condensed";
-  font-size: 30px;
+  font-size: 2.8vw;
   text-align: center;
   padding-top: 5vw;
   margin-bottom: 1vw;
@@ -740,7 +741,7 @@ body{
 
 #page4 p {
   color: white;
-  font-size: 1vw;
+  font-size: 1.2vw;
   width: 26%;
   text-align: center;
   position: absolute;
@@ -860,7 +861,7 @@ body{
 #page5 h2 {
   color: white;
   font-family: "Roboto Condensed";
-  font-size: 30px;
+  font-size: 3vw;
   text-align: center;
   text-transform: uppercase;
   margin-top: -36vw;
@@ -873,7 +874,7 @@ body{
 
 #page5 p {
   color: white;
-  font-size: 1vw;
+  font-size: 1.2vw;
   width: 26%;
   text-align: center;
   position: absolute;
@@ -966,7 +967,7 @@ input[type="radio"] {
 #page6 h1 {
   color: white;
   font-family: "Roboto Condensed";
-  font-size: 3vw;
+  font-size: 3.2vw;
   position: absolute;
   top: 30%;
   left: 50%;
@@ -1008,12 +1009,12 @@ input[type="radio"] {
 #page6 p {
   color: white;
   /* background-color: aqua; */
-  font-size: 1vw;
+  font-size: 1.2vw;
   width: 40%;
   line-height: 1.5vw;
   font-family: 'work sans';
   position: absolute;
-  top: 55%;
+  top: 50%;
   transform: translate(-50%, -50%);
   left: 50%;
   text-align: center;
@@ -1537,11 +1538,7 @@ input[type="radio"] {
 
   .card .overlay p{
     color: #fff;
-<<<<<<< HEAD
     font-size: 1.2vw;
-=======
-    font-size: 1.3vw;
->>>>>>> main
     font-family: 'Work Sans';
     line-height: 1.5;
     text-align: center;
@@ -1824,27 +1821,10 @@ input[type="radio"] {
       top: -16vw;
       left: 20%;
   }
-
-<<<<<<< HEAD
   #page6 #lines h5>i {
       color: rgb(220, 220, 248);
       padding: 3px;
   }
-=======
-#page6 p {
-    color: white;
-    /* background-color: aqua; */
-    font-size: 1.3vw;
-    width: 40%;
-    line-height: 1.5vw;
-    font-family: 'work sans';
-    position: absolute;
-    top: 55%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    text-align: center;
-}
->>>>>>> main
 
   #page6 #lines h6 {
       font-size: 1vw;
@@ -2103,6 +2083,7 @@ input[type="radio"] {
 
   #page1 {
       min-height: 90vh;
+      background-image: none;
   }
   
   #nav {
@@ -2126,7 +2107,6 @@ input[type="radio"] {
       display: none;
   }
 
-<<<<<<< HEAD
   #nav #nav-left h3 {
       display: none;
   }
@@ -2146,35 +2126,10 @@ input[type="radio"] {
   
   .btn {
       margin-top: 33%;
-      margin-left: 30%;
+      margin-left: 25%;
       padding: 25px 50px;
       font-size: 5vw;
   }
-=======
-    #nav #nav-left h3 {
-        display: none;
-    }
-    
-    #header_content {
-        width: 100%;
-        min-height: 25vh;
-        position: absolute;
-        top: 28%;
-        left: 0%;
-        padding: 3vw;
-    }
-    
-    #header_content h2 {
-        font-size: 14.5vw;
-    }
-    
-    .btn {
-        margin-top: 33%;
-        margin-left: 25%;
-        padding: 25px 50px;
-        font-size: 5vw;
-    }
->>>>>>> main
 
   .btn::after {
       content: "";
@@ -2204,7 +2159,7 @@ input[type="radio"] {
       width: 100%;
       min-height: 60vh;
       background-color: black;
-      background-image: url(./IMAGES/space\ image.jpg);
+      background-image: none;
   }
   
   #page2 #side_content {
@@ -2248,6 +2203,7 @@ input[type="radio"] {
       width: 100%;
       min-height: 60vh;
       margin-top: 8vw;
+      background-image: none;
   }
   
   #page2 .aboutus #about {
@@ -2257,16 +2213,17 @@ input[type="radio"] {
   
   #about #about_box {
       width: 13vw;
-      margin-top: -1vw;
+      margin-top: 1vw;
   }
   
   #page2 .aboutus #about>h2 {
-      font-size: 7vw;
+      font-size: 10vw;
   }
   
   #page2 .aboutus #about>p {
       margin-top: 14vw;
       font-size: 5vw;
+      text-align: center;
   }
   
   #page2 .aboutus #about>button {
@@ -2275,93 +2232,15 @@ input[type="radio"] {
       font-size: 5vw;
   }
 
-<<<<<<< HEAD
   #page3 {
       margin-top: 200vw;
       width: 100%;
       min-height: 100vh;
       padding: 10vw 5vw;
       position: relative;
+      background-image: none;
+      background-color: black;
   }
-=======
-    #page2 {
-        /* margin-top: 10vw; */
-        width: 100%;
-        min-height: 60vh;
-        background-color: black;
-        background-image: url(./space\ image.jpg);
-    }
-    
-    #page2 #side_content {
-        margin-top: 8vw;
-        width: 100%;
-        min-height: 90vh;
-        /* background-color: red; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8vw;
-        /* padding: 10vw 4vw; */
-    }
-    
-    #page2 .content {
-        /* background-color: royalblue; */
-        width: 100%;
-        height: 30vh;
-        text-align: center;
-        padding: 6vw;
-        border-right: none;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1.5px solid white;
-    }
-    
-    #page2 .content:nth-child(5) {
-        border: 1.5px solid white;
-    }
-    
-    #page2 .content h2 {
-        font-size: 8vw;
-    }
-    
-    #page2 .content h3 {
-        font-size: 5vw;
-    }
-    
-    #page2 .aboutus {
-        width: 100%;
-        min-height: 60vh;
-        margin-top: 8vw;
-    }
-    
-    #page2 .aboutus #about {
-        width: 100%;
-        height: 60vh;
-    }
-    
-    #about #about_box {
-        width: 13vw;
-        margin-top: -1vw;
-    }
-    
-    #page2 .aboutus #about>h2 {
-        font-size: 10vw;
-    }
-    
-    #page2 .aboutus #about>p {
-        margin-top: 14vw;
-        font-size: 5vw;
-        text-align: center;
-    }
-    
-    #page2 .aboutus #about>button {
-        top: 20%;
-        padding: 20px 45px;
-        font-size: 5vw;
-    }
->>>>>>> main
 
   #page3 #services {
       width: 100%;
@@ -2379,7 +2258,7 @@ input[type="radio"] {
   }
   
   #page3 #services>h2 {
-      font-size: 8vw;
+      font-size: 10vw;
   }
   
   #page3 #container {
@@ -2450,12 +2329,13 @@ input[type="radio"] {
   
   #page3 #container .card>button {
       margin-top: 95%;
-      margin-left: 25%;
+      margin-left: 22%;
       padding: 20px 40px;
       border-radius: 5px;
       background-color: transparent;
       border: 2px solid #E0DDDD;
       color: white;
+      font-size: 4vw !important;
       font-weight: 600;
       position: relative;
       overflow: hidden;
@@ -2466,13 +2346,14 @@ input[type="radio"] {
   #page3>button {
       position: absolute;
       top: 10%;
-      left: 50%;
+      left: 48%;
       transform: translateX(-50%);
       padding: 25px 40px;
       border-radius: 5px;
       background-color: transparent;
       border: 2px solid #428DDE;
       color: white;
+      font-size: 5vw !important;
       font-weight: 600;
       position: relative;
       overflow: hidden;
@@ -2480,9 +2361,8 @@ input[type="radio"] {
       font-size: 4vw;
   }
 
-<<<<<<< HEAD
   .card .overlay p{
-      font-size: 3.5vw;
+      font-size: 4vw;
   }
 
   #page4 {
@@ -2492,141 +2372,20 @@ input[type="radio"] {
       /* background-color: royalblue; */
       margin-top: 430vw;
   }
-  
-=======
-    #page3 #services {
-        width: 100%;
-        /* background-color: red; */
-        margin-top: -6vw;
-        margin-bottom: 6vw;
-    }
-    
-    #services #about_box {
-        /* background-color: red; */
-        width: 13vw;
-        margin-left: 42%;
-        margin-top: 1.2vw;
-        margin-bottom: 2.5vw;
-    }
-    
-    #page3 #services>h2 {
-        font-size: 10vw;
-    }
-    
-    #page3 #container {
-        width: 100%;
-        min-height: 260vh;
-        /* background-color: red; */
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 5vw;
-        padding: 8vw;
-    }
-    
-    #page3 #container .card {
-        width: 100vw;
-        height: 100vw;
-        background-color: #070A0C;
-        border-right: 2px solid black;
-        border-radius: 40px;
-        padding: 3vw;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    #page3 #container .card>h3 {
-        color: #fff;
-        font-family: "Roboto Condensed";
-        font-weight: 500;
-        text-align: center;
-        margin-left: 1px;
-        margin-top: 20px;
-        width: 100%;
-        font-size: 5vw;
-        /* background-color: red; */
-    }
-    
-    #page3 #container .card>i {
-        color: white;
-        position: absolute;
-        top: 20%;
-        font-size: 5vw;
-        margin-left: 31vw;
-    }
-    
-    #page3 #container .card .gola {
-        width: 190px;
-        height: 190px;
-        /* background-color: royalblue; */
-        border-radius: 50%;
-        position: absolute;
-        top: 53%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 1px solid black;
-    }
-    
-    #page3 #container .card:nth-child(2) .gola {
-        width: 190px;
-        height: 190px;
-        /* background-color: royalblue; */
-        border-radius: 50%;
-        position: absolute;
-        top: 53%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    #page3 #container .card>button {
-        margin-top: 90%;
-        margin-left: 20%;
-        padding: 20px 40px;
-        border-radius: 5px;
-        background-color: transparent;
-        border: 2px solid #E0DDDD;
-        color: white;
-        font-size: 18px;
-        font-weight: 600;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        
-    }
-    
-    #page3>button {
-        position: absolute;
-        top: 10%;
-        left: 48%;
-        transform: translateX(-50%);
-        padding: 25px 40px;
-        border-radius: 5px;
-        background-color: transparent;
-        border: 2px solid #428DDE;
-        color: white;
-        font-weight: 600;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        font-size: 4.8vw;
-    
-    }
 
-    .card .overlay p{
-        font-size: 4.2vw;
-    }
->>>>>>> main
+  #page4 #background-image{
+    background-image: none !important;
+  }
 
   #page4 h2 {
-      font-size: 8vw;
+      font-size: 10vw;
       text-align: center;
       padding-top: 5vw;
       margin-bottom: 5vw;
   }
   
   #page4 p {
-      font-size: 3vw;
+      font-size: 3.8vw;
       /* background-color: red; */
       width: 70%;
       text-align: center;
@@ -2647,8 +2406,8 @@ input[type="radio"] {
   }
   
   .image-container img {
-      height: 140px;
-      width:140px;
+      height: 150px;
+      width:150px;
   }
   
   .image-container span {
@@ -2658,70 +2417,24 @@ input[type="radio"] {
   
   #container2 {
       margin-top: -3vw;
-      width: 350%;
+      width: 370%;
       height: 70%;
       /* background-color: blue; */
       padding: 2vw;
   }
-  
 
-<<<<<<< HEAD
   #page5 {
       width: 100%;
       height: 100vh;
       /* background-color: red; */ 
   }
-=======
-    #page4 h2 {
-        font-size: 10vw;
-        text-align: center;
-        padding-top: 5vw;
-        margin-bottom: 5vw;
-    }
-    
-    #page4 p {
-        font-size: 3.5vw;
-        /* background-color: red; */
-        width: 70%;
-        text-align: center;
-        position: absolute;
-        left: 15%;
-        margin-bottom: 2vw;
-        /* Ensure the text is above the overlay */
-    }
-    
-    #scroll {
-        margin-top: 40vw;
-        height: 40vh;
-        width: 100%;
-    }
-    
-    .image-container {
-        margin: 5vw 2.4vw;
-    }
-    
-    .image-container img {
-        height: 140px;
-        width:140px;
-    }
-    
-    .image-container span {
-        font-weight: 800;
-        margin-top: 0.5vw;
-    }
-    
-    #container2 {
-        margin-top: -3vw;
-        width: 350%;
-        height: 70%;
-        /* background-color: blue; */
-        padding: 2vw;
-    }
-    
->>>>>>> main
+
+  #page5 #background-image2{
+    background-image: none;
+  }
 
   #page5 h2 {
-      font-size: 8vw;
+      font-size: 10vw;
       margin-top: -300vw;
       margin-bottom: 13vw;
   }
@@ -2742,12 +2455,11 @@ input[type="radio"] {
       width: 30%;
   }
   
-
-<<<<<<< HEAD
   #page6 {
       margin-top: -100vw;
       width: 100%;
       height: 100vh;
+      background-image: none;
   }
   
   #page6 #centerimage {
@@ -2759,35 +2471,11 @@ input[type="radio"] {
       left: 50%;
       transform: translateX(-50%);
   }
-=======
-    #page5 h2 {
-        font-size: 10vw;
-        margin-top: -300vw;
-        margin-bottom: 13vw;
-    }
-    
-    #page5 p {
-        font-size: 3.8vw;
-        width: 70%;
-        position: absolute;
-        left: 15%;
-        margin-top: -280vw;
-        margin-bottom: 2vw;
-    }
-    
-    #page5 #slider {
-        margin-top: -100vw;
-        background-color: aliceblue;
-        height: 200px;
-        width: 30%;
-    }
-    
->>>>>>> main
 
   #page6 h1 {
       color: white;
       font-family: "Roboto Condensed";
-      font-size: 8vw;
+      font-size: 10vw;
       width: 100%;
       text-align: center;
       margin-top: -90vw;
@@ -2837,7 +2525,7 @@ input[type="radio"] {
   }
   
   #page6 #lines h4 {
-      font-size: 4.5vw;
+      font-size: 4.3vw;
       font-family: 'work sans';
       font-weight: 800;
       position: absolute;
@@ -2848,14 +2536,14 @@ input[type="radio"] {
   #page6 #lines h4>i {
       color: rgb(220, 220, 248);
       padding: 2px;
-      font-size: 8vw !important;
+      font-size: 7vw !important;
       position: absolute;
       left: 20%;
       top: -15%;
   }
   
   #page6 #lines h5 {
-      font-size: 4.8vw;
+      font-size: 4.4vw;
       font-family: 'work sans';
       font-weight: 800;
       position: absolute;
@@ -2866,14 +2554,14 @@ input[type="radio"] {
   #page6 #lines h5>i {
       color: rgb(220, 220, 248);
       padding: 3px;
-      font-size: 8vw !important;
+      font-size: 7vw !important;
       position: absolute;
       left: 25%;
       top: -18%;
   }
   
   #page6 #lines h6 {
-      font-size: 4.8vw;
+      font-size: 4.4vw;
       font-family: 'work sans';
       font-family: 300;
       position: absolute;
@@ -2884,14 +2572,14 @@ input[type="radio"] {
   #page6 #lines h6>i {
       color: rgb(220, 220, 248);
       padding: 7px;
-      font-size: 8vw !important;
+      font-size: 7vw !important;
       position: absolute;
       left: 18%;
       top: -22%;
   }
   
   #page6 #lines h3 {
-      font-size: 4.8vw;
+      font-size: 4.4vw;
       font-family: 'work sans';
       font-family: 300;
       position: absolute;
@@ -2902,18 +2590,17 @@ input[type="radio"] {
   #page6 #lines h3>i {
       color: rgb(220, 220, 248);
       padding: 7px;
-      font-size: 8vw !important;
+      font-size: 7vw !important;
       position: absolute;
       left: 25%;
       top: 3%;
   }
   
-
-<<<<<<< HEAD
   #footer {
       background-color: black;
       width: 100%;
       min-height: 90vh;
+      background-image: none;
   }
   
   #footer-top {
@@ -2926,132 +2613,6 @@ input[type="radio"] {
       position: relative;
       top: -5%;
   }
-=======
-    #page6 h1 {
-        color: white;
-        font-family: "Roboto Condensed";
-        font-size: 10vw;
-        width: 100%;
-        text-align: center;
-        margin-top: -90vw;
-    }
-    
-    #page6 #box {
-        width: 15vw;
-        gap: 2vw;
-        position: absolute;
-        top: -9%;
-        left: 49%;
-        transform: translate(-50%, -50%);
-    }
-    
-    #box2 {
-        width: 3vw;
-        height: 3vw;
-    }
-    
-    #box1 {
-        width: 3vw;
-        height: 3vw;
-    }
-    
-    #box3 {
-        width: 3vw;
-        height: 3vw;
-    }
-    
-    #page6 p {
-        font-size: 3.7vw;
-        width: 80%;
-        line-height: 5vw;
-        position: absolute;
-        top: 2%;
-    }
-    
-    #page6 #lines {
-        width: 90%;
-        height: 30%;
-        color: white;
-        /* background-color: royalblue; */
-        position: relative;
-        top: 120vw;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    
-    #page6 #lines h4 {
-        font-size: 4.3vw;
-        font-family: 'work sans';
-        font-weight: 800;
-        position: absolute;
-        top: -34vw;
-        left: 52%;
-    }
-    
-    #page6 #lines h4>i {
-        color: rgb(220, 220, 248);
-        padding: 2px;
-        font-size: 7vw !important;
-        position: absolute;
-        left: 20%;
-        top: -15%;
-    }
-    
-    #page6 #lines h5 {
-        font-size: 4.4vw;
-        font-family: 'work sans';
-        font-weight: 800;
-        position: absolute;
-        top: 2vw;
-        left: 2%;
-    }
-    
-    #page6 #lines h5>i {
-        color: rgb(220, 220, 248);
-        padding: 3px;
-        font-size: 7vw !important;
-        position: absolute;
-        left: 25%;
-        top: -18%;
-    }
-    
-    #page6 #lines h6 {
-        font-size: 4.5vw;
-        font-family: 'work sans';
-        font-family: 300;
-        position: absolute;
-        top: 55%;
-        left: 50%;
-    }
-    
-    #page6 #lines h6>i {
-        color: rgb(220, 220, 248);
-        padding: 7px;
-        font-size: 7vw !important;
-        position: absolute;
-        left: 18%;
-        top: -22%;
-    }
-    
-    #page6 #lines h3 {
-        font-size: 4.2vw;
-        font-family: 'work sans';
-        font-family: 300;
-        position: absolute;
-        top: 68vw;
-        left: 3%;
-    }
-    
-    #page6 #lines h3>i {
-        color: rgb(220, 220, 248);
-        padding: 7px;
-        font-size: 7vw !important;
-        position: absolute;
-        left: 25%;
-        top: 3%;
-    }
-    
->>>>>>> main
 
   #create {
       width: 100%;
@@ -3074,7 +2635,7 @@ input[type="radio"] {
       align-items: center;
       justify-content: center;
       gap: 5px;
-      font-size: 4vw;
+      font-size: 2.3vw;
       color: white;
       letter-spacing: 0.5vw;
       font-weight: 500;
@@ -3098,7 +2659,6 @@ input[type="radio"] {
       -webkit-text-stroke: 1px #fff;
   }
 
-<<<<<<< HEAD
   #footer-content {
       width: 100%;
       min-height: 100vh;
@@ -3111,52 +2671,6 @@ input[type="radio"] {
       justify-content: space-between;
   
   }
-=======
-    #create {
-        width: 100%;
-        position: absolute;
-        top: 85%;
-        height: 8vw;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 10px;
-    }
-    
-    #plain,
-    #silk {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        font-size: 2.3vw;
-        color: white;
-        letter-spacing: 0.5vw;
-        font-weight: 500;
-        line-height: 1;
-        text-transform: uppercase;
-        opacity: 1;
-        padding: 2.6vw;
-    }
-    
-    #silk {
-        font-family: "silk serif";
-        color: transparent;
-        -webkit-text-stroke: 1px #fff;
-    }
-    
-    #silk span {
-        opacity: 0;
-        font-weight: 100;
-        font-family: "silk serif";
-        color: transparent;
-        -webkit-text-stroke: 1px #fff;
-    }
->>>>>>> main
 
   #footer-lines {
       /* background-color: aqua; */
@@ -3190,14 +2704,14 @@ input[type="radio"] {
       bottom: -8%;
       top: -10%;
       left: -16%;
-      width: 170%;
+      width: 155%;
       border-bottom: 2px solid white;
   }
   
   #footer-content ul:nth-child(3) {
       /* background-color: aqua; */
       color: white;
-      font-size: 6vw;
+      font-size: 5vw;
       font-family: 'Work Sans';
       line-height: 10vw;
       position: absolute;
@@ -3206,14 +2720,13 @@ input[type="radio"] {
       /* margin-top: -300%; */
   }
 
-<<<<<<< HEAD
   #footer-content ul:nth-child(3)::before {
       content: "";
       position: absolute;
       bottom: -15%;
       top: -10%;
-      left: -16%;
-      width: 156%;
+      left: -20%;
+      width: 170%;
       border-bottom: 2px solid white;
   }
   
@@ -3235,7 +2748,7 @@ input[type="radio"] {
       position: absolute;
       bottom: 0;
       left: -10%;
-      width: 110%;
+      width: 100%;
       border-bottom: 2px solid white;
   }
 
@@ -3245,7 +2758,6 @@ input[type="radio"] {
       /* background-color: rgb(240, 127, 255); */
       padding: 3vw;
       display: flex;
-      border-top: 2px solid white;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
@@ -3270,93 +2782,6 @@ input[type="radio"] {
       color: white;
       margin-left: 3.5%;
   }
-=======
-    #footer-content ul:nth-child(2)::before {
-        content: "";
-        position: absolute;
-        bottom: -8%;
-        top: -10%;
-        left: -5%;
-        width: 140%;
-        border-bottom: 2px solid white;
-    }
-    
-    #footer-content ul:nth-child(3) {
-        /* background-color: aqua; */
-        color: white;
-        font-size: 5vw;
-        font-family: 'Work Sans';
-        line-height: 10vw;
-        position: absolute;
-        top: -2350%;
-        left: 8%;
-        /* margin-top: -300%; */
-    }
-
-    #footer-content ul:nth-child(3)::before {
-        content: "";
-        position: absolute;
-        bottom: -15%;
-        top: -10%;
-        left: -5%;
-        width: 150%;
-        border-bottom: 2px solid white;
-    }
-    
-    #footer-content ul:nth-child(1) {
-        /* background-color: aqua; */
-        width: 100%;
-        color: white;
-        font-size: 5vw;
-        font-family: 'Work Sans';
-        position: relative;
-        line-height: 8vw;
-        margin-top: -235%;
-        margin-left: 4%;
-        margin-bottom: 5vw;
-        padding-bottom: 6vw;
-    }
-    #footer-content ul:nth-child(1)::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: -4%;
-        width: 95%;
-        border-bottom: 2px solid white;
-    }
-
-    #footer-bottom {
-        width: 100%;
-        height: 20vh;
-        /* background-color: rgb(240, 127, 255); */
-        padding: 3vw;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        position: relative;
-        top: 15%;
-    }
-
-    #footer-bottom::before{
-        content: "";
-        position: absolute;
-        width: 80%;
-        top: 5%;
-        left: 6%;
-        border-top: 2px solid white;
-
-    }
-    
-    #footer-bottom #Copyright {
-        font-size: 5vw;
-        font-weight: 400;
-        font-family: 'Work Sans';
-        margin-bottom: 7vw;
-        color: white;
-        margin-left: 3.5%;
-    }
->>>>>>> main
 
   #footer-content #address{
       width: 100%;
@@ -3413,12 +2838,12 @@ input[type="radio"] {
   width: 100%;
   min-height: 60vh;
   background-color: black;
-  background-image: url(./IMAGES/space\ image.jpg);
 }
 
 #page2 #side_content {
   margin-top: 4vw;
   min-height: 95vh;
+  background-image: none;
 }
 
 #page2 .content h2 {
@@ -3472,7 +2897,7 @@ input[type="radio"] {
   min-height: 140vh;
   padding: 10vw 5vw;
   position: relative;
-  background-color: rgb(110, 67, 67);
+  background-color: black;
 }
 
 
@@ -3872,5 +3297,67 @@ input[type="radio"] {
   margin-bottom: 8.9vw;
   margin-left: 3.8%;
 }
+
+#plain,
+  #silk {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 1.9vw;
+      color: white;
+      letter-spacing: 0.5vw;
+      font-weight: 500;
+      line-height: 1;
+      text-transform: uppercase;
+      opacity: 1;
+      padding: 2.6vw;
+  }
+
+  /* #nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    color: #fff;
+}
+#nav-right h1{
+    font-size: 40px;
+
+}
+#nav-right i{
+    font-size: 30px;
+    font-weight: 800;
+    cursor: pointer;
+}
+#nav-left{
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.526);
+    top: 0;
+    right: -40%;
+    backdrop-filter: blur(10px);
+    padding: 150px 60px;
+}
+#nav-left h3{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#nav-left i{
+    position: absolute;
+    top:5%;
+    right: 10%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 25px;
+    cursor: pointer;
+} */
 
 }

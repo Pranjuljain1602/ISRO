@@ -1,10 +1,8 @@
 function loadingAnimation() {
   var preloader = document.querySelector(".preloader");
 
-  // GSAP Animation
   var tl = gsap.timeline();
 
-  // Add GSAP animations
   tl.from(".rocket", { y: "-100vh", ease: "bounce.out", duration: 1 }, "-=0.5")
     .from(
       ".cloud1, .cloud2, .cloud3",
@@ -19,13 +17,11 @@ function loadingAnimation() {
       onComplete: showWebsiteContent,
     });
 
-  // Function to show website content after preloader animation completes
   function showWebsiteContent() {
     preloader.classList.add("end-preloader");
     document.querySelector("#main").style.opacity = 1;
   }
 
-  // Additional animations
   tl.from("#page1", {
     delay: 0.17,
     opacity: 0,
@@ -146,18 +142,18 @@ function contentAnimation() {
       scrollTrigger: {
         trigger: "#page2",
         scroller: "body",
-        start: "top 80%", // Adjust start position for mobile
-        end: "top 0%", // Adjust end position for mobile
+        start: "top 80%", 
+        end: "top 0%",
         toggleActions: "play none none none",
-        scrub: 3, // Reduce scrub time for mobile
+        scrub: 3,
       },
     });
   
     t2.from(".content", {
       opacity: 0,
-      y: 30, // Adjust Y position for mobile
-      duration: 0.8, // Shorten duration for mobile
-      stagger: 0.5, // Adjust stagger for mobile
+      y: 30, 
+      duration: 0.8,
+      stagger: 0.5,
     });
   });
   
@@ -245,10 +241,8 @@ cardP.forEach(function (elem) {
 
 
 function animateText(elem) {
-  // Kill any ongoing animation for the text
   gsap.killTweensOf(elem.querySelectorAll("span"));
 
-  // Reset text span properties
   gsap.set(elem.querySelectorAll("span"), {
     x: -70,
     opacity: 0
@@ -354,8 +348,6 @@ t2.from(".card, #card_btn", {
 });
 })
 
-
-
 var portalP = document.querySelectorAll("#page4 p");
 
 portalP.forEach(function (elem) {
@@ -426,18 +418,18 @@ mm3.add("(max-width: 600px)", () => {
     "#page5",
     {
       opacity: 0,
-      y: 30, // Adjust y for mobile
-      duration: 0.8, // Shorten duration for mobile
-      delay: 0.5, // Adjust delay for mobile
+      y: 30,
+      duration: 0.8, 
+      delay: 0.5,
       scrollTrigger: {
         trigger: "#page5",
         scroller: "body",
-        start: "top 90%", // Adjust start position for mobile
-        end: "top 50%", // Adjust end position for mobile
+        start: "top 90%",
+        end: "top 50%",
         scrub: 1,
       },
     },
-    "-=-0.5" // Adjust timeline overlap for mobile
+    "-=-0.5"
   );
 
   t2.from("#page5 p span", {
@@ -535,8 +527,6 @@ mm3.add("(min-width: 601px)", () => {
 });
 
 
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 let mm4 = gsap.matchMedia();
@@ -561,37 +551,37 @@ mm4.add("(max-width: 600px)", () => {
     "#page6",
     {
       opacity: 0,
-      y: 30, // Adjust y for mobile
-      duration: 0.8, // Shorten duration for mobile
-      delay: 0.5, // Adjust delay for mobile
+      y: 30,
+      duration: 0.8,
+      delay: 0.5,
       scrollTrigger: {
         trigger: "#page6",
         scroller: "body",
         start: "top 80%",
         end: "top 10%",
-        scrub: 2, // Reduce scrub time for mobile
+        scrub: 2,
       },
     },
     "-=-0.5"
   );
 
   t2.from("#page6 p span", {
-    stagger: 0.05, // Reduce stagger for mobile
+    stagger: 0.05,
     opacity: 0.5,
-    y: 30, // Adjust y for mobile
-    duration: 0.8, // Shorten duration for mobile
-    delay: 0.5, // Adjust delay for mobile
+    y: 30,
+    duration: 0.8,
+    delay: 0.5,
     scrollTrigger: {
       trigger: "#page6 p",
       scroller: "body",
       start: "top 100%",
       end: "top 20%",
-      scrub: 2, // Reduce scrub time for mobile
+      scrub: 2,
     },
   });
 });
 
-// Adding desktop version for completeness
+
 mm4.add("(min-width: 601px)", () => {
   // Desktop animation settings
   let t2 = gsap.timeline();
@@ -704,19 +694,19 @@ mm5.add("(max-width: 600px)", () => {
   // Mobile animation settings for #footer
   t2.from("#footer", {
     opacity: 0,
-    duration: 0.5, // Shorter duration for mobile
-    delay: 0.5, // Adjust delay for mobile
+    duration: 0.5,
+    delay: 0.5,
     scrollTrigger: {
       trigger: "#footer",
       scroller: "body",
-      scrub: 2, // Reduce scrub time for mobile
-      start: "top 60%", // Adjust start position for mobile
-      end: "top 10%", // Adjust end position for mobile
+      scrub: 2,
+      start: "top 60%",
+      end: "top 10%",
     },
   });
 });
 
-// Adding desktop version for completeness
+
 mm5.add("(min-width: 601px)", () => {
   // Desktop animation settings for #footer
   t2.from("#footer", {
@@ -742,7 +732,7 @@ function slideImage() {
   const radioButton = document.querySelectorAll(".button");
 
   let counter = 0;
-  let intervalId; // Variable to store the interval ID
+  let intervalId;
 
   slides.forEach((slide, index) => {
     slide.style.left = `${index * 100}%`;
@@ -751,7 +741,7 @@ function slideImage() {
   const goNext = () => {
     counter++;
     if (counter >= slides.length) {
-      counter = 0; // Reset counter to 0 if it exceeds the number of slides
+      counter = 0;
     }
     slideImage();
   };
@@ -974,8 +964,6 @@ function FooterAnimation() {
 FooterAnimation();
 
 
-
-
 function cardOverlayAnimation(){
   function showOverlay(card) {
     card.classList.add('show-overlay');
@@ -1050,3 +1038,30 @@ function transitionToPage6() {
       behavior: 'smooth'
   });
 }
+
+// var menu = document.querySelector("#nav-right i")
+// var cross = document.querySelector("#nav-left i")
+
+// var tl2 = gsap.timeline()
+
+// tl2.to("#nav-left",{
+//     right:0,
+//     duration:0.5,
+// })
+// tl2.from("#nav-left h3",{
+//     x:150,
+//     duration:0.5,
+//     stagger:0.2,
+//     opacity:0,
+// })
+// tl2.from("#nav-left i",{
+//        opacity:0,
+// })
+// tl2.pause()
+
+// menu.addEventListener("click",function(){
+//     tl2.play()
+// })
+// cross.addEventListener("click",function(){
+//     tl2.reverse()
+// })
