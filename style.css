@@ -1821,7 +1821,6 @@ input[type="radio"] {
       top: -16vw;
       left: 20%;
   }
-
   #page6 #lines h5>i {
       color: rgb(220, 220, 248);
       padding: 3px;
@@ -2377,7 +2376,6 @@ input[type="radio"] {
   #page4 #background-image{
     background-image: none !important;
   }
-  
 
   #page4 h2 {
       font-size: 10vw;
@@ -2424,7 +2422,6 @@ input[type="radio"] {
       /* background-color: blue; */
       padding: 2vw;
   }
-  
 
   #page5 {
       width: 100%;
@@ -2458,7 +2455,6 @@ input[type="radio"] {
       width: 30%;
   }
   
-
   #page6 {
       margin-top: -100vw;
       width: 100%;
@@ -2600,7 +2596,6 @@ input[type="radio"] {
       top: 3%;
   }
   
-
   #footer {
       background-color: black;
       width: 100%;
@@ -2843,12 +2838,12 @@ input[type="radio"] {
   width: 100%;
   min-height: 60vh;
   background-color: black;
-  background-image: url(./IMAGES/space\ image.jpg);
 }
 
 #page2 #side_content {
   margin-top: 4vw;
   min-height: 95vh;
+  background-image: none;
 }
 
 #page2 .content h2 {
@@ -2902,7 +2897,7 @@ input[type="radio"] {
   min-height: 140vh;
   padding: 10vw 5vw;
   position: relative;
-  background-color: rgb(110, 67, 67);
+  background-color: black;
 }
 
 
@@ -3302,5 +3297,67 @@ input[type="radio"] {
   margin-bottom: 8.9vw;
   margin-left: 3.8%;
 }
+
+#plain,
+  #silk {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 1.9vw;
+      color: white;
+      letter-spacing: 0.5vw;
+      font-weight: 500;
+      line-height: 1;
+      text-transform: uppercase;
+      opacity: 1;
+      padding: 2.6vw;
+  }
+
+  /* #nav-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    color: #fff;
+}
+#nav-right h1{
+    font-size: 40px;
+
+}
+#nav-right i{
+    font-size: 30px;
+    font-weight: 800;
+    cursor: pointer;
+}
+#nav-left{
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.526);
+    top: 0;
+    right: -40%;
+    backdrop-filter: blur(10px);
+    padding: 150px 60px;
+}
+#nav-left h3{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#nav-left i{
+    position: absolute;
+    top:5%;
+    right: 10%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 25px;
+    cursor: pointer;
+} */
 
 }

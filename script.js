@@ -1004,3 +1004,30 @@ function transitionToPage6() {
       behavior: 'smooth'
   });
 }
+
+// var menu = document.querySelector("#nav-right i")
+// var cross = document.querySelector("#nav-left i")
+
+// var tl2 = gsap.timeline()
+
+// tl2.to("#nav-left",{
+//     right:0,
+//     duration:0.5,
+// })
+// tl2.from("#nav-left h3",{
+//     x:150,
+//     duration:0.5,
+//     stagger:0.2,
+//     opacity:0,
+// })
+// tl2.from("#nav-left i",{
+//        opacity:0,
+// })
+// tl2.pause()
+
+// menu.addEventListener("click",function(){
+//     tl2.play()
+// })
+// cross.addEventListener("click",function(){
+//     tl2.reverse()
+// })
