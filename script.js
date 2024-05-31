@@ -117,6 +117,7 @@ function loadingAnimation() {
 
 loadingAnimation();
 
+
 function cursorAnimation() {
   Shery.mouseFollower({
     skew: true,
