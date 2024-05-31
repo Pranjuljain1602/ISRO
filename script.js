@@ -810,7 +810,7 @@ function FooterAnimation() {
       })
       .from("#footer-bottom h4", {
         opacity: 0,
-        y: -10,
+        y: 10,
       });
 
     // Apply shared effects
@@ -1068,6 +1068,3 @@ function navbarTransition() {
 }
 
 navbarTransition();
-
-
-
