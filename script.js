@@ -986,40 +986,6 @@ function cardOverlayAnimation(){
 
 cardOverlayAnimation();
 
-
-var menu = document.querySelector("#nav-right i")
-
-var close = document.querySelector("#nav-left i")
-
-var t5 = gsap.timeline()
-
-t5.to("#nav-left",{
-    right: 0,
-    duration: 0.6,
-})
-
-t5.from("#nav-left h3",{
-    x: 100,
-    opacity: 0,
-    stagger: 0.25,
-    duration: 0.5,
-})
-
-t5.from("#nav-left i",{
-    opacity: 0
-})
-
-t5.pause()
-
-
-menu.addEventListener("click",function(){
-    t5.play();
-})
-
-close.addEventListener("click",function(){
-    t5.reverse();
-})
-
 function transitionToPage5() {
   document.querySelector('#page5').scrollIntoView({
       behavior: 'smooth'
