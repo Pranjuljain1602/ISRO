@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "work sans";
+  src: url(./Fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "silk serif";
+  src: url(./Fonts/Silk\ Serif\ Regular\ Italic.otf);
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url(./Fonts/RobotoCondensed-VariableFont_wght.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -189,8 +204,6 @@ body{
   cursor: pointer;
 }
 
-
-
 #header_content {
   width: 90%;
   height: 55vh;
@@ -248,15 +261,12 @@ body{
   color: black;
 }
 
-
 #page2 {
   /* margin-top: 10vw; */
   width: 100%;
   height: 100vh;
   background-color: black;
   background-image: url(./IMAGES/space\ image.jpg);
-  /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
-  /* background-image: url(./dark\ images.jpg);  */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -307,8 +317,6 @@ body{
   /* background-color: red; */
   margin-top: -2vw;
   background-image: url(./IMAGES/space\ image.jpg);
-  /* background-image: url('https://www.abc.net.au/reslib/201409/r1324763_18379889.jpg'); */
-  /* background-image: url(./dark\ images.jpg);  */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -440,7 +448,6 @@ body{
   position: relative;
   background-color: rgb(40, 37, 37);
 }
-
 
 #page3 #services {
   width: 100%;
@@ -709,7 +716,6 @@ body{
   background-color: rgba(0, 0, 0, 0.4);
   /* Adjust the opacity here */
   z-index: 1;
-  /* Ensure the overlay is above the background image */
 }
 
 #background-image {
@@ -723,7 +729,6 @@ body{
   top: 0;
   left: 0;
   z-index: 0;
-  /* Ensure the background image is behind the overlay */
 }
 
 #page4 h2 {
@@ -734,9 +739,7 @@ body{
   padding-top: 5vw;
   margin-bottom: 1vw;
   position: relative;
-  /* Ensure the text is positioned correctly relative to its container */
   z-index: 2;
-  /* Ensure the text is above the overlay */
 }
 
 #page4 p {
@@ -748,7 +751,6 @@ body{
   left: 37%;
   margin-bottom: 2vw;
   z-index: 2;
-  /* Ensure the text is above the overlay */
 }
 
 #page4 p span{
@@ -839,9 +841,7 @@ body{
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  /* Adjust the opacity here */
   z-index: 1;
-  /* Ensure the overlay is above the background image */
 }
 
 #background-image2 {
@@ -855,7 +855,6 @@ body{
   top: 0;
   left: 0;
   z-index: 0;
-  /* Ensure the background image is behind the overlay */
 }
 
 #page5 h2 {
@@ -867,9 +866,7 @@ body{
   margin-top: -36vw;
   margin-bottom: 1vw;
   position: relative;
-  /* Ensure the text is positioned correctly relative to its container */
   z-index: 2;
-  /* Ensure the text is above the overlay */
 }
 
 #page5 p {
@@ -882,7 +879,6 @@ body{
   margin-top: -26vw;
   margin-bottom: 2vw;
   z-index: 3;
-  /* Ensure the text is above the overlay */
 }
 
 #page5 p span{
@@ -940,7 +936,6 @@ input[type="radio"] {
   background-repeat: no-repeat;
   background-position: center;
   z-index: 0;
-  /* background-color: red; */
 }
 
 #page6 #centerimage {
@@ -1042,8 +1037,6 @@ input[type="radio"] {
   font-weight: 800;
   position: absolute;
   top: -10vw;
-  /* background-color: red; */
-  /* top: 3vw; */
   left: 52%;
 }
 
@@ -1186,9 +1179,6 @@ input[type="radio"] {
 }
 
 #footer-top img :nth-child(3) {
-  /* background-color: aqua; */
-  /* width: 100%; */
-  /* color: #fff; */
   padding-right: 4px;
   height: 52%;
   margin-top: 1px;
@@ -1197,8 +1187,6 @@ input[type="radio"] {
 #footer-content {
   width: 100%;
   height: 50vh;
-  /* background-color: blueviolet;  */
-  /* padding: 3% 2%;  */
   padding: 3vw;
   display: flex;
   align-items: center;
@@ -1209,7 +1197,6 @@ input[type="radio"] {
 #footer-content #address{
   width: 30%;
   height: fit-content;
-  /* background-color: red; */
   position: relative;
   top: 190%;
   left: 1%;
@@ -1224,18 +1211,15 @@ input[type="radio"] {
 }
 
 #footer-content ul:nth-child(2) {
-  /* background-color: aqua;  */
   color: white;
   font-size: 1.2vw;
   font-family: 'Work Sans';
   line-height: 2vw;
   margin-top: 84%;
   margin-left: 6%;
-  /* transition: transform 0.4s ease; */
 }
 
 #footer-content ul:nth-child(3) {
-  /* background-color: aqua; */
   color: white;
   font-size: 1.2vw;
   font-family: 'Work Sans';
@@ -1244,7 +1228,6 @@ input[type="radio"] {
 }
 
 #footer-content ul:nth-child(1) {
-  /* background-color: aqua; */
   color: white;
   font-size: 1.2vw;
   font-family: 'Work Sans';
@@ -1254,7 +1237,6 @@ input[type="radio"] {
 }
 
 #footer-lines {
-  /* background-color: aqua; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1268,7 +1250,6 @@ input[type="radio"] {
 #footer-bottom {
   width: 100%;
   height: 20vh;
-  /* background-color: aquamarine; */
   padding: 3vw;
   display: flex;
   align-items: center;
@@ -1330,7 +1311,6 @@ input[type="radio"] {
   }
 
   #page2 {
-    /* margin-top: 10vw; */
     width: 100%;
     height: 100vh;
     background-color: black;
@@ -1344,16 +1324,13 @@ input[type="radio"] {
 
   #page2 .aboutus #about {
       width: 100%;
-      /* background-color: rgb(0, 68, 255); */
       position: absolute;
       top: 10%;
       left: 0%;
       z-index: 1;
-      /* Ensure text is on top of the overlay */
   }
 
   #about #about_box {
-      /* background-color: rgb(0, 21, 255); */
       width: 3.5vw;
       display: flex;
       position: absolute;
@@ -1372,15 +1349,12 @@ input[type="radio"] {
       padding-bottom: 0.2vw;
       padding-top: 3vw;
       text-align: center;
-      /* Increase text brightness */
       filter: brightness(150%);
 
   }
 
   #page2 .aboutus #about>p {
       color: #edeaea;
-      /* Increase text brightness */
-      /* background-color: rgb(45, 38, 28); */
       margin-top: 4vw;
       filter: brightness(80%);
       font-size: 2.2vw;
@@ -1528,7 +1502,6 @@ input[type="radio"] {
 
   #page3 #container>.card:nth-child(1)>button {
       margin-top: 119%;
-      /* background-color: red; */
   }
 
    #page3 #container>.card:nth-child(3)>button {
@@ -1553,8 +1526,6 @@ input[type="radio"] {
   
   }
 
-/* Adjust your existing CSS for the overlay */
-
 #page4 {
   margin-top: 16vw;
 }
@@ -1566,9 +1537,7 @@ input[type="radio"] {
       text-align: center;
       margin-bottom: 1vw;
       position: relative;
-      /* Ensure the text is positioned correctly relative to its container */
       z-index: 2;
-      /* Ensure the text is above the overlay */
   }
 
   #page4 p {
@@ -1580,17 +1549,14 @@ input[type="radio"] {
       left: 37%;
       margin-bottom: 2vw;
       z-index: 2;
-      /* Ensure the text is above the overlay */
   }
 
   #scroll {
       margin-top: 10vw;
       height: 40vh;
       width: 100%;
-      /* background-color: red; */
       white-space: nowrap;
       overflow-x: auto;
-      /* overflow-y: hidden; */
       padding: 0.7vw;
       z-index: 2;
   }
@@ -1618,17 +1584,6 @@ input[type="radio"] {
       display: block;
       margin-top: 0.5vw;
   }
-  
-  /* #scroll img {
-      height: 80%;
-      border-radius: 50%;
-      width: 13.5%;
-      object-fit: cover;
-      object-position: top;
-      margin: 0.4vw;
-      z-index: 999;
-      filter: brightness(120%);
-  } */
 
   #container2 {
     width: 110%;
@@ -1654,7 +1609,6 @@ input[type="radio"] {
       top: 0;
       left: 0;
       z-index: 0;
-      /* Ensure the background image is behind the overlay */
   }
 
   #page5 {
@@ -1665,8 +1619,6 @@ input[type="radio"] {
       display: flex;
       align-items: center;
       justify-content: center;
-      /* background-color: red; */
-
   }
 
   #page5 h2 {
@@ -1678,9 +1630,7 @@ input[type="radio"] {
       margin-top: -25vw;
       margin-bottom: 1vw;
       position: relative;
-      /* Ensure the text is positioned correctly relative to its container */
       z-index: 2;
-      /* Ensure the text is above the overlay */
   }
 
   #page5 p {
@@ -1693,7 +1643,6 @@ input[type="radio"] {
       margin-top: -15vw;
       margin-bottom: 2vw;
       z-index: 2;
-      /* Ensure the text is above the overlay */
   }
 
   #page5 #slider {
@@ -1701,8 +1650,6 @@ input[type="radio"] {
       background-color: aliceblue;
       height: 480px;
       width: 600px;
-      /* width: 1000px; */
-      /* width: 900px; */
       position: absolute;
       top: 38%;
       display: flex;
@@ -1723,15 +1670,6 @@ input[type="radio"] {
       position: absolute;
       transition: transform 1s;
   }
-
-  /* #slider .buttons{
-      z-index: 100;
-      display: flex;
-      position: absolute;
-      color: aliceblue;
-      bottom: 20px;
-      gap: 15px;
-  } */
 
   input[type="radio"] {
       height: 1.2rem;
@@ -1885,8 +1823,6 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Center align the h1 elements */
-    /* background-color: red; */
     margin-right: 10px;
     padding-left: 2.2vw;
 }
@@ -1909,8 +1845,6 @@ input[type="radio"] {
     opacity: 1;
     padding: 2.6vw;
     font-size: 2.1vw;
-    /* background-color: royalblue; */
-    /* Ensure both h1 elements are initially visible */
 }
 
 #silk {
@@ -1928,17 +1862,12 @@ input[type="radio"] {
 }
 
 #footer-top img {
-  /* height: 80px; */
-  /* padding-left: 2%; */
   height: 65%;
   padding-right: 1vw;
   padding-left: 1.8vw;
 }
 
 #footer-top img :nth-child(3) {
-  /* background-color: aqua; */
-  /* width: 100%; */
-  /* color: #fff; */
   padding-right: 1px;
   height: 52%;
   margin-top: 1px;
@@ -1948,8 +1877,6 @@ input[type="radio"] {
 #footer-content {
     width: 100%;
     height: 50vh;
-    /* background-color: blueviolet;  */
-    /* padding: 3% 2%;  */
     padding: 3vw;
     display: flex;
     align-items: center;
@@ -1982,7 +1909,6 @@ input[type="radio"] {
     line-height: 2vw;
     margin-top: 44%;
     margin-left: 6%;
-    /* transition: transform 0.4s ease; */
 }
 
 #footer-content ul:nth-child(3) {
@@ -2040,8 +1966,7 @@ input[type="radio"] {
       padding: 15px 28px;
   }
 
-
-  #page3>button {
+#page3>button {
       position: absolute;
       top: 20%;
       left: 50%;
@@ -2087,28 +2012,74 @@ input[type="radio"] {
   }
   
   #nav {
-      min-height: 30vw;
-      /* background-color: red; */
+    min-height: 30vw;
   }
 
   #nav #nav-right {
-      width: 30%;
-      gap: 2vw;
-      margin-left: 5vw;
-      margin-top: 20vw;
+    width: 30%;
+    gap: 2vw;
+    margin-left: 5vw;
+    margin-top: 20vw;
   }
-  
+
+  #nav #nav-right i{
+    position: absolute;
+    left: 250% !important;
+  }
+
+
   #nav #nav-right img {
-      filter: brightness(100%);
-      width: 140px;
+    filter: brightness(100%);
+    width: 140px;
   }
-  
+
   #nav #nav-right h1 {
-      display: none;
+    display: none;
+  }
+
+  #nav #nav-left {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #1e1d1d;
+    backdrop-filter: blur(10%);
+    padding: 170px 50px;
+    transition: right 0.5s ease;
+    z-index: 999;
+  }
+
+  #nav #nav-left.show {
+    right: -5%;
+    width: 100% !important;
   }
 
   #nav #nav-left h3 {
-      display: none;
+    display: block !important;
+    margin: 1.5rem 0;
+    font-size: 2.5rem;
+  }
+
+  #nav #nav-right i {
+    display: block !important;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+  }
+
+  #nav #nav-left i {
+    display: block;
+    font-size: 20px;
+    padding: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 7%;
+    right: 10%;
+    cursor: pointer;
   }
   
   #header_content {
@@ -2141,18 +2112,6 @@ input[type="radio"] {
       display: none;
   }
 
-  #nav #nav-right i{
-      display: block;
-      font-size: 35px;
-      color: white;
-      cursor: pointer;
-      position: relative;
-      left: 145%;
-  }
-  
-  #nav #nav-left i{
-      display: block;
-  }
 
   #page2 {
       /* margin-top: 10vw; */
@@ -2166,13 +2125,11 @@ input[type="radio"] {
       margin-top: 8vw;
       width: 100%;
       min-height: 90vh;
-      /* background-color: red; */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
       gap: 8vw;
-      /* padding: 10vw 4vw; */
   }
   
   #page2 .content {
@@ -2230,6 +2187,12 @@ input[type="radio"] {
       top: 20%;
       padding: 20px 45px;
       font-size: 5vw;
+  }
+
+  #page2 .aboutus #about>button::after {
+    content: "";
+    height: 90px;
+    width: 90px;
   }
 
   #page3 {
@@ -2339,8 +2302,11 @@ input[type="radio"] {
       font-weight: 600;
       position: relative;
       overflow: hidden;
-      z-index: 1;
-      
+      z-index: 1;    
+  }
+
+  #page3 #container .card>button::after {
+    display: none !important;
   }
   
   #page3>button {
@@ -2359,6 +2325,12 @@ input[type="radio"] {
       overflow: hidden;
       z-index: 1;
       font-size: 4vw;
+  }
+
+  #page3>button::after {
+    content: "";
+    height: 90px;
+    width: 90px;
   }
 
   .card .overlay p{
@@ -2662,8 +2634,6 @@ input[type="radio"] {
   #footer-content {
       width: 100%;
       min-height: 100vh;
-      /* background-color: blueviolet;  */
-      /* padding: 3% 2%;  */
       padding: 3vw;
       display: flex;
       flex-direction: column;
@@ -2704,7 +2674,7 @@ input[type="radio"] {
       bottom: -8%;
       top: -10%;
       left: -16%;
-      width: 155%;
+      width: 143%;
       border-bottom: 2px solid white;
   }
   
@@ -2726,7 +2696,7 @@ input[type="radio"] {
       bottom: -15%;
       top: -10%;
       left: -20%;
-      width: 170%;
+      width: 155%;
       border-bottom: 2px solid white;
   }
   
@@ -2762,8 +2732,18 @@ input[type="radio"] {
       align-items: flex-start;
       justify-content: center;
       position: relative;
-      top: 15%;
+      top: 18%;
   }
+
+  #footer-bottom::before{
+    content: "";
+    width: 100%;
+    bottom: 100%;
+    left: -10%;
+    border-top: 2px solid white;
+    position: absolute;
+  }
+
   
   #footer-bottom #Copyright {
       font-size: 5vw;
@@ -2775,8 +2755,8 @@ input[type="radio"] {
   }
 
   #footer-bottom h4 {
-      font-size: 4.5vw;
-      font-weight: 400;
+      font-size: 4.2vw;
+      font-weight: 500;
       font-family: 'Work Sans';
       margin-bottom: 7vw;
       color: white;
@@ -2941,6 +2921,10 @@ input[type="radio"] {
   z-index: 1;
 }
 
+#page3 #container .card>button::after {
+  display: none !important;
+}
+
 #page3>button {
   position: absolute;
   top: 2.5%;
@@ -2986,7 +2970,6 @@ input[type="radio"] {
   position: absolute;
   left: 15%;
   margin-bottom: 2vw;
-  /* Ensure the text is above the overlay */
 }
 
 .image-container img {
@@ -3316,48 +3299,5 @@ input[type="radio"] {
       opacity: 1;
       padding: 2.6vw;
   }
-
-  /* #nav-right{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 50px;
-    color: #fff;
-}
-#nav-right h1{
-    font-size: 40px;
-
-}
-#nav-right i{
-    font-size: 30px;
-    font-weight: 800;
-    cursor: pointer;
-}
-#nav-left{
-    height: 100%;
-    width: 40%;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.526);
-    top: 0;
-    right: -40%;
-    backdrop-filter: blur(10px);
-    padding: 150px 60px;
-}
-#nav-left h3{
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-#nav-left i{
-    position: absolute;
-    top:5%;
-    right: 10%;
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
-    font-weight: 600;
-    font-size: 25px;
-    cursor: pointer;
-} */
 
 }

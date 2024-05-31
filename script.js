@@ -777,8 +777,6 @@ function slideImage() {
 
 slideImage();
 
-gsap.registerPlugin(ScrollTrigger);
-
 function FooterAnimation() {
   let mm6 = gsap.matchMedia();
 
@@ -1005,29 +1003,70 @@ function transitionToPage6() {
   });
 }
 
-// var menu = document.querySelector("#nav-right i")
-// var cross = document.querySelector("#nav-left i")
+function transitionToabout() {
+  document.querySelector('#about').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
 
-// var tl2 = gsap.timeline()
+function transitionToportal() {
+  document.querySelector('#portals').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
 
-// tl2.to("#nav-left",{
-//     right:0,
-//     duration:0.5,
-// })
-// tl2.from("#nav-left h3",{
-//     x:150,
-//     duration:0.5,
-//     stagger:0.2,
-//     opacity:0,
-// })
-// tl2.from("#nav-left i",{
-//        opacity:0,
-// })
-// tl2.pause()
+function transitionToservice() {
+  document.querySelector('#services').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
 
-// menu.addEventListener("click",function(){
-//     tl2.play()
-// })
-// cross.addEventListener("click",function(){
-//     tl2.reverse()
-// })
+function navbarTransition() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
+    const navLeft = document.getElementById("nav-left");
+
+    menuIcon.addEventListener("click", function () {
+      navLeft.classList.add("show");
+      gsap.fromTo(
+        "#nav-left h3",
+        { opacity: 0, x: -100 },
+        { opacity: 1, x: 0, duration: 0.6, stagger: 0.3 }
+      );
+    });
+
+    closeIcon.addEventListener("click", function () {
+      navLeft.classList.remove("show");
+    });
+
+    document.querySelectorAll("#nav-left h3").forEach(function (menuItem) {
+      menuItem.addEventListener("click", function () {
+        navLeft.classList.remove("show");
+
+        const section = menuItem.textContent.toLowerCase(); // convert text to lowercase
+        const targetSection = document.getElementById(section);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    function activate(e) {
+      const items = document.querySelectorAll(".item");
+      if (e.target.matches(".next")) {
+        slider.append(items[0]);
+      }
+      if (e.target.matches(".prev")) {
+        slider.prepend(items[items.length - 1]);
+      }
+    }
+
+    document.addEventListener("click", activate, false);
+  });
+}
+
+navbarTransition();
+
+
+
