@@ -112,7 +112,6 @@ function loadingAnimation() {
     isMobile = window.matchMedia("(max-width: 600px)").matches;
     createAnimation(isMobile);
   });
-
 }
 
 loadingAnimation();
