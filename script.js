@@ -42,8 +42,8 @@ function loadingAnimation() {
     stagger: 0.2,
   });
 
-  function createAnimation(isMobile) {
-    if (isMobile) {
+  function createAnimation(isMobile, isSmallScreen) {
+    if (isMobile && !isSmallScreen) {
       tl.from(
         "#header_content",
         {
@@ -64,7 +64,7 @@ function loadingAnimation() {
         },
         "pjain"
       );
-    } else {
+    } else if (!isMobile && !isSmallScreen) {
       tl.from(
         "#header_content",
         {
@@ -85,32 +85,54 @@ function loadingAnimation() {
         },
         "pjain"
       );
+    } else {
+      tl.from(
+        "#header_content",
+        {
+          x: -100,
+          opacity: 0,
+          duration: 0.3,
+        },
+        "pjain"
+      );
+      tl.from(
+        "h2 span",
+        {
+          x: -60,
+          opacity: 0,
+          duration: 0.2,
+          stagger: 0.03,
+          ease: "power4.out",
+        },
+        "pjain"
+      );
     }
   }
-  
+
   function initTextAnimation() {
     var h2 = document.querySelector("#header_content h2");
     var h2Text = h2.textContent;
     var clutter = "";
     var splittedText = h2Text.split("");
-  
+
     splittedText.forEach(function (elem) {
       clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
     });
-  
+
     h2.innerHTML = clutter;
   }
-  
+
   var isMobile = window.matchMedia("(max-width: 600px)").matches;
-  
+  var isSmallScreen = window.matchMedia("(max-width: 400px)").matches;
+
   initTextAnimation();
 
-  createAnimation(isMobile);
-  
+  createAnimation(isMobile, isSmallScreen);
 
   window.addEventListener('resize', function () {
     isMobile = window.matchMedia("(max-width: 600px)").matches;
-    createAnimation(isMobile);
+    isSmallScreen = window.matchMedia("(max-width: 400px)").matches;
+    createAnimation(isMobile, isSmallScreen);
   });
 
 }
