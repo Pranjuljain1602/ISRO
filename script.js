@@ -130,11 +130,25 @@ function cursorAnimation() {
 
 cursorAnimation();
 
+gsap.registerPlugin(ScrollTrigger);
+
+function splitTextAnimation() {
+  document.querySelectorAll("#page2 .content h3").forEach(function(h3) {
+    var h3Text = h3.textContent;
+    var clutter = "";
+    var splittedText = h3Text.split("");
+    
+    splittedText.forEach(function(elem) {
+      clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
+    });
+    
+    h3.innerHTML = clutter;
+  });
+}
+
 function contentAnimation() {
-  var t2 = gsap.timeline();
-
-  gsap.registerPlugin(ScrollTrigger);
-
+  splitTextAnimation();
+  
   let mm = gsap.matchMedia();
   
   mm.add("(max-width: 600px)", () => {
@@ -152,11 +166,28 @@ function contentAnimation() {
   
     t2.from(".content", {
       opacity: 0,
-      y: 30, 
-      duration: 0.8,
+      y: 40, 
+      duration: 0.6,
       stagger: 0.5,
     });
+
+    gsap.from("#page2 .content h3 span", {
+      x: -180,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.08,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#page2",
+        scroller: "body",
+        start: "top 70%", 
+        end: "top 0%",
+        toggleActions: "play none none none",
+        scrub: 3,
+      },
+    });
   });
+  
   
   mm.add("(min-width: 601px)", () => {
     // Desktop animation settings
@@ -178,316 +209,169 @@ function contentAnimation() {
       stagger: 1,
       delay: 1.2,
     });
+
+    gsap.from("#page2 .content h3 span", {
+      x: -80,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.05,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#page2",
+        scroller: "body",
+        start: "top 60%",
+        end: "top 30%",
+        toggleActions: "play none none none",
+        scrub: 2,
+      },
+    });
   });
   
 
-var aboutP = document.querySelectorAll(".aboutus p");
+  var aboutP = document.querySelectorAll(".aboutus p");
 
-aboutP.forEach(function (elem) {
-  var clutter = "";
-  var PText = elem.textContent;
-  var splittedText = PText.split("");
-  splittedText.forEach(function (e) {
-    clutter += `<span>${e}</span>`;
-  });
-  elem.innerHTML = clutter;
-});
-
-t2.from(
-  ".aboutus",
-  {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    delay: 1,
-    scrollTrigger: {
-      trigger: ".aboutus",
-      scroller: "body",
-      //  markers: true,
-      start: "top 50%",
-      end: "top 0%",
-      scrub: 1,
-    },
-  },
-  "-=-1"
-);
-
-t2.from(".aboutus p span", {
-  stagger: 0.1,
-  opacity: 0.5,
-  y: 50,
-  duration: 1,
-  delay: 1,
-  scrollTrigger: {
-    trigger: ".aboutus",
-    scroller: "body",
-    start: "top 40%",
-    end: "top 0%",
-    scrub: 1,
-  },
-});
-
-
-var cardP = document.querySelectorAll("#page3 p");
-
-cardP.forEach(function (elem) {
-  var clutter = "";
-  var rText = elem.textContent;
-  var splittedText = rText.split("");
-  splittedText.forEach(function (e) {
-    clutter += `<span>${e}</span>`;
-  });
-  elem.innerHTML = clutter;
-});
-
-
-function animateText(elem) {
-  gsap.killTweensOf(elem.querySelectorAll("span"));
-
-  gsap.set(elem.querySelectorAll("span"), {
-    x: -70,
-    opacity: 0
-  });
-
-  gsap.fromTo(elem.querySelectorAll("span"), 
-    {
-      x: -70,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.04,
-      ease: "power4.out"
+  aboutP.forEach(function (elem) {
+    var clutter = "";
+    var PText = elem.textContent;
+    if (window.innerWidth < 600) {
+      PText = PText.substring(0, 227); // Display only the first 150 characters
+      PText += "..."; // Add an ellipsis to indicate text truncation
     }
-  );
-}
-
-document.querySelectorAll('#page3 .card').forEach(function(card) {
-  card.addEventListener('mouseenter', function() {
-    animateText(this.querySelector('.overlay p'));
-  });
-});
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-let mm2 = gsap.matchMedia();
-
-mm2.add("(max-width: 600px)", () => {
-  // Mobile animation settings
-  gsap.from(
-    "#page3",
-    {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: "#page3",
-        scroller: "body",
-        start: "top 70%",
-        end: "top 0%", 
-        scrub: 1,
-      },
-    },
-    "-=-0.5"
-  );
-
-  t2.from(".card, #card_btn", {
-    opacity: 0,
-    y: 50,
-    duration: 0.7,
-    stagger: 0.8,
-    delay: 0.7,
-    scrollTrigger: {
-      trigger: ".card, #card_btn",
-      scroller: "body",
-      start: "top 50%",
-      end: "top -200%",
-      toggleActions: "play none none none",
-      scrub: 4,
-    },
-  });
-});
-
-mm2.add("(min-width: 601px)", () =>{
-  gsap.from(
-  "#page3",
-  {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    delay: 1,
-    scrollTrigger: {
-      trigger: "#page3",
-      scroller: "body",
-      //  markers: true,
-      start: "top 70%",
-      end: "top 0%",
-      scrub: 1,
-    },
-  },
-  "-=-1"
-);
-
-t2.from(".card, #card_btn", {
-  opacity: 0,
-  y: 50,
-  duration: 0.7,
-  stagger: 1,
-  delay: 1,
-  scrollTrigger: {
-    trigger: "#page3",
-    scroller: "body",
-    start: "top 30%",
-    end: "top 0%",
-    toggleActions: "play none none none",
-    scrub: 4,
-  },
-});
-})
-
-var portalP = document.querySelectorAll("#page4 p");
-
-portalP.forEach(function (elem) {
-  var clutter = "";
-  var rText = elem.textContent;
-  var splittedText = rText.split("");
-  splittedText.forEach(function (e) {
-    clutter += `<span>${e}</span>`;
-  });
-  elem.innerHTML = clutter;
-});
-
-t2.from(
-  "#page4",
-  {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    delay: 1,
-    scrollTrigger: {
-      trigger: "#page4",
-      scroller: "body",
-      //  markers: true,
-      start: "top 70%",
-      end: "top 0%",
-      scrub: 1,
-    },
-  },
-  "-=-1"
-);
-
-t2.from("#page4 p span", {
-  stagger: 0.1,
-  opacity: 0.5,
-  y: 50,
-  duration: 1,
-  delay: 1,
-  scrollTrigger: {
-    trigger: "#page4 p",
-    scroller: "body",
-    // markers: true,
-    start: "top 50%",
-    end: "top 10%",
-    scrub: 1,
-  },
-});
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-let mm3 = gsap.matchMedia();
-
-mm3.add("(max-width: 600px)", () => {
-  // Mobile animation settings
-  var recentP = document.querySelectorAll("#page5 p");
-
-  recentP.forEach(function (elem) {
-    var clutter = "";
-    var rText = elem.textContent;
-    var splittedText = rText.split("");
+    var splittedText = PText.split("");
     splittedText.forEach(function (e) {
       clutter += `<span>${e}</span>`;
     });
     elem.innerHTML = clutter;
   });
 
-  t2.from(
-    "#page5",
-    {
-      opacity: 0,
-      y: 30,
-      duration: 0.8, 
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: "#page5",
-        scroller: "body",
-        start: "top 90%",
-        end: "top 50%",
-        scrub: 1,
-      },
-    },
-    "-=-0.5"
-  );
-
-  t2.from("#page5 p span", {
-    stagger: 0.05,
-    opacity: 0.5,
-    y: 30,
-    duration: 0.5,
-    delay: 0.2,
-    scrollTrigger: {
-      trigger: "#page5 p",
-      scroller: "body",
-      start: "top 60%",
-      end: "top 30%",
-      scrub: 1,
-    },
-  });
-
-  t2.to("#slider", {
-    width: "90%",
-    zIndex: 100, 
-    duration: 1,
-    delay: 0.5,
-    scrollTrigger: {
-      trigger: "#page5",
-      scroll: "body",
-      start: "top 40%",
-      end: "top 0%",
-      scrub: 2,
-      pin: true,
-    },
-  });
-});
-
-mm3.add("(min-width: 601px)", () => {
-  // Desktop animation settings
-  var recentP = document.querySelectorAll("#page5 p");
-
-  recentP.forEach(function (elem) {
-    var clutter = "";
-    var rText = elem.textContent;
-    var splittedText = rText.split("");
-    splittedText.forEach(function (e) {
-      clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-  });
+  var t2 = gsap.timeline();
 
   t2.from(
-    "#page5",
+    ".aboutus",
     {
       opacity: 0,
       y: 50,
       duration: 1,
       delay: 1,
       scrollTrigger: {
-        trigger: "#page5",
+        trigger: ".aboutus",
         scroller: "body",
+        //  markers: true,
+        start: "top 50%",
+        end: "top 0%",
+        scrub: 1,
+      },
+    },
+    "-=-1"
+  );
+
+  t2.from(".aboutus p span", {
+    stagger: 0.1,
+    opacity: 0.5,
+    y: 50,
+    duration: 1,
+    delay: 1,
+    scrollTrigger: {
+      trigger: ".aboutus",
+      scroller: "body",
+      start: "top 40%",
+      end: "top 0%",
+      scrub: 1,
+    },
+  });
+
+  var cardP = document.querySelectorAll("#page3 p");
+
+  cardP.forEach(function (elem) {
+    var clutter = "";
+    var rText = elem.textContent;
+    var splittedText = rText.split("");
+    splittedText.forEach(function (e) {
+      clutter += `<span>${e}</span>`;
+    });
+    elem.innerHTML = clutter;
+  });
+
+  function animateText(elem) {
+    gsap.killTweensOf(elem.querySelectorAll("span"));
+
+    gsap.set(elem.querySelectorAll("span"), {
+      x: -70,
+      opacity: 0
+    });
+
+    gsap.fromTo(elem.querySelectorAll("span"), 
+      {
+        x: -70,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.04,
+        ease: "power4.out"
+      }
+    );
+  }
+
+  document.querySelectorAll('#page3 .card').forEach(function(card) {
+    card.addEventListener('mouseenter', function() {
+      animateText(this.querySelector('.overlay p'));
+    });
+  });
+
+  let mm2 = gsap.matchMedia();
+
+  mm2.add("(max-width: 600px)", () => {
+    // Mobile animation settings
+    gsap.from(
+      "#page3",
+      {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: "#page3",
+          scroller: "body",
+          start: "top 70%",
+          end: "top 0%", 
+          scrub: 1,
+        },
+      },
+      "-=-0.5"
+    );
+
+    t2.from(".card, #card_btn", {
+      opacity: 0,
+      y: 50,
+      duration: 0.7,
+      stagger: 0.8,
+      delay: 0.7,
+      scrollTrigger: {
+        trigger: ".card, #card_btn",
+        scroller: "body",
+        start: "top 50%",
+        end: "top -200%",
+        toggleActions: "play none none none",
+        scrub: 4,
+      },
+    });
+  });
+
+  mm2.add("(min-width: 601px)", () =>{
+    gsap.from(
+    "#page3",
+    {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#page3",
+        scroller: "body",
+        //  markers: true,
         start: "top 70%",
         end: "top 0%",
         scrub: 1,
@@ -496,52 +380,29 @@ mm3.add("(min-width: 601px)", () => {
     "-=-1"
   );
 
-  t2.from("#page5 p span", {
-    stagger: 0.1,
-    opacity: 0.5,
+  t2.from(".card, #card_btn", {
+    opacity: 0,
     y: 50,
-    duration: 1,
+    duration: 0.7,
+    stagger: 1,
     delay: 1,
     scrollTrigger: {
-      trigger: "#page5 p",
+      trigger: "#page3",
       scroller: "body",
-      start: "top 70%",
-      end: "top 40%",
-      scrub: 1,
+      start: "top 30%",
+      end: "top 0%",
+      toggleActions: "play none none none",
+      scrub: 4,
     },
   });
+  })
 
-  t2.to("#slider", {
-    width: "70%",
-    zIndex: 100, 
-    duration: 1,
-    delay: 1,
-    scrollTrigger: {
-      trigger: "#page5",
-      scroll: "body",
-      start: "top 0%",
-      end: "top 40%",
-      scrub: 3,
-      pin: true,
-    },
-  });
-});
+  var portalP = document.querySelectorAll("#page4 p");
 
-
-gsap.registerPlugin(ScrollTrigger);
-
-let mm4 = gsap.matchMedia();
-
-mm4.add("(max-width: 600px)", () => {
-  // Mobile animation settings
-  let t2 = gsap.timeline();
-  
-  var centerP = document.querySelectorAll("#page6 p");
-
-  centerP.forEach(function (elem) {
+  portalP.forEach(function (elem) {
     var clutter = "";
-    var pText = elem.textContent;
-    var splittedText = pText.split("");
+    var rText = elem.textContent;
+    var splittedText = rText.split("");
     splittedText.forEach(function (e) {
       clutter += `<span>${e}</span>`;
     });
@@ -549,184 +410,359 @@ mm4.add("(max-width: 600px)", () => {
   });
 
   t2.from(
-    "#page6",
-    {
-      opacity: 0,
-      y: 30,
-      duration: 0.8,
-      delay: 0.5,
-      scrollTrigger: {
-        trigger: "#page6",
-        scroller: "body",
-        start: "top 80%",
-        end: "top 10%",
-        scrub: 2,
-      },
-    },
-    "-=-0.5"
-  );
-
-  t2.from("#page6 p span", {
-    stagger: 0.05,
-    opacity: 0.5,
-    y: 30,
-    duration: 0.8,
-    delay: 0.5,
-    scrollTrigger: {
-      trigger: "#page6 p",
-      scroller: "body",
-      start: "top 100%",
-      end: "top 20%",
-      scrub: 2,
-    },
-  });
-});
-
-
-mm4.add("(min-width: 601px)", () => {
-  // Desktop animation settings
-  let t2 = gsap.timeline();
-  
-  var centerP = document.querySelectorAll("#page6 p");
-
-  centerP.forEach(function (elem) {
-    var clutter = "";
-    var pText = elem.textContent;
-    var splittedText = pText.split("");
-    splittedText.forEach(function (e) {
-      clutter += `<span>${e}</span>`;
-    });
-    elem.innerHTML = clutter;
-  });
-
-  t2.from(
-    "#page6",
+    "#page4",
     {
       opacity: 0,
       y: 50,
       duration: 1,
       delay: 1,
       scrollTrigger: {
-        trigger: "#page6",
+        trigger: "#page4",
         scroller: "body",
-        start: "top 40%",
-        end: "top -40%",
+        //  markers: true,
+        start: "top 70%",
+        end: "top 0%",
         scrub: 1,
       },
     },
     "-=-1"
   );
 
-  t2.from("#page6 p span", {
+  t2.from("#page4 p span", {
     stagger: 0.1,
     opacity: 0.5,
     y: 50,
     duration: 1,
     delay: 1,
     scrollTrigger: {
-      trigger: "#page6 p",
+      trigger: "#page4 p",
       scroller: "body",
-      start: "top 65%",
-      end: "top 30%",
+      // markers: true,
+      start: "top 50%",
+      end: "top 10%",
       scrub: 1,
     },
   });
-});
 
+  let mm3 = gsap.matchMedia();
 
-t2.from("#page6 #lines h4", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#page6 #lines h4",
-    scroller: "body",
-    start: "top 80%",
-    end: "top 60%",
-    scrub: 1,
-  },
-});
+  mm3.add("(max-width: 600px)", () => {
+    // Mobile animation settings
+    var recentP = document.querySelectorAll("#page5 p");
 
-t2.from("#page6 #lines h5", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#page6 #lines h5",
-    scroller: "body",
-    start: "top 80%",
-    end: "top 60%",
-    scrub: 1,
-  },
-});
+    recentP.forEach(function (elem) {
+      var clutter = "";
+      var rText = elem.textContent;
+      var splittedText = rText.split("");
+      splittedText.forEach(function (e) {
+        clutter += `<span>${e}</span>`;
+      });
+      elem.innerHTML = clutter;
+    });
 
-t2.from("#page6 #lines h6", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#page6 #lines h6",
-    scroller: "body",
-    start: "top 80%",
-    end: "top 60%",
-    scrub: 1,
-  },
-});
+    t2.from(
+      "#page5",
+      {
+        opacity: 0,
+        y: 30,
+        duration: 0.8, 
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: "#page5",
+          scroller: "body",
+          start: "top 90%",
+          end: "top 50%",
+          scrub: 1,
+        },
+      },
+      "-=-0.5"
+    );
 
-t2.from("#page6 #lines h3", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  scrollTrigger: {
-    trigger: "#page6 #lines h3",
-    scroller: "body",
-    start: "top 80%",
-    end: "top 60%",
-    scrub: 1,
-  },
-});
+    t2.from("#page5 p span", {
+      stagger: 0.05,
+      opacity: 0.5,
+      y: 30,
+      duration: 0.5,
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: "#page5 p",
+        scroller: "body",
+        start: "top 60%",
+        end: "top 30%",
+        scrub: 1,
+      },
+    });
 
+    t2.to("#slider", {
+      width: "90%",
+      zIndex: 100, 
+      duration: 1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: "#page5",
+        scroll: "body",
+        start: "top 40%",
+        end: "top 0%",
+        scrub: 2,
+        pin: true,
+      },
+    });
+  });
 
-gsap.registerPlugin(ScrollTrigger);
+  mm3.add("(min-width: 601px)", () => {
+    // Desktop animation settings
+    var recentP = document.querySelectorAll("#page5 p");
 
-let mm5 = gsap.matchMedia();
+    recentP.forEach(function (elem) {
+      var clutter = "";
+      var rText = elem.textContent;
+      var splittedText = rText.split("");
+      splittedText.forEach(function (e) {
+        clutter += `<span>${e}</span>`;
+      });
+      elem.innerHTML = clutter;
+    });
 
-mm5.add("(max-width: 600px)", () => {
-  // Mobile animation settings for #footer
-  t2.from("#footer", {
+    t2.from(
+      "#page5",
+      {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 1,
+        scrollTrigger: {
+          trigger: "#page5",
+          scroller: "body",
+          start: "top 70%",
+          end: "top 0%",
+          scrub: 1,
+        },
+      },
+      "-=-1"
+    );
+
+    t2.from("#page5 p span", {
+      stagger: 0.1,
+      opacity: 0.5,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#page5 p",
+        scroller: "body",
+        start: "top 70%",
+        end: "top 40%",
+        scrub: 1,
+      },
+    });
+
+    t2.to("#slider", {
+      width: "70%",
+      zIndex: 100, 
+      duration: 1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#page5",
+        scroll: "body",
+        start: "top 0%",
+        end: "top 40%",
+        scrub: 3,
+        pin: true,
+      },
+    });
+  });
+
+  let mm4 = gsap.matchMedia();
+
+  mm4.add("(max-width: 600px)", () => {
+    // Mobile animation settings
+    let t2 = gsap.timeline();
+    
+    var centerP = document.querySelectorAll("#page6 p");
+
+    centerP.forEach(function (elem) {
+      var clutter = "";
+      var pText = elem.textContent;
+      var splittedText = pText.split("");
+      splittedText.forEach(function (e) {
+        clutter += `<span>${e}</span>`;
+      });
+      elem.innerHTML = clutter;
+    });
+
+    t2.from(
+      "#page6",
+      {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: "#page6",
+          scroller: "body",
+          start: "top 80%",
+          end: "top 10%",
+          scrub: 2,
+        },
+      },
+      "-=-0.5"
+    );
+
+    t2.from("#page6 p span", {
+      stagger: 0.05,
+      opacity: 0.5,
+      y: 30,
+      duration: 0.8,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: "#page6 p",
+        scroller: "body",
+        start: "top 100%",
+        end: "top 20%",
+        scrub: 2,
+      },
+    });
+  });
+
+  mm4.add("(min-width: 601px)", () => {
+    // Desktop animation settings
+    let t2 = gsap.timeline();
+    
+    var centerP = document.querySelectorAll("#page6 p");
+
+    centerP.forEach(function (elem) {
+      var clutter = "";
+      var pText = elem.textContent;
+      var splittedText = pText.split("");
+      splittedText.forEach(function (e) {
+        clutter += `<span>${e}</span>`;
+      });
+      elem.innerHTML = clutter;
+    });
+
+    t2.from(
+      "#page6",
+      {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 1,
+        scrollTrigger: {
+          trigger: "#page6",
+          scroller: "body",
+          start: "top 40%",
+          end: "top -40%",
+          scrub: 1,
+        },
+      },
+      "-=-1"
+    );
+
+    t2.from("#page6 p span", {
+      stagger: 0.1,
+      opacity: 0.5,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      scrollTrigger: {
+        trigger: "#page6 p",
+        scroller: "body",
+        start: "top 65%",
+        end: "top 30%",
+        scrub: 1,
+      },
+    });
+  });
+
+  t2.from("#page6 #lines h4", {
     opacity: 0,
-    duration: 0.5,
-    delay: 0.5,
+    y: 50,
+    duration: 1,
     scrollTrigger: {
-      trigger: "#footer",
+      trigger: "#page6 #lines h4",
       scroller: "body",
-      scrub: 2,
-      start: "top 60%",
-      end: "top 10%",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 1,
     },
   });
-});
 
-
-mm5.add("(min-width: 601px)", () => {
-  // Desktop animation settings for #footer
-  t2.from("#footer", {
+  t2.from("#page6 #lines h5", {
     opacity: 0,
-    duration: 0.8,
-    delay: 1.2,
+    y: 50,
+    duration: 1,
     scrollTrigger: {
-      trigger: "#footer",
+      trigger: "#page6 #lines h5",
       scroller: "body",
-      scrub: 5,
-      start: "top -10%",
-      end: "top -10%",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 1,
     },
   });
-});
 
+  t2.from("#page6 #lines h6", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#page6 #lines h6",
+      scroller: "body",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 1,
+    },
+  });
+
+  t2.from("#page6 #lines h3", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#page6 #lines h3",
+      scroller: "body",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 1,
+    },
+  });
+
+  let mm5 = gsap.matchMedia();
+
+  mm5.add("(max-width: 600px)", () => {
+    // Mobile animation settings for #footer
+    t2.from("#footer", {
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: "#footer",
+        scroller: "body",
+        scrub: 2,
+        start: "top 60%",
+        end: "top 10%",
+      },
+    });
+  });
+
+  mm5.add("(min-width: 601px)", () => {
+    // Desktop animation settings for #footer
+    t2.from("#footer", {
+      opacity: 0,
+      duration: 0.8,
+      delay: 1.2,
+      scrollTrigger: {
+        trigger: "#footer",
+        scroller: "body",
+        scrub: 5,
+        start: "top -10%",
+        end: "top -10%",
+      },
+    });
+  });
 }
 
 contentAnimation();
+
 
 function slideImage() {
   const slides = document.querySelectorAll(".slide");
