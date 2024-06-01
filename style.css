@@ -279,6 +279,14 @@ body{
   border-right: 1.5px solid #E0DDDD;
 }
 
+#page2 .content h3 span{
+  font-family: "Roboto Condensed";
+}
+
+#page2 .content img{
+  display: none;
+}
+
 #page2 .content:nth-child(5) {
   border: none;
 }
@@ -294,7 +302,7 @@ body{
 
 #page2 .content h3 {
   color: #E0DDDD;
-  font-size: 2vw;
+  font-size: 2.4vw;
   font-weight: 400;
 }
 
@@ -2071,8 +2079,30 @@ input[type="radio"] {
       justify-content: space-between;
       border: 1.5px solid white;
   }
-  
-  #page2 .content:nth-child(5) {
+
+  #page2 .content img{
+    display: block !important;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: bottom;
+    position: absolute;
+    right: 0%;
+    opacity: 0;
+    transition: all ease 0.7s;
+  }
+
+  #page2 .content:hover img{
+    opacity: 1;
+    right: 72%;
+  }
+
+  #page2 .content:hover{
+    background-color: #070A0C
+  }
+
+#page2 .content:nth-child(5) {
       border: 1.5px solid white;
   }
   
@@ -2107,10 +2137,10 @@ input[type="radio"] {
   
   #page2 .aboutus #about>p {
       margin-top: 14vw;
-      font-size: 5vw;
+      font-size: 9.45vw;
       text-align: center;
   }
-  
+
   #page2 .aboutus #about>button {
       top: 20%;
       padding: 20px 45px;
