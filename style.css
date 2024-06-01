@@ -2774,10 +2774,19 @@ input[type="radio"] {
   font-size: 5.5vw;
 }
 
+#page2 .content img{
+  display: block !important;
+}
+
+#page2 .content:hover img{
+  opacity: 1;
+  right: 72%;
+}
+
 #page2 .aboutus {
   width: 100%;
   min-height: 60vh;
-  margin-top: -3vw;
+  margin-top: 5vw;
 }
  
 #page2 .aboutus #about {
@@ -2791,12 +2800,12 @@ input[type="radio"] {
 }
 
 #page2 .aboutus #about>h2 {
-  font-size: 11vw;
+  font-size: 12vw;
 }
 
 #page2 .aboutus #about>p {
   margin-top: 16vw;
-  font-size: 6vw;
+  font-size: 8vw;
   text-align: center;
 }
 
@@ -2812,7 +2821,7 @@ input[type="radio"] {
 }
 
 #page3 {
-  margin-top: 220vw;
+  margin-top: 210vw;
   min-height: 140vh;
   padding: 10vw 5vw;
   position: relative;
@@ -2820,7 +2829,7 @@ input[type="radio"] {
 }
 
 #page3 #services>h2 {
-  font-size: 10vw;
+  font-size: 12vw;
 }
 
 #page3 #container {
