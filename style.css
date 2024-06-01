@@ -2882,7 +2882,7 @@ input[type="radio"] {
 
 #page3>button {
   position: absolute;
-  top: 2.5%;
+  top: 2.5% !important;
   left: 49%;
   transform: translateX(-50%);
   padding: 25px 40px;
