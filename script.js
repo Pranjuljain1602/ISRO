@@ -763,7 +763,6 @@ function contentAnimation() {
 
 contentAnimation();
 
-
 function slideImage() {
   const slides = document.querySelectorAll(".slide");
   const radioButton = document.querySelectorAll(".button");

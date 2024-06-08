@@ -2736,6 +2736,10 @@ input[type="radio"] {
   left: 142% !important;
 }
 
+#header_content{
+  display: block !important;;
+}
+
 #header_content h2 {
     font-size: 14.8vw;
 }
