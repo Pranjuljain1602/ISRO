@@ -1,3 +1,5 @@
+var headerAnimationPlayed = false; // Initialize flag
+
 function loadingAnimation() {
   var preloader = document.querySelector(".preloader");
 
@@ -20,31 +22,45 @@ function loadingAnimation() {
   function showWebsiteContent() {
     preloader.classList.add("end-preloader");
     document.querySelector("#main").style.opacity = 1;
+    startMainAnimations();
   }
 
-  tl.from("#page1", {
-    delay: 0.17,
-    opacity: 0,
-    duration: 0.4,
-    ease: "power4.out",
-  });
+  function startMainAnimations() {
+    var mainTl = gsap.timeline();
 
-  tl.from("#nav-right", {
-    opacity: 0,
-    y: -80,
-    duration: 0.45,
-  });
+    mainTl.from("#nav-right", {
+      opacity: 0,
+      y: -80,
+      duration: 0.45,
+    });
 
-  tl.from("#nav-left h3", {
-    opacity: 0,
-    y: -80,
-    duration: 0.45,
-    stagger: 0.2,
-  });
+    mainTl.from("#nav-left h3", {
+      opacity: 0,
+      y: -80,
+      duration: 0.45,
+      stagger: 0.2,
+    });
+
+    mainTl.from("#header_content", {
+      x: -100,
+      opacity: 0,
+      duration: 0.4,
+    }, "-=0.2"); // Starts after a slight delay
+
+    // Check if header animation already played before triggering
+    if (!headerAnimationPlayed) {
+      initTextAnimation();
+      createAnimation(window.matchMedia("(max-width: 600px)").matches);
+      headerAnimationPlayed = true; // Set flag to true after animation played
+    }
+
+    window.addEventListener("resize", handleResize);
+  }
 
   function createAnimation(isMobile) {
+    var headerTl = gsap.timeline();
     if (isMobile) {
-      tl.from(
+      headerTl.from(
         "#header_content",
         {
           x: -100,
@@ -53,19 +69,18 @@ function loadingAnimation() {
         },
         "pjain"
       );
-      tl.from(
+      headerTl.from(
         "h2 span",
         {
-          x: -80,
-          opacity: 0,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: "power2.out",
+          opacity: 0, // Start with opacity 0
+          duration: 0.5, // Duration of animation
+          stagger: 0.05, // Stagger animation
+          ease: "power2.out", // Easing
         },
-        "pjain"
+        "+=0.4" // Delay after header_content animation
       );
     } else {
-      tl.from(
+      headerTl.from(
         "#header_content",
         {
           x: -100,
@@ -74,48 +89,47 @@ function loadingAnimation() {
         },
         "pjain"
       );
-      tl.from(
+      headerTl.from(
         "h2 span",
         {
-          x: -70,
           opacity: 0,
           duration: 0.3,
           stagger: 0.04,
           ease: "power4.out",
         },
-        "pjain"
+        "+=1.2" // Delay after header_content animation
       );
     }
   }
-  
+
   function initTextAnimation() {
     var h2 = document.querySelector("#header_content h2");
     var h2Text = h2.textContent;
     var clutter = "";
     var splittedText = h2Text.split("");
-  
+
     splittedText.forEach(function (elem) {
       clutter += `<span style="font-family: 'Roboto Condensed';">${elem}</span>`;
     });
-  
+
     h2.innerHTML = clutter;
   }
-  
-  var isMobile = window.matchMedia("(max-width: 600px)").matches;
-  
+
+  function handleResize() {
+    var isMobile = window.matchMedia("(max-width: 600px)").matches;
+    if (!headerAnimationPlayed) {
+      initTextAnimation();
+      createAnimation(isMobile);
+      headerAnimationPlayed = true;
+    }
+  }
+
   initTextAnimation();
-
-  createAnimation(isMobile);
-  
-
-  window.addEventListener('resize', function () {
-    isMobile = window.matchMedia("(max-width: 600px)").matches;
-    createAnimation(isMobile);
-  });
-
+  createAnimation(window.matchMedia("(max-width: 600px)").matches);
 }
 
 loadingAnimation();
+
 
 function cursorAnimation() {
   Shery.mouseFollower({
@@ -761,7 +775,6 @@ function contentAnimation() {
 }
 
 contentAnimation();
-
 
 function slideImage() {
   const slides = document.querySelectorAll(".slide");
