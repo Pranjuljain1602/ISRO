@@ -1239,12 +1239,12 @@ input[type="radio"] {
   }
 
   #nav #nav-right img {
-      height: 8.5vw;
-      width: 8.5vw;
+      height: 8.5vw !important;
+      width: 8.5vw !important;
   }
 
   #nav #nav-right h1 {
-      font-size: 5vw;
+      font-size: 5vw !important;
   }
 
   #nav #nav-left {
@@ -1252,8 +1252,8 @@ input[type="radio"] {
   }
 
   #nav #nav-left h3 {
-      font-size: 1.7vw;
-      font-weight: 500;
+      font-size: 1.7vw !important;
+      font-weight: 500 !important;
   }
 
   #header_content h2 {
@@ -1265,14 +1265,14 @@ input[type="radio"] {
   }
 
   .btn {
-    font-size: 1.7vw;
-    padding: 17px 27px;
-    margin-top: 3%;
+    font-size: 1.7vw !important;
+    padding: 17px 27px !important;
+    margin-top: 3% !important;
   }
 
   .btn::after {
-    height: 70px;
-    width: 70px;
+    height: 70px !important;
+    width: 70px !important;
   }
 
   #page2 {
@@ -1290,7 +1290,7 @@ input[type="radio"] {
   #page2 .aboutus #about {
       width: 100%;
       position: absolute;
-      top: 10%;
+      top: 10% !important;
       left: 0%;
       z-index: 1;
   }
@@ -1303,7 +1303,7 @@ input[type="radio"] {
       transform: translateX(-50%);
       align-items: center;
       justify-content: space-between;
-      margin-top: 0.7vw;
+      margin-top: 0.7vw !important;
       margin-bottom: 2.5vw;
   }
 
@@ -1320,7 +1320,7 @@ input[type="radio"] {
 
   #page2 .aboutus #about>p {
       color: #edeaea;
-      margin-top: 4vw;
+      margin-top: 4vw !important;
       filter: brightness(80%);
       font-size: 2.2vw;
       padding: 3vw;
@@ -1328,20 +1328,20 @@ input[type="radio"] {
   }
 
   #page2 .aboutus #about>button {
-      padding: 25px 35px;
-      font-size: 1.4vw;
-      margin-top: 0.6%;
+      padding: 25px 35px !important;
+      font-size: 1.4vw !important;
+      margin-top: 0.6% !important;
       
   }
 
   #page2 .aboutus #about>button::after {
-    height: 73px;
-    width: 73px;
+    height: 73px !important;
+    width: 73px !important;
   }
 
 
   #page3 {
-    margin-top: 13vw;
+    margin-top: 13vw !important;
   } 
   #page3 #services {
       margin-top: 3vw;
@@ -1450,7 +1450,7 @@ input[type="radio"] {
   }
 
   #page3 #container .card>button {
-      margin-top: 120%;
+      margin-top: 120% !important;
       margin-left: 13%;
       padding: 15px 30px;
       border-radius: 5px;
@@ -1491,7 +1491,7 @@ input[type="radio"] {
   }
 
 #page4 {
-  margin-top: 16vw;
+  margin-top: 16vw !important;
 }
 
   #page4 h2 {
@@ -1550,8 +1550,8 @@ input[type="radio"] {
   }
 
   #container2 {
-    width: 110%;
-    height: 110%;
+    width: 110% !important;
+    height: 110% !important;
     padding: 1.8vw;
     display: inline-block;
     animation-name: bhaggu;
@@ -1575,7 +1575,7 @@ input[type="radio"] {
   }
 
   #page5 {
-      margin-top: -3vw;
+      margin-top: -3vw !important;
       width: 100%;
       height: 100vh;
       position: relative;
@@ -1660,7 +1660,7 @@ input[type="radio"] {
       width: 100%;
       min-height: 100%;
       position: relative;
-      top: 5vw;
+      top: 5vw !important;
   }
 
   #page6 p {
@@ -1670,7 +1670,7 @@ input[type="radio"] {
       line-height: 1.5vw;
       font-family: 'work sans';
       position: absolute;
-      top: 45%;
+      top: 45% !important;
       transform: translate(-50%, -50%);
       left: 50%;
       text-align: center;
@@ -1682,7 +1682,7 @@ input[type="radio"] {
     object-fit: cover;
     opacity: 0.8;
     z-index: 999;
-    margin-top: -19vw;
+    margin-top: -19vw !important;
   }
   
   #page6 #box {
@@ -1691,7 +1691,7 @@ input[type="radio"] {
     justify-content: center;
     gap: 0.7vw;
     position: absolute;
-    top: 36%;
+    top: 36% !important;
     left: 49%;
     transform: translate(-50%, -50%);
   }
@@ -1701,7 +1701,7 @@ input[type="radio"] {
       font-family: 'work sans';
       font-weight: 700;
       position: absolute;
-      top: -23vw;
+      top: -23vw !important;
       left: 53
   }
 
@@ -1715,7 +1715,7 @@ input[type="radio"] {
       font-family: 'work sans';
       font-weight: 700;
       position: absolute;
-      top: -16vw;
+      top: -16vw !important;
       left: 20%;
   }
   #page6 #lines h5>i {
@@ -1728,7 +1728,7 @@ input[type="radio"] {
       font-family: 'work sans';
       font-family: 300;
       position: absolute;
-      top: -10vw;
+      top: -10vw !important;
       left: 58%;
   }
 
@@ -1742,7 +1742,7 @@ input[type="radio"] {
       font-family: 'work sans';
       font-family: 30;
       position: absolute;
-      top: -3vw;
+      top: -3vw !important;
       left: 31%;
   }
 
@@ -1768,7 +1768,7 @@ input[type="radio"] {
     justify-content: space-between;
     border-bottom: 2px dashed rgb(40, 32, 32);
     position: relative;
-    top: 60%;
+    top: 60% !important;
 }
 
 #create {
@@ -2753,7 +2753,7 @@ input[type="radio"] {
 
 
 .btn {
-    margin-top: 33%;
+    margin-top: 33% !important;
     margin-left: 23.4%;
     padding: 20px 40px;
     font-size: 6vw;
@@ -2942,8 +2942,8 @@ input[type="radio"] {
 
 #container2 {
   margin-top: -3vw;
-  width: 435%;
-  height: 70%;
+  width: 435% !important;
+  height: 70% !important;
   padding: 2vw;
 }
 
@@ -2969,14 +2969,14 @@ input[type="radio"] {
 }
 
 #page5 #slider {
-  margin-top: -80vw;
+  margin-top: -80vw !important;
   background-color: aliceblue;
   height: 200px;
   width: 50%;
 }
 
 #page6 {
-  margin-top: -35vw;
+  margin-top: -35vw !important;
   width: 100%;
   height: 100vh;
 }
