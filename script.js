@@ -3,6 +3,8 @@ var headerAnimationPlayed = false; // Initialize flag
 function loadingAnimation() {
   var preloader = document.querySelector(".preloader");
 
+  document.documentElement.style.overflow = "hidden"; // Hide overflow for the entire document
+
   var tl = gsap.timeline();
 
   tl.from(".rocket", { y: "-100vh", ease: "bounce.out", duration: 1 }, "-=0.5")
@@ -22,6 +24,7 @@ function loadingAnimation() {
   function showWebsiteContent() {
     preloader.classList.add("end-preloader");
     document.querySelector("#main").style.opacity = 1;
+    document.documentElement.style.overflow = ""; // Restore overflow after animation
     startMainAnimations();
   }
 
@@ -41,11 +44,15 @@ function loadingAnimation() {
       stagger: 0.2,
     });
 
-    mainTl.from("#header_content", {
-      x: -100,
-      opacity: 0,
-      duration: 0.4,
-    }, "-=0.2"); // Starts after a slight delay
+    mainTl.from(
+      "#header_content",
+      {
+        x: -100,
+        opacity: 0,
+        duration: 0.4,
+      },
+      "-=0.2" // Starts after a slight delay
+    );
 
     // Check if header animation already played before triggering
     if (!headerAnimationPlayed) {
@@ -129,6 +136,7 @@ function loadingAnimation() {
 }
 
 loadingAnimation();
+
 
 
 function cursorAnimation() {
