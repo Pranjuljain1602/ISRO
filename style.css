@@ -1374,7 +1374,7 @@ input[type="radio"] {
       margin-left: 4.5vw;
   }
 
-  #page3 #container .card:nth-child(2) .gola {
+#page3 #container .card:nth-child(2) .gola {
       width: 120px;
       height: 120px;
       background-color: royalblue;
@@ -1389,7 +1389,7 @@ input[type="radio"] {
       background-repeat: no-repeat;
   }
 
-  #page3 #container .card:nth-child(1)>.gola {
+#page3 #container .card:nth-child(1)>.gola {
       width: 120px;
       height: 120px;
       background-color: royalblue;
@@ -1404,7 +1404,7 @@ input[type="radio"] {
       background-repeat: no-repeat;
   }
 
-  #page3 #container .card:nth-child(3)>.gola {
+#page3 #container .card:nth-child(3)>.gola {
       width: 120px;
       height: 120px;
       background-color: royalblue;
