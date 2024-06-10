@@ -1081,9 +1081,9 @@ input[type="radio"] {
   background-color: black;
   width: 100%;
   height: 110vh;
-  background-image: url(./IMAGES/space\ image.jpg);
-  background-size: cover;
-  background-position: center;
+  /* background-image: url(./IMAGES/space\ image.jpg); */
+  /* background-size: cover; */
+  /* background-position: center; */
 }
 
 #footer-top {
@@ -1761,9 +1761,9 @@ input[type="radio"] {
     background-color: black;
     width: 100%;
     height: 70vh;
-    background-image: url(./IMAGES/space\ image.jpg);
-    background-size: cover;
-    background-position: center;
+    /* background-image: url(./IMAGES/space\ image.jpg); */
+    /* background-size: cover; */
+    /* background-position: center; */
 }
 
 #footer-top {
