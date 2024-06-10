@@ -229,6 +229,7 @@ body{
   background-color: transparent;
   border: 2px solid #428DDE;
   color: white;
+
   font-weight: 600;
   position: relative;
   overflow: hidden;
@@ -1234,7 +1235,7 @@ input[type="radio"] {
 @media (min-width: 1600px) {
 
   .rocket {
-      height: 580px;
+      height: 580px !important;
       animation: rocket 0.01s ease infinite alternate;
   }
 
@@ -1312,7 +1313,7 @@ input[type="radio"] {
       font-family: "Roboto Condensed";
       font-size: 3vw;
       padding-bottom: 0.2vw;
-      padding-top: 3vw;
+      padding-top: 3.3vw;
       text-align: center;
       filter: brightness(150%);
 
@@ -1320,7 +1321,7 @@ input[type="radio"] {
 
   #page2 .aboutus #about>p {
       color: #edeaea;
-      margin-top: 4vw !important;
+      margin-top: 2vw !important;
       filter: brightness(80%);
       font-size: 2.2vw;
       padding: 3vw;
@@ -1335,8 +1336,8 @@ input[type="radio"] {
   }
 
   #page2 .aboutus #about>button::after {
-    height: 73px !important;
-    width: 73px !important;
+    height: 80px !important;
+    width: 80px !important;
   }
 
 
@@ -1450,7 +1451,7 @@ input[type="radio"] {
   }
 
   #page3 #container .card>button {
-      margin-top: 120% !important;
+      margin-top: 120%;
       margin-left: 13%;
       padding: 15px 30px;
       border-radius: 5px;
@@ -1483,7 +1484,7 @@ input[type="radio"] {
   }
 
   #page3>button {
-    top: 42%;
+    top: 7vw !important;
     left: 50%;
     padding: 18px 40px;
     font-size: 1.4vw;
@@ -1575,7 +1576,7 @@ input[type="radio"] {
   }
 
   #page5 {
-      margin-top: -3vw !important;
+      margin-top: -4.3vw !important;
       width: 100%;
       height: 100vh;
       position: relative;
@@ -1660,7 +1661,7 @@ input[type="radio"] {
       width: 100%;
       min-height: 100%;
       position: relative;
-      top: 5vw !important;
+      top: 3vw !important;
   }
 
   #page6 p {
@@ -3310,7 +3311,7 @@ input[type="radio"] {
     z-index: 1;
     font-size: 6vw;
   }
-  
+
   .card .overlay p{
     font-size: 4.5vw;
   }
