@@ -161,12 +161,12 @@ body{
 
 #nav #nav-right img {
   filter: brightness(100%);
-  width: 7vw;
+  width: 9vw;
 }
 
 #nav #nav-right h1 {
   font-family: 'Roboto Condensed';
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: 400;
   color: #fff;
   border-left: 1.5px solid rgba(255, 255, 255);
@@ -192,7 +192,7 @@ body{
 }
 
 #nav #nav-left h3 {
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   font-weight: 500;
   color: #fff;
   filter: brightness(100%);
@@ -229,6 +229,7 @@ body{
   background-color: transparent;
   border: 2px solid #428DDE;
   color: white;
+  font-size: 1.8vw;
   font-weight: 600;
   position: relative;
   overflow: hidden;
@@ -237,8 +238,8 @@ body{
 
 .btn::after {
   content: "";
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   position: absolute;
   background-color: #428DDE;
@@ -376,7 +377,7 @@ body{
 #page2 .aboutus #about>h2 {
   color: #fff;
   font-family: "Roboto Condensed";
-  font-size: 3vw;
+  font-size: 4vw;
   padding-bottom: 2vw;
   text-align: center;
   filter: brightness(150%);
@@ -397,6 +398,7 @@ body{
   background-color: transparent;
   border: 2px solid #428DDE;
   color: white;
+  font-size: 1.5vw;
   font-weight: 600;
   position: relative;
   left: 50%;
@@ -407,8 +409,8 @@ body{
 
 #page2 .aboutus #about>button::after {
   content: "";
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   position: absolute;
   background-color: #428DDE;
@@ -476,7 +478,7 @@ body{
 #page3 #services>h2 {
   color: #fff;
   font-family: "Roboto Condensed";
-  font-size: 3vw;
+  font-size: 4vw;
   padding-bottom: 2vw;
   text-align: center;
   filter: brightness(150%);
@@ -575,6 +577,7 @@ body{
   background-color: transparent;
   border: 2px solid #E0DDDD;
   color: white;
+  font-size: 1.1vw;
   font-weight: 600;
   position: relative;
   overflow: hidden;
@@ -719,7 +722,7 @@ body{
 #page4 h2 {
   color: white;
   font-family: "Roboto Condensed";
-  font-size: 2.8vw;
+  font-size: 4vw;
   text-align: center;
   padding-top: 5vw;
   margin-bottom: 1vw;
@@ -763,8 +766,8 @@ body{
 }
 
 .image-container img {
-  height: 130px;
-  width: 130px;
+  height: 12vw;
+  width: 12vw;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
@@ -781,11 +784,11 @@ body{
 }
 
 #container2 {
-  width: 120%;
+  width: 136%;
   height: 110%;
   padding: 1.8vw;
   display: inline-block;
-  animation-name: bhaggu;
+  animation-name: anime;
   animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -793,7 +796,7 @@ body{
 
 }
 
-@keyframes bhaggu {
+@keyframes anime {
   from {
       transform: translate(0);
   }
@@ -838,7 +841,7 @@ body{
 #page5 h2 {
   color: white;
   font-family: "Roboto Condensed";
-  font-size: 3vw;
+  font-size: 4vw;
   text-align: center;
   text-transform: uppercase;
   margin-top: -36vw;
@@ -935,10 +938,10 @@ input[type="radio"] {
   margin-top: -8vw;
 }
 
-#page6 h1 {
+#page6 h2 {
   color: white;
   font-family: "Roboto Condensed";
-  font-size: 3.2vw;
+  font-size: 4vw;
   position: absolute;
   top: 30%;
   left: 50%;
@@ -1097,7 +1100,7 @@ input[type="radio"] {
   width: 100%;
   position: relative;
   height: 8vw;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1108,12 +1111,13 @@ input[type="radio"] {
 #silk {
   position: absolute;
   top: 0;
+  left: 4%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  font-size: 2.2vw;
+  font-size: 2.3vw;
   color: white;
   letter-spacing: 0.5vw;
   font-weight: 500;
@@ -1121,6 +1125,7 @@ input[type="radio"] {
   text-transform: uppercase;
   opacity: 1;
   padding: 2.6vw;
+
 }
 
 #silk {
@@ -1139,14 +1144,14 @@ input[type="radio"] {
 
 
 #footer-top img {
-  height: 52%;
+  height: 65%;
   padding-right: 1.5vw;
   padding-left: 3vw;
 }
 
 #footer-top img :nth-child(3) {
   padding-right: 4px;
-  height: 52%;
+  height: 65%;
   margin-top: 1px;
 }
 
@@ -1974,7 +1979,7 @@ input[type="radio"] {
 
   #nav #nav-right img {
     filter: brightness(100%);
-    width: 140px;
+    width: 40vw;
   }
 
   #nav #nav-right h1 {
