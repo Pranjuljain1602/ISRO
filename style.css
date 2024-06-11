@@ -2403,7 +2403,7 @@ input[type="radio"] {
       transform: translateX(-50%);
   }
 
-  #page6 h1 {
+  #page6 h2 {
       color: white;
       font-family: "Roboto Condensed";
       font-size: 10vw;
@@ -2549,23 +2549,35 @@ input[type="radio"] {
       position: absolute;
       top: 85%;
       height: 8vw;
-      overflow: hidden;
+      /* overflow: hidden; */
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 10px;
+      /* margin-right: 5px !important; */
+  }
+  
+   #create img {
+    height: 60%;
+    margin-top: 1px;
+  }
+
+  #footer-top img {
+    height: 60%;
+    padding-right: 1.5vw;
+    padding-left: 2.5vw;
   }
   
   #plain,
   #silk {
       position: absolute;
       top: 0;
+      left: -0.5%;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 5px;
-      font-size: 2.3vw;
+      font-size: 2.25vw;
       color: white;
       letter-spacing: 0.5vw;
       font-weight: 500;
