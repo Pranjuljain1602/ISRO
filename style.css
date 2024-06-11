@@ -3025,6 +3025,19 @@ input[type="radio"] {
       opacity: 1;
       padding: 2.6vw;
   }
+
+  #page2 .content img{
+    display: block !important;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: bottom;
+    position: absolute;
+    right: 0%;
+    opacity: 0;
+    transition: all ease 0.7s;
+  }
 }
 
 
