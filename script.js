@@ -137,8 +137,6 @@ function loadingAnimation() {
 
 loadingAnimation();
 
-
-
 function cursorAnimation() {
   Shery.mouseFollower({
     skew: true,
@@ -1046,7 +1044,6 @@ function transitionToPage5() {
       behavior: 'smooth'
   });
 }
-
 
 function transitionToPage2() {
   document.querySelector('#page2').scrollIntoView({
